@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAC TIT & Science</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Assets/Css/Responsive.css">
+</head>
+<body>
+    <main>
+        <header>
+                <div class="club-logo">
+                    <img src="./Assets/Image/RAC-removebg-preview.png" alt="Logo" />
+                    <p class="title-logo">Rotaract Club Of <br>TIT & Science Bhopal, RID3040</p>
+                </div>
+    
+                <nav class="nav-element">
+                    <div class="nav-list">
+                        <ul id="nav-list-elements">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Rotaractors</a></li>
+                            <li><a href="#">Events and Projects</a></li>
+                            <li><a href="#">Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div id="nav-cta-btn">
+                        <button class="join-us-btn" onclick="joinus()">Join Us</button>
+                        <button class="donate-here" onclick="donate()">
+                            <i class='bx bxs-donate-heart'></i> Donate
+                        </button>
+                    </div>
+                </nav>
+            
+                <div class="toggle-button" onclick="toggleMenu()">
+                    <i class='bx bx-menu-alt-right'></i>
+                </div>
+        </header>
+
+        <!-- Hero Section -->
+         <section class="hero-section">
+            <div class="hero-tag">
+                <p>Together, We craete a better Tommorow!</p>
+            </div>
+            <div class="hero-title">
+                <p>Rotaract Club Of TIT & Science Bhopal, RID 3040</p>
+            </div>
+            <div class="hero-description">
+                <p>The <b>Rotaract Club of TIT & Science</b>  is dedicated to developing young leaders through service, fellowship, and professional growth. Together, we create a better tomorrow by empowering individuals, driving meaningful change, and building a stronger, more connected community.</p>
+            </div>
+            <div class="hero-stats">
+                <div class="project-stats">
+                    <i class='bx bxs-notepad bx-md' style="color: #00A0A6;"></i>
+                    <!-- <span class="count-stats">100+</span> -->
+                    <span class="stats-name">Projects</span>
+                    <span id="stats-description">Rotaract Club Of TIT & Science have done 100+ projects till now.</span>
+                </div>
+                <div class="member-stats">
+                    <i class='bx bxs-user-rectangle bx-md' style="color: #00A0A6;"></i>
+                    <!-- <span class="count-stats">40</span> -->
+                    <span class="stats-name">Active Members</span>
+                    <span id="stats-description">We have 40 active members, 22 are Boards Of Directors and rest are General Body Members.</span>
+                </div>
+                <div class="achievement-stats">
+                    <i class='bx bxl-sketch bx-md' style="color: #00A0A6;"></i>
+                    <!-- <span class="count-stats">5</span> -->
+                    <span class="stats-name">Achievements</span>
+                    <span id="stats-description">We have recognized with various rewards for our work and dedication towards social service.</span>
+                </div>
+            </div>
+    
+         </section>
+
+         <!-- About Section -->
+          <section class="about-section">
+            <div>
+                <p class="about-section-title">
+                    About RAC TIT & Science RID 3040
+                </p>
+            </div>
+            <div class="about-section-description">The <b>Rotaract Club of TIT & Science</b> is an institution-based international service club affiliated with the Technocrats Institute of Technology and Science in Bhopal, India. Sponsored by the Rotary Club of East Bhopal, it was chartered in 2018. The club operates under Rotary International District (RID) 3040 and embraces the motto "Learn, Achieve, Grow."</div>
+
+            <div class="about-section-details-list">
+                <ul class="about-list-items">
+                    <li><b>Established in 2018</b>, the club was formed to empower young leaders through service, fellowship, and professional growth.</li>
+                    <li>It was established under the guidance of <b>Dr. Shashi Jain</b>, who was the Director of TIT & Science at the time.</li>
+                    <li>The club is sponsored by the Rotary Club of East Bhopal and operates under Rotary International District 3040.</li>
+                    <li><b>Rtr. Wassif Khan</b> served as the first president during Rotary Year (RY) 2018-19, laying the foundation for impactful community service initiatives.</li>
+                    <li>The club has since grown, organizing various projects focused on social welfare, leadership development, and global networking opportunities.</li>
+                </ul>
+            </div>
+            <div class="about-section-flex">
+                <div class="about-section-mission">
+                    <div class="about-icons"><i class='bx bx-bullseye bx-md' style="color: #00A0A6;
+                    margin-bottom: 10px;"></i></div>
+                    <span class="mission-title">Mission</span>
+                    <p class="mission-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam eaque amet labore! Facilis modi officiis vero amet veritatis, maxime magni odio doloremque pariatur ratione, possimus quis rerum quibusdam! Modi, iusto!</p>
+                </div>
+                <div class="about-section-vision">
+                    <div class="about-icons"><i class='bx bx-infinite bx-md' style="color: #00A0A6;
+                        margin-bottom:10px;
+                        "></i></div>
+                    <span class="vision-title">Vision</span>
+                    <p class="vision-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam eaque amet labore! Facilis modi officiis vero amet veritatis, maxime magni odio doloremque pariatur ratione, possimus quis rerum quibusdam! Modi, iusto!</p>
+                </div>
+            </div>
+          </section>
+
+          <!-- What rotaract gives -->
+           <section class="skills-section">
+            <div class="skill-section-container">
+                <div>
+                    <p class="skill-section-title">Rotaract: Empowering Leaders, Creating Impact</p>
+                    <p class="skill-section-tagline">Rotaract provides opportunities for personal growth, leadership development, professional networking, and community service, empowering individuals to make a meaningful impact while building lifelong skills and connections.</p>
+                </div>
+                <div class="skill-section-cards">
+                    <div class="skill-card">
+                        <div class="icon"><i class='bx bxs-rocket bx-md' style='color:#79c7b2' ></i></div>
+                        <span class="skill-card-title">Leadership & Management Skills</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon"><i class='bx bxs-user-voice bx-md' style='color:#79c7b2'></i></div>
+                        <span class="skill-card-title">Communication & Public Speaking</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon"><i class='bx bxs-user-detail bx-md' style='color:#79c7b2'></i></div>
+                        <span class="skill-card-title">Social & Community Engagement</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon"><i class='bx bxs-notepad bx-md' style='color:#79c7b2'></i></div>
+                        <span class="skill-card-title">Project Management</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon"><i class='bx bxl-microsoft-teams bx-md' style='color:#79c7b2' ></i></div>
+                        <span class="skill-card-title">Networking & Team Work</span>
+                    </div>
+                </div>
+            </div>
+
+           </section>
+        
+           <!-- Testimonial section -->
+            <section class="testimonial-section">
+                
+            </section>
+    </main>
+    <script src="Assets/JavaScript/toggle.js"></script>
+</body>
+</html>
