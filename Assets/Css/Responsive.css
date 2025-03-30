@@ -37,8 +37,6 @@
     #nav-cta-btn{
         display: flex;
         flex-direction: column;
-
-
     }
     .nav-list ul {
         flex-direction: column;
