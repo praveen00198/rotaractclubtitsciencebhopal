@@ -7,11 +7,13 @@
     }
     header {
         padding: 25px 8px;
-        height: 80px;
+        height: 60px;
         background-color: rgb(37, 37, 37);
         box-shadow: 0px 2px 10px rgba(173, 173, 173, 0.993);
     }
-    
+    .club-logo>img{
+        width: 30px;
+    }
     .title-logo {
         display: none;
     }
@@ -85,6 +87,12 @@
         margin-top: 1rem;
         width: 80%;
     }
+    .about-section{
+        padding-top: 20px;
+        padding-bottom: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .about-section-flex{
         display: flex;
         flex-direction: column;
@@ -94,6 +102,9 @@
     }
     .about-section-mission, .about-section-vision{
         width: 100%;
+    }
+    .skills-section{
+        padding: 10px 15px;
     }
     .skill-section-cards{
         grid-template-columns: repeat(1, 1fr);
