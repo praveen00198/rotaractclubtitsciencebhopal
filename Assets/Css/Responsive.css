@@ -52,7 +52,7 @@
         display: block;
         cursor: pointer;
         font-size: 38px;
-        color: white;
+        color: black;
     }
     
     .toggle-button:hover {
