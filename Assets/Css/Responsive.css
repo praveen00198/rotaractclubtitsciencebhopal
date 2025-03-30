@@ -8,11 +8,11 @@
     header {
         padding: 25px 8px;
         height: 60px;
-        background-color: rgb(37, 37, 37);
+        background-color: rgb(223, 223, 223);
         box-shadow: 0px 2px 10px rgba(173, 173, 173, 0.993);
     }
     .club-logo>img{
-        width: 30px;
+        width: 40px;
     }
     .title-logo {
         display: none;
@@ -90,13 +90,18 @@
     .about-section{
         padding-top: 20px;
         padding-bottom: 80px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .about-section-title{
+        font-size: 18px;
+    }
+    .about-section-details-list{
+        display: none;
     }
     .about-section-flex{
         display: flex;
         flex-direction: column;
-        gap: 10px;
         justify-content: center;
         align-items: center;
     }
@@ -106,10 +111,20 @@
     .skills-section{
         padding: 10px 15px;
     }
+    .skill-section-title{
+        font-size: 18px;
+        text-align: center;
+    }
+    .skill-section-tagline{
+        text-align: justify;
+    }
     .skill-section-cards{
         grid-template-columns: repeat(1, 1fr);
         display: grid;
         justify-content: center;
         align-items: center;
+    }
+    .skill-card{
+        width: 100%;
     }
 }
