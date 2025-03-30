@@ -99,6 +99,9 @@
     .about-section-details-list{
         display: none;
     }
+    .about-section-description{
+        margin-bottom: 15px;
+    }
     .about-section-flex{
         display: flex;
         flex-direction: column;
@@ -107,6 +110,7 @@
     }
     .about-section-mission, .about-section-vision{
         width: 100%;
+        margin-bottom: 15px;
     }
     .skills-section{
         padding: 10px 15px;
