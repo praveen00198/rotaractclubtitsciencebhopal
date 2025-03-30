@@ -140,3 +140,128 @@
         width: 100%;
     }
 }
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 20px 12px;
+        height: 70px;
+    }
+
+    .club-logo > img {
+        width: 45px;
+    }
+
+    .nav-element {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0px;
+        width: 60%;
+        height: fit-content;
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 10px;
+        text-align: center;
+        border-radius: 10px;
+        transform: translateX(-100%);
+        transition: transform 2s ease-in-out, opacity 0.4s ease-in-out;
+    }
+    #nav-cta-btn{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-list ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 16px;
+    }
+    #nav-list-elements > li >a{
+        font-size: 20px;
+    }
+    .nav-element.active {
+        display: grid;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .toggle-button {
+        display: block;
+        cursor: pointer;
+        font-size: 38px;
+        color: black;
+    }
+    
+    .toggle-button:hover {
+        color: #0e928c;
+    }
+    .hero-section {
+        padding: 30px;
+    }
+
+    .hero-title > p {
+        font-size: 24px;
+    }
+
+    .hero-description > p {
+        font-size: 16px;
+    }
+
+    .about-section {
+        padding: 30px;
+    }
+
+    .skill-section-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ----- Small Desktop (1025px - 1200px) ----- */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    header {
+        padding: 25px 15px;
+        height: 75px;
+    }
+
+    .club-logo > img {
+        width: 50px;
+    }
+
+    .nav-list ul {
+        gap: 30px;
+        font-size: 20px;
+    }
+
+    .hero-section {
+        padding: 40px;
+    }
+
+    .hero-title > p {
+        font-size: 26px;
+    }
+
+    .hero-description > p {
+        font-size: 18px;
+    }
+
+    .about-section {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10rem;
+    background-color: #0a2627;
+    color: white;
+    }
+    .about-section-details-list{
+        margin-bottom: -15px;
+    }
+
+    .skill-section-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
