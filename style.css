@@ -428,3 +428,100 @@ header {
     text-align: center;
     margin-bottom: 40px;
 }
+
+/* Profile carousal */
+
+.swipping-profile-section{
+    padding: 60px 50px;
+}
+.swipping-profile-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: var(--heading-font);
+    font-size: 30px;
+    font-weight: 700;
+}
+.swipping-profile-tagline{
+    text-align: center;
+    font-family: var(--second-font);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.carousel-container {
+    padding: 30px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s linear;
+}
+
+.carousel-item {
+    min-width: 210px;
+    height: auto;
+    background-color: #032b2c;
+    margin: 0 10px;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    border: 1px solid #207a86;
+    border-radius: 12px;
+}
+.carousel-item:hover{
+    box-shadow: 0 0 12px #085c58;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.07);
+}
+
+.carousel-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-card-name {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: var(--heading-font);
+    font-weight: 500;
+    color: white;
+}
+
+.profile-card-post {
+    font-family: var(--second-font);
+    color: #afafaf;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #333;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #529fa5;
+    color: #0a2627;
+}

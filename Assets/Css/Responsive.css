@@ -167,6 +167,15 @@
         font-weight: 400;
         text-align: center;
     }
+
+    .carousel-item {
+        min-width: 210px;
+    }
+
+    .carousel-item img {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 
