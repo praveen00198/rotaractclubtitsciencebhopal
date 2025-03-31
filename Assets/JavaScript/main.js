@@ -1,3 +1,5 @@
+// Toggle the menu on mobile devices
+// This function toggles the visibility of the navigation menu when the hamburger icon is clicked
 let isOpen = false;
 
 function toggleMenu() {
@@ -11,7 +13,3 @@ function toggleMenu() {
 
     isOpen = !isOpen; 
 }
-
-const carousel = document.querySelector('.carousel');
-carousel.innerHTML += carousel.innerHTML; // Duplicates cards for infinite looping
-document.querySelector('.carousel').style.animationDuration = "25s"; // Change to slower speed

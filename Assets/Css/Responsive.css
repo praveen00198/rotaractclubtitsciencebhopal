@@ -21,7 +21,7 @@
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 50px;
         right: 0px;
         width: 60%;
         height: fit-content;
@@ -139,7 +139,43 @@
     .skill-card{
         width: 100%;
     }
+
+    .testimonial-section-title{
+        font-size: 20px;
+        text-align: center;
+    }
+    .testimonial-card-container{
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+    .testimonial-section{
+        padding: 20px 20px;
+    }
+    .testimonial-card{
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #0f383ad5;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+    .testimonial-card-description{
+        font-family: var(--second-font);
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+    }
 }
+
+
+
+
+
+
+
+
 
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
