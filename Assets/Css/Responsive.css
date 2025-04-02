@@ -140,6 +140,10 @@
         width: 100%;
     }
 
+
+    .swipping-profile-section{
+        padding: 60px 20px;
+    }
     .testimonial-section-title{
         font-size: 20px;
         text-align: center;
