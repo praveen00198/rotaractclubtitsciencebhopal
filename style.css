@@ -534,24 +534,21 @@ header {
 footer {
     background-color: #f0f0f0;
     padding: 40px 20px;
-    font-family: sans-serif;
   }
 
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
-
-  .footer-column {
-    flex: 1 1 250px;
-    margin-bottom: 20px;
+  .footer-column{
+    width: fit-content;
+    padding: 10px 40px;
   }
-
   .footer-column h3 {
     margin-bottom: 15px;
+    font-family: var(--heading-font);
     font-size: 1.2em;
   }
 
@@ -562,6 +559,9 @@ footer {
 
   .footer-column ul li {
     margin-bottom: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
 
   .footer-column a {
@@ -569,11 +569,44 @@ footer {
     color: #333;
   }
 
-  .social-icons a {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 1.5em;
+  .social-icons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
   }
+  .social-icons a i:hover{
+    color: #00A0A6;
+  }
+  #newsletter{
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    margin-top: 15px;
+    border: 1px solid #032b2c;
+    font-family: var(--second-font);
+    font-size: 14px;
+  }
+  #newsletter-btn{
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 20px;
+    border: 1px solid #021e1f;
+    padding: 5px;
+    font-size: 16px;
+    font-family: var(--second-font);
+    background-color: #30c0c5;
+    color: #032b2c;
+    cursor: pointer;
+  }
+
+  #developed-by{
+    font-size: 16px;
+  }
+  #developed-by:hover i{
+    color: red;
+    filter: drop-shadow(1px 1px 5px red);
+  }
+  
 
   .copyright {
     text-align: center;
@@ -583,3 +616,5 @@ footer {
     padding-top: 20px;
     font-size: 0.9em;
   }
+
+

@@ -140,7 +140,9 @@
         width: 100%;
     }
 
-
+    .swipping-profile-section{
+        padding: 60px 20px;
+    }
     .swipping-profile-section{
         padding: 60px 20px;
     }
@@ -180,7 +182,20 @@
         width: 100px;
         height: 100px;
     }
-}
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .footer-column{
+        width: fit-content;
+        padding: 25px 10px;
+      }
+
+    }
 
 
 
