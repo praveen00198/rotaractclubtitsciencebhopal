@@ -1,0 +1,53 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the spacing between images */
+    padding: 20px;
+    margin-top: 120px;
+}
+
+.image-container {
+    position: relative; /* Needed for absolute positioning of the overlay */
+    overflow: hidden; /* Clips the overlay if it goes outside */
+    border: 1px solid #ccc; /* Optional: Adds a border around each image */
+    border-radius: 5px; /* Optional: Rounds the corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.image-container img {
+    display: block; /* Removes extra space below the image */
+    width: 320px; /* Adjust the initial width of the images */
+    height: auto; /* Maintain aspect ratio */
+    transition: opacity 0.3s ease-in-out; /* Optional: Smooth transition for image opacity on hover */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for the overlay */
+    text-align: center; /* Center the text horizontally */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1; /* Show the overlay on hover */
+}
+
+.image-container:hover img {
+    opacity: 0.7;
+}
+
+.image-text {
+    font-size: 1em; /* Adjust the font size of the text */
+}
