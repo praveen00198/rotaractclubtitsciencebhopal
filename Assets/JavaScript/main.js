@@ -1,27 +1,18 @@
 // Toggle the menu on mobile devices
 // This function toggles the visibility of the navigation menu when the hamburger icon is clicked
-document.addEventListener('click', function(event) {
-    const navElement = document.querySelector('.nav-element');
-    const toggleButton = document.querySelector('.toggle-button');
-  
-    // Check if the menu is currently open (has the 'active' class)
-    if (navElement.classList.contains('active')) {
-      // Check if the clicked element is NOT the menu itself or a descendant of the menu
-      if (!navElement.contains(event.target) && event.target !== toggleButton) {
-        // If the click is outside the menu and not on the toggle button, close the menu
-        navElement.classList.remove('active');
-        isOpen = false; // Update the isOpen variable
-      }
-    }
-  });
-  
-  let isOpen = false;
-  
-  function toggleMenu() {
+let isOpen = false;
+
+function toggleMenu() {
     const navElement = document.querySelector(".nav-element");
-    navElement.classList.toggle("active");
-    isOpen = !isOpen;
-  }
+
+    if (isOpen) {
+        navElement.classList.remove("active");
+    } else {
+        navElement.classList.add("active");
+    }
+
+    isOpen = !isOpen; 
+}
 
 
 // Card swiping
