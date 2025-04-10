@@ -17,6 +17,8 @@
     .title-logo {
         display: none;
     }
+
+    /* Navigation bar */
     .nav-element {
         display: none;
         flex-direction: column;
