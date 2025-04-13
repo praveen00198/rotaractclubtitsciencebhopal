@@ -86,3 +86,48 @@ carouselTrack.addEventListener('mouseleave', startScroll);
 carouselTrack.addEventListener('touchstart', handleTouchStart);
 carouselTrack.addEventListener('touchmove', handleTouchMove);
 carouselTrack.addEventListener('touchend', handleTouchEnd);
+
+
+// Overlay for Join Us
+document.addEventListener('DOMContentLoaded', function() {
+    const showFormBtn = document.getElementById('showJoinUsFormBtn');
+    const formOverlay = document.getElementById('joinUsformOverlay');
+    const closeFormBtn = document.getElementById('closeFormBtn');
+
+    showFormBtn.addEventListener('click', function() {
+        formOverlay.style.display = 'flex'; // Or 'block' depending on your overlay styling
+    });
+
+    closeFormBtn.addEventListener('click', function() {
+        formOverlay.style.display = 'none';
+    });
+
+    // Optional: Close the form when clicking outside the form container
+    formOverlay.addEventListener('click', function(event) {
+        if (event.target === formOverlay) {
+            formOverlay.style.display = 'none';
+        }
+    });
+});
+
+// Overlay for Donate 
+document.addEventListener('DOMContentLoaded', function() {
+    const showFormBtn = document.getElementById('showDonateform');
+    const formOverlay = document.getElementById('donatePageOverlay');
+    const closeFormBtn = document.getElementById('closeFormBtn');
+
+    showFormBtn.addEventListener('click', function() {
+        formOverlay.style.display = 'flex'; // Or 'block' depending on your overlay styling
+    });
+
+    closeFormBtn.addEventListener('click', function() {
+        formOverlay.style.display = 'none';
+    });
+
+    // Optional: Close the form when clicking outside the form container
+    formOverlay.addEventListener('click', function(event) {
+        if (event.target === formOverlay) {
+            formOverlay.style.display = 'none';
+        }
+    });
+});

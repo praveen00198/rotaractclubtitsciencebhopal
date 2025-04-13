@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Gruppo&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rancho&family=Send+Flowers&display=swap');
+
+
+/* Styles for the Overlay */
+.overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    z-index: 1000; /* Ensure it's on top of other content */
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+    overflow: auto; /* Enable scrolling on the overlay */
+}
+
+/* Styles for the Form Container */
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative; /* To position the close button */
+    width: 400px; /* Adjust as needed */
+    max-width: 90%; /* Ensure it fits on smaller screens */
+}
+
+/* Styles for the Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 7px;
+}
+
+.close-btn:hover {
+    color: #0e0e0e;
+}
+
+/* Styles for Form Groups */
+#logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1d1d1d;
+            font-family: 'Poppins';
+        }
+        .tagline {
+            color: #666;
+            margin-bottom: 20px;
+            font-family: 'Nunito';
+            font-size: 16px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 2px;
+            margin-left: 8px;
+            color: #272727;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            border: 1px solid #c5c5c5;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-family: 'Nunito';
+            font-size: 16px;
+            font-weight: 600;
+            outline: none;
+        }
+        button[type="submit"] {
+            width: calc(100% - 12px);
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: 'Poppins';
+            margin-top: 15px;
+        }
+        button[type="submit"]:hover {
+            background-color: #1e74cf;
+        }
+
+
+
+/* Donation overlay */
+/* ... Your existing CSS for .overlay and .close-btn ... */
+
+/* ... Your existing CSS ... */
+
+.donate-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+    width: 600px; /* Adjust as needed for this layout */
+    max-width: 95%;
+    overflow-y: auto;
+    max-height: 90vh;
+    display: flex; /* For left and right sections */
+    flex-direction: row;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px;
+}
+
+.donate-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 30px;
+}
+
+.image-container {
+    width: 40%; /* Adjust width for the image container */
+    border: 1px solid #ccc; /* Optional border for visual separation */
+    border-radius: 5px;
+    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* To contain the image if it doesn't fit perfectly */
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.form-info-wrapper {
+    width: 60%; /* Adjust width for the form and info */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between icon/tagline and form */
+}
+
+.icon-tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align icon and tagline to the left */
+    gap: 10px;
+}
+
+.donate-icon {
+    font-size: 3em;
+    color: #e53e3e;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.donate-icon:hover {
+    box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    color: #333;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 15px; /* Add some space below the tagline */
+}
+
+.donation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form groups */
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    font-family: 'Nunito', sans-serif;
+    text-align: left;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Pill-shaped input fields */
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+}
+
+.upload-group label {
+    font-weight: normal; /* Adjust label style for upload */
+}
+
+.donate-button {
+    background-color: #007bff; /* Blue submit button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px; /* Pill-shaped button */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+.donate-button:hover {
+    background-color: #0056b3;
+}

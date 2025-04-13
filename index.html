@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="Assets/Css/Responsive.css" />
+    <link rel="stylesheet" href="Assets/Css/overlay.css">
   </head>
   <body>
     <main>
@@ -37,8 +38,8 @@
           </div>
           <hr id="separator" />
           <div id="nav-cta-btn">
-            <button class="join-us-btn" onclick="joinus()">Join Us</button>
-            <button class="donate-here" onclick="donate()">
+            <button class="join-us-btn" id="showJoinUsFormBtn">Join Us</button>
+            <button class="donate-here" id="showDonateform">
               <i class="bx bxs-donate-heart"></i> Donate
             </button>
           </div>
@@ -592,6 +593,82 @@
           &copy; 2025 Rotaract Club Of TIT & Science. All rights reserved.
         </div>
       </footer>
+
+
+      <!-- Overlay form for Join Us-->
+      <div id="joinUsformOverlay" class="overlay">
+        <div class="form-container">
+            <button id="closeFormBtn" class="close-btn">&times;</button>
+            <div class="logo-placeholder">
+              <img src="Assets/Image/RAC-removebg-preview.png" id="logo-placeholder" alt="Logo">
+            </div>
+            <p class="form-title">Rotaract Club Of TIT & Science</p>
+            <p class="tagline">Make a difference, grow as a leader. Join Rotaract today!</p>
+            <form id="myForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="What would we call you?" required>
+                </div>
+                <div class="form-group">
+                    <label for="enrollment-no">Enrollment No:</label>
+                    <input type="text" name="contact" id="enrollment-no" placeholder="Enter your enrollment number">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email here" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact:</label>
+                    <input type="text" name="contact" id="contact" placeholder="Enter your contact number">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Donation overlay -->
+    <div id="donatePageOverlay" class="overlay">
+      <div class="donate-container">
+          <button id="closeFormBtn" class="close-btn">&times;</button>
+          <div class="donate-content-wrapper">
+              <div class="image-container">
+                  <img src="Assets/Image/QR-Image.jpg" id="QR-Image" alt="Donation Image">
+              </div>
+              <div class="form-info-wrapper">
+                  <div class="icon-tagline">
+                      <div class="donate-icon">
+                          <i class='bx bxs-donate-heart bx-lg'></i>
+                      </div>
+                      <h2 class="tagline">Every contribution makes a difference. Donate today!</h2>
+                  </div>
+                  <form class="donation-form">
+                      <div class="form-group">
+                          <label for="name">Name:</label>
+                          <input type="text" id="name" name="name" placeholder="Your Name">
+                      </div>
+                      <div class="form-group">
+                          <label for="contact">Contact:</label>
+                          <input type="text" id="contact" name="contact" placeholder="Your Phone Number">
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email:</label>
+                          <input type="email" id="email" name="email" placeholder="Your Email">
+                      </div>
+                      <div class="form-group">
+                          <label for="occupation">Occupation here:</label>
+                          <input type="text" id="occupation" name="occupation" placeholder="Your Profession/Occupation">
+                      </div>
+                      <div class="form-group upload-group">
+                          <label for="upload-image">Upload image</label>
+                          <input type="file" id="upload-image" name="upload-image">
+                          </div>
+                      <button type="submit" class="donate-button">Submit</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
 
 
     </main>
