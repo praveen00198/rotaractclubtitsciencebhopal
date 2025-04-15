@@ -432,7 +432,7 @@ header {
 /* Profile carousal */
 
 .swipping-profile-section{
-    padding: 60px 50px;
+    padding: 40px 50px;
 }
 .swipping-profile-title {
     text-align: center;
@@ -474,10 +474,12 @@ header {
 }
 .carousel-item:hover{
     box-shadow: 0 0 12px #085c58;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.07);
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.05);
 }
-
+.carousel-item:hover > .profile-card-post{
+    color: #0e928c;
+}
 .carousel-item img {
     width: 120px;
     height: 120px;
@@ -526,14 +528,33 @@ header {
     color: #0a2627;
 }
 
-
-
-
+/* Registration Section */
+.registration-section{
+    padding: 30px 120px;
+}
+.flex-registration{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #0a2627;
+    padding: 20px 60px;
+    border-radius: 100px;
+    color: white;
+}
+.registration-right-container, .registration-left-container{
+    width: 100%;
+}
+#registration-right-text{
+    font-size: 12px;
+}
 
 /* Footer */
 footer {
     background-color: #f0f0f0;
-    padding: 40px 20px;
+    padding-top: 60px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
   }
 
   .footer-container {

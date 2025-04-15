@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Gruppo&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rancho&family=Send+Flowers&display=swap');
+
 .gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px; /* Adjust the spacing between images */
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 30px;
     margin-top: 120px;
 }
 
@@ -11,7 +12,7 @@
     position: relative; /* Needed for absolute positioning of the overlay */
     overflow: hidden; /* Clips the overlay if it goes outside */
     border: 1px solid #ccc; /* Optional: Adds a border around each image */
-    border-radius: 5px; /* Optional: Rounds the corners */
+    border-radius: 8px; /* Optional: Rounds the corners */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
 
@@ -31,11 +32,9 @@
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack the text vertically */
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease-in-out; /* Smooth transition for the overlay */
-    text-align: center; /* Center the text horizontally */
     padding: 20px;
     box-sizing: border-box; /* Include padding in the element's total width and height */
 }
@@ -48,6 +47,33 @@
     opacity: 0.7;
 }
 
-.image-text {
-    font-size: 1em; /* Adjust the font size of the text */
+.somethinf-it-is{
+    margin-top: 90px;
+    width: fit-content;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    padding: 2px 6px;
+    background-color: #e6e6e6; /* Light gray background */
+    color: #333; /* Dark text color */
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid #808080; /* Light gray border */
+}
+.image-title-text{
+    margin-top: 6px;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+}
+.iamge-description-text{
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+}
+.event-date{
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
 }

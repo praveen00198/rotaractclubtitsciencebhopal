@@ -194,6 +194,32 @@
         padding: 25px 10px;
       }
 
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+        margin-top: 70px;
+    }
+    .image-title-text{
+        margin-top: 6px;
+        font-size: 14px;
+        /* font-family: "Poppins", sans-serif;
+        font-weight: 600; */
+    
+    }
+    .iamge-description-text{
+        font-size: 12px;
+        /* font-family: "Nunito", sans-serif;
+        font-weight: 400; */
+    }
+    .event-date{
+        font-size: 10px;
+        /* font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        margin-top: 5px; */
+    }
+
     }
 
 
