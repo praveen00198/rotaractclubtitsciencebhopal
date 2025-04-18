@@ -14,8 +14,7 @@ function toggleMenu() {
   isOpen = !isOpen;
 }
 
-// This function enables smooth scrolling to sections of the page
-// Card swiping
+// This section implements carousel swiping behavior for the card carousel
 const carouselTrack = document.querySelector(".carousel-track");
 const carouselItems = document.querySelectorAll(".carousel-item");
 const itemWidth = carouselItems[0].offsetWidth + 20;
@@ -155,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
     card.innerHTML = `
       <div class="testimonial-card-description">
         <span id="testimonial-card-icon"></span>
-        <p id="testimonial-card-description">
+        <p class="testimonial-card-description">
           ${testimonial.description}
         </p>
       </div>
