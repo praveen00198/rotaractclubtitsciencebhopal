@@ -1,19 +1,22 @@
 @media screen and (max-width: 768px) {
-    body{
+    body {
         width: 100%;
         height: 100vh;
         font-family: var(--default-font);
 
     }
+
     header {
         padding: 25px 8px;
         height: 60px;
         background-color: rgb(223, 223, 223);
         box-shadow: 0px 2px 10px rgba(173, 173, 173, 0.993);
     }
-    .club-logo>img{
+
+    .club-logo>img {
         width: 40px;
     }
+
     .title-logo {
         display: none;
     }
@@ -35,19 +38,23 @@
         transform: translateX(-100%);
         transition: transform 2s ease-in-out, opacity 0.4s ease-in-out;
     }
-    #nav-cta-btn{
+
+    #nav-cta-btn {
         display: flex;
         flex-direction: column;
     }
+
     .nav-list ul {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
         font-size: 16px;
     }
-    #nav-list-elements > li >a{
+
+    #nav-list-elements>li>a {
         font-size: 20px;
     }
+
     .nav-element.active {
         display: grid;
         transform: translateX(0);
@@ -60,113 +67,135 @@
         font-size: 38px;
         color: black;
     }
-    
+
     .toggle-button:hover {
         color: #0e928c;
     }
 
-    .hero-section{
-        margin-top: 5rem;
+    .hero-section {
+        margin-top: 1rem;
         padding: 20px 10px;
         display: flex;
         flex-direction: column;
         place-items: center;
     }
-    .hero-title>p{
+
+    .hero-title>p {
         font-size: 20px;
         line-height: 30px;
         text-align: center;
     }
-    .hero-description>p{
+
+    .hero-description>p {
         font-size: 14px;
         margin-bottom: 10px;
         text-align: justify;
     }
-    .hero-stats{
+
+    .hero-stats {
         display: flex;
         flex-direction: column;
         gap: 10px;
         justify-content: center;
         align-items: center;
     }
-    .project-stats, .member-stats, .achievement-stats{
+
+    .project-stats,
+    .member-stats,
+    .achievement-stats {
         margin-top: 1rem;
         width: 80%;
     }
-    .about-section{
+
+    .about-section {
         padding-top: 20px;
         padding-bottom: 80px;
         padding-left: 15px;
         padding-right: 15px;
     }
-    .about-section-title{
+
+    .about-section-title {
         font-size: 20px;
     }
-    .about-section-details-list{
+
+    .about-section-details-list {
         display: none;
     }
-    .about-section-description{
+
+    .about-section-description {
         margin-bottom: -15px;
     }
-    .about-section-flex{
+
+    .about-section-flex {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-bottom: 60px;
     }
-    .about-section-mission{
+
+    .about-section-mission {
         width: 100%;
         margin-bottom: -40px;
     }
-    .about-section-vision{
-        width: 100%;
-    }
-    .skills-section{
-        padding: 10px 8px;
-    }
-    .skill-section-title{
-        font-size: 18px;
-        text-align: center;
-    }
-    .skill-section-tagline{
-        text-align: justify;
-    }
-    .skill-section-cards{
-        grid-template-columns: repeat(1, 1fr);
-        display: grid;
-        justify-content: center;
-        align-items: center;
-    }
-    .skill-card{
+
+    .about-section-vision {
         width: 100%;
     }
 
-    .swipping-profile-section{
-        padding: 60px 10px;
+    .skills-section {
+        padding: 10px 8px;
     }
-    .testimonial-section-title{
-        font-size: 20px;
+
+    .skill-section-title {
+        font-size: 18px;
         text-align: center;
     }
-    .testimonial-card-container{
+
+    .skill-section-tagline {
+        text-align: justify;
+    }
+
+    .skill-section-cards {
         grid-template-columns: repeat(1, 1fr);
         display: grid;
         justify-content: center;
         align-items: center;
     }
-    .testimonial-section{
+
+    .skill-card {
+        width: 100%;
+    }
+
+    .swipping-profile-section {
+        padding: 60px 10px;
+    }
+
+    .testimonial-section-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .testimonial-card-container {
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .testimonial-section {
         padding: 20px 20px;
     }
-    .testimonial-card{
+
+    /* .testimonial-card{
         width: 100%;
         padding: 10px 20px;
         background-color: #0f383ad5;
         color: white;
         border-radius: 10px;
         margin-bottom: 25px;
-    }
-    .testimonial-card-description{
+    } */
+    .testimonial-card-description {
         font-family: var(--second-font);
         font-size: 14px;
         font-weight: 400;
@@ -181,46 +210,49 @@
         width: 100px;
         height: 100px;
     }
-    
+
     .footer-container {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-      }
+    }
 
-      .footer-column{
+    .footer-column {
         width: fit-content;
         padding: 25px 10px;
-      }
+    }
 
-      .gallery {
+    .gallery {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         padding: 10px;
         margin-top: 70px;
     }
-    .image-title-text{
+
+    .image-title-text {
         margin-top: 6px;
         font-size: 14px;
         /* font-family: "Poppins", sans-serif;
         font-weight: 600; */
-    
+
     }
-    .iamge-description-text{
+
+    .iamge-description-text {
         font-size: 12px;
         /* font-family: "Nunito", sans-serif;
         font-weight: 400; */
     }
-    .event-date{
+
+    .event-date {
         font-size: 10px;
         /* font-family: "Poppins", sans-serif;
         font-weight: 400;
         margin-top: 5px; */
     }
 
-    }
+}
 
 
 
@@ -237,7 +269,7 @@
         height: 70px;
     }
 
-    .club-logo > img {
+    .club-logo>img {
         width: 45px;
     }
 
@@ -257,19 +289,23 @@
         transform: translateX(-100%);
         transition: transform 2s ease-in-out, opacity 0.4s ease-in-out;
     }
-    #nav-cta-btn{
+
+    #nav-cta-btn {
         display: flex;
         flex-direction: column;
     }
+
     .nav-list ul {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
         font-size: 16px;
     }
-    #nav-list-elements > li >a{
+
+    #nav-list-elements>li>a {
         font-size: 20px;
     }
+
     .nav-element.active {
         display: grid;
         transform: translateX(0);
@@ -282,19 +318,20 @@
         font-size: 38px;
         color: black;
     }
-    
+
     .toggle-button:hover {
         color: #0e928c;
     }
+
     .hero-section {
         padding: 30px;
     }
 
-    .hero-title > p {
+    .hero-title>p {
         font-size: 24px;
     }
 
-    .hero-description > p {
+    .hero-description>p {
         font-size: 16px;
     }
 
@@ -314,7 +351,7 @@
         height: 75px;
     }
 
-    .club-logo > img {
+    .club-logo>img {
         width: 50px;
     }
 
@@ -327,26 +364,27 @@
         padding: 40px;
     }
 
-    .hero-title > p {
+    .hero-title>p {
         font-size: 26px;
     }
 
-    .hero-description > p {
+    .hero-description>p {
         font-size: 18px;
     }
 
     .about-section {
         display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 10rem;
-    background-color: #0a2627;
-    color: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 10rem;
+        background-color: #0a2627;
+        color: white;
     }
-    .about-section-details-list{
+
+    .about-section-details-list {
         margin-bottom: -15px;
     }
 

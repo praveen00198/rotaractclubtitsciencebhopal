@@ -16,9 +16,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
     line-height: inherit;
     height: 100vh;
@@ -100,7 +102,8 @@ header {
     margin-left: 20px;
 }
 
-.join-us-btn, .donate-here {
+.join-us-btn,
+.donate-here {
     padding: 5px 16px;
     font-family: var(--second-font);
     font-size: 14px;
@@ -109,27 +112,32 @@ header {
     border-radius: 8px;
     transition: background 0.3s ease;
 }
-.join-us-btn{
+
+.join-us-btn {
     background-color: transparent;
     color: #0a2627;
     border: 2px solid #0e928c;
     transition: background 0.3s ease;
 }
+
 .join-us-btn:hover {
     background-color: #0e928c;
     color: white;
 }
+
 .donate-here {
     background-color: #0e928c;
     color: white;
     border: 2px solid #0e928c;
     transition: background 0.3s ease;
 }
+
 .donate-here:hover {
     background-color: #3c9994;
     border-color: #3c9994;
-    
+
 }
+
 /* Toggle Menu (Mobile) */
 .toggle-button {
     display: none;
@@ -138,7 +146,7 @@ header {
 }
 
 
-.hero-section{
+.hero-section {
     margin-top: -20px;
     display: flex;
     flex-direction: column;
@@ -146,7 +154,7 @@ header {
     padding: 50px 40px;
 }
 
-.hero-tag>p{
+.hero-tag>p {
     font-family: var(--second-font);
     font-size: 14px;
     font-weight: 600;
@@ -158,7 +166,8 @@ header {
     border-radius: 20px;
     box-shadow: 0 0 10px #0e928c;
 }
-.hero-title>p{
+
+.hero-title>p {
     font-family: var(--heading-font);
     font-size: 50px;
     font-weight: 700;
@@ -166,7 +175,8 @@ header {
     text-align: center;
     margin-bottom: 10px;
 }
-.hero-description{
+
+.hero-description {
     width: 90%;
     font-family: var(--second-font);
     font-size: 20px;
@@ -176,14 +186,17 @@ header {
     margin-bottom: 20px;
 }
 
-.hero-stats{
+.hero-stats {
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
-.project-stats, .member-stats, .achievement-stats{
+
+.project-stats,
+.member-stats,
+.achievement-stats {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
@@ -194,14 +207,16 @@ header {
     width: 60%;
 
 }
-.count-stats{
+
+.count-stats {
     font-family: var(--heading-font);
     font-size: 20px;
     font-weight: 700;
     color: #0a2627;
     text-align: center;
 }
-.stats-name{
+
+.stats-name {
     font-family: var(--second-font);
     font-size: 12px;
     font-weight: 400;
@@ -211,14 +226,17 @@ header {
     border: 1px solid #1d6e6c;
     border-radius: 4px;
 }
-#stats-description{
+
+#stats-description {
     font-family: var(--second-font);
     font-size: 14px;
     font-weight: 400;
     color: #123746;
 }
 
-.project-stats:hover, .member-stats:hover, .achievement-stats:hover{
+.project-stats:hover,
+.member-stats:hover,
+.achievement-stats:hover {
     background-color: #d6f1f0;
     color: white;
     border-radius: 10px;
@@ -239,7 +257,8 @@ header {
     background-color: #0a2627;
     color: white;
 }
-.about-section-title{
+
+.about-section-title {
     font-family: var(--heading-font);
     font-size: 30px;
     font-weight: 700;
@@ -247,7 +266,8 @@ header {
     text-align: center;
     margin-bottom: 20px;
 }
-.about-section-description{
+
+.about-section-description {
     font-family: var(--second-font);
     font-size: 18px;
     font-weight: 400;
@@ -256,18 +276,22 @@ header {
     width: 100%;
     letter-spacing: 1px;
 }
-.about-list-items{
+
+.about-list-items {
     list-style-type: circle;
     letter-spacing: 1px;
     line-height: 25px;
     width: 100%;
 }
-.about-section-flex{
+
+.about-section-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.about-section-mission, .about-section-vision{
+
+.about-section-mission,
+.about-section-vision {
     width: 45%;
     margin-top: 4rem;
     padding: 20px 20px;
@@ -277,13 +301,17 @@ header {
     border: 1px solid #054441;
     border-radius: 12px;
 }
-.mission-title, .vision-title{
+
+.mission-title,
+.vision-title {
     font-family: var(--heading-font);
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 10px;
 }
-.mission-description, .vision-description{
+
+.mission-description,
+.vision-description {
     font-family: var(--second-font);
     font-size: 14px;
     font-weight: 400;
@@ -292,7 +320,8 @@ header {
     letter-spacing: 1px;
 }
 
-.about-section-mission:hover, .about-section-vision:hover{
+.about-section-mission:hover,
+.about-section-vision:hover {
     box-shadow: 0 0 10px #0c706b;
     transition: all 0.3s ease-in-out;
     transform: scale(1.05);
@@ -303,13 +332,14 @@ header {
 
 
 /* Skill section */
-.skills-section{
+.skills-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 50px;
 }
-.skill-section-container{
+
+.skill-section-container {
     padding: 20px 20px;
     width: 100%;
     background-color: #e1e6e4;
@@ -318,7 +348,8 @@ header {
     position: relative;
     top: -6rem;
 }
-.skill-section-title{
+
+.skill-section-title {
     font-family: var(--heading-font);
     font-size: 30px;
     font-weight: 700;
@@ -326,7 +357,8 @@ header {
     text-align: center;
     margin-bottom: 10px;
 }
-.skill-section-tagline{
+
+.skill-section-tagline {
     font-family: var(--second-font);
     font-size: 14px;
     font-weight: 400;
@@ -334,7 +366,8 @@ header {
     text-align: center;
     margin-bottom: 40px;
 }
-.skill-card{
+
+.skill-card {
     width: 90%;
     padding: 20px 20px;
     background-color: #0a2627;
@@ -342,21 +375,25 @@ header {
     border-radius: 10px;
     margin-bottom: 25px;
 }
-.icon{
+
+.icon {
     margin-bottom: 10px;
 }
-.skill-section-cards{
-  grid-template-columns: repeat(3, 1fr);
-  display: grid;
-  align-items: center;
-  justify-content: space-between;
+
+.skill-section-cards {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
 }
-.skill-card-title{
+
+.skill-card-title {
     font-family: var(--heading-font);
     font-size: 16px;
     font-weight: 500;
 }
-.skill-card:hover{
+
+.skill-card:hover {
     box-shadow: 0 0 10px #0c706b;
     transition: all 0.3s ease-in-out;
     transform: scale(1.05);
@@ -389,16 +426,18 @@ header {
 .testimonial-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* optional - keeps content spaced */
+    justify-content: space-between;
+    /* optional - keeps content spaced */
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     background-color: #042c2ea6;
     color: white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-bottom: 25px;
     width: 90%;
     opacity: 0;
     transition: opacity 0.5s ease-in;
+    border-left: 4px solid #0aa073;
 }
 
 .testimonial-card.visible {
@@ -407,7 +446,7 @@ header {
 
 #testimonial-card-description {
     font-family: var(--second-font);
-    font-size: 14px;
+    font-size: 16px;
     /* font-weight: 400; */
     text-align: justify;
     width: 100%;
@@ -433,11 +472,11 @@ header {
     border-radius: 20px;
 }
 
-.testimonial-card:hover {
+/* .testimonial-card:hover {
     box-shadow: 0 0 10px #0c706b;
     transition: all 0.3s ease-in-out;
     transform: scale(1.05);
-}
+} */
 
 .testimonial-section-title {
     font-family: var(--heading-font);
@@ -464,6 +503,7 @@ header {
 .testimonial-card[data-aos="fade-up"].aos-animate {
     opacity: 1;
 }
+
 /* Styling for quote icon next to names */
 /* .quote-icon {
     display: inline-block;
@@ -476,9 +516,10 @@ header {
 
 /* Profile carousal */
 
-.swipping-profile-section{
+.swipping-profile-section {
     padding: 40px 50px;
 }
+
 .swipping-profile-title {
     text-align: center;
     margin-bottom: 10px;
@@ -486,7 +527,8 @@ header {
     font-size: 30px;
     font-weight: 700;
 }
-.swipping-profile-tagline{
+
+.swipping-profile-tagline {
     text-align: center;
     font-family: var(--second-font);
     font-size: 14px;
@@ -517,14 +559,17 @@ header {
     border: 1px solid #207a86;
     border-radius: 12px;
 }
-.carousel-item:hover{
+
+.carousel-item:hover {
     box-shadow: 0 0 12px #085c58;
     transition: all 0.1s ease-in-out;
     transform: scale(1.05);
 }
-.carousel-item:hover > .profile-card-post{
+
+.carousel-item:hover>.profile-card-post {
     color: #0e928c;
 }
+
 .carousel-item img {
     width: 120px;
     height: 120px;
@@ -568,16 +613,17 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.social-icon:hover {
-    background-color: #529fa5;
-    color: #0a2627;
+.social-icon:hover i {
+    /* background-color: #529fa5; */
+    color: #18c8d4;
 }
 
 /* Registration Section */
-.registration-section{
+.registration-section {
     padding: 30px 120px;
 }
-.flex-registration{
+
+.flex-registration {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -586,10 +632,13 @@ header {
     border-radius: 100px;
     color: white;
 }
-.registration-right-container, .registration-left-container{
+
+.registration-right-container,
+.registration-left-container {
     width: 100%;
 }
-#registration-right-text{
+
+#registration-right-text {
     font-size: 12px;
 }
 
@@ -600,50 +649,54 @@ footer {
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
-  }
+}
 
-  .footer-container {
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-  }
-  .footer-column{
+}
+
+.footer-column {
     width: fit-content;
     padding: 10px 40px;
-  }
-  .footer-column h3 {
+}
+
+.footer-column h3 {
     margin-bottom: 15px;
     font-family: var(--heading-font);
     font-size: 1.2em;
-  }
+}
 
-  .footer-column ul {
+.footer-column ul {
     list-style: none;
     padding: 0;
-  }
+}
 
-  .footer-column ul li {
+.footer-column ul li {
     margin-bottom: 8px;
     display: flex;
     gap: 10px;
     align-items: center;
-  }
+}
 
-  .footer-column a {
+.footer-column a {
     text-decoration: none;
     color: #333;
-  }
+}
 
-  .social-icons{
+.social-icons {
     display: flex;
     gap: 20px;
     align-items: center;
-  }
-  .social-icons a i:hover{
+}
+
+.social-icons a i:hover {
     color: #00A0A6;
-  }
-  #newsletter{
+}
+
+#newsletter {
     width: 100%;
     padding: 8px;
     border-radius: 6px;
@@ -651,8 +704,9 @@ footer {
     border: 1px solid #032b2c;
     font-family: var(--second-font);
     font-size: 14px;
-  }
-  #newsletter-btn{
+}
+
+#newsletter-btn {
     width: 100%;
     margin-top: 8px;
     border-radius: 20px;
@@ -663,24 +717,23 @@ footer {
     background-color: #30c0c5;
     color: #032b2c;
     cursor: pointer;
-  }
+}
 
-  #developed-by{
+#developed-by {
     font-size: 16px;
-  }
-  #developed-by:hover i{
+}
+
+#developed-by:hover i {
     color: red;
     filter: drop-shadow(1px 1px 5px red);
-  }
-  
+}
 
-  .copyright {
+
+.copyright {
     text-align: center;
     width: 100%;
     margin-top: 20px;
     border-top: 1px solid #ddd;
     padding-top: 20px;
     font-size: 0.9em;
-  }
-
-
+}
