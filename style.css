@@ -427,12 +427,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* optional - keeps content spaced */
     height: 100%;
     padding: 10px;
     background-color: #042c2ea6;
     color: white;
-    /* border-radius: 10px; */
     margin-bottom: 25px;
     width: 90%;
     transition: opacity 0.5s ease-in;
@@ -446,7 +444,6 @@ header {
 #testimonial-card-description {
     font-family: var(--second-font);
     font-size: 16px;
-    /* font-weight: 400; */
     text-align: justify;
     width: 100%;
 }
@@ -456,12 +453,10 @@ header {
     margin: 5px;
     font-family: var(--heading-font);
     font-size: 15px;
-    /* font-weight: 600; */
     text-align: start;
 }
 
 #testimonial-card-position {
-    /* margin-top: 5px; */
     font-family: var(--second-font);
     width: fit-content;
     font-size: 12px;
@@ -470,12 +465,6 @@ header {
     padding: 5px 10px;
     border-radius: 20px;
 }
-
-/* .testimonial-card:hover {
-    box-shadow: 0 0 10px #0c706b;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.05);
-} */
 
 .testimonial-section-title {
     font-family: var(--heading-font);
@@ -503,18 +492,8 @@ header {
     opacity: 1;
 }
 
-/* Styling for quote icon next to names */
-/* .quote-icon {
-    display: inline-block;
-    font-size: 28px;
-    color: #0c706b;
-    font-weight: bold;
-} */
-
-
 
 /* Profile carousal */
-
 .swipping-profile-section {
     padding: 40px 50px;
 }
@@ -613,7 +592,6 @@ header {
 }
 
 .social-icon:hover i {
-    /* background-color: #529fa5; */
     color: #18c8d4;
 }
 
