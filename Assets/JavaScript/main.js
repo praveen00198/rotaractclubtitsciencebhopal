@@ -141,61 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
       position: "Secretary",
     },
   ];
-
   // Populate testimonial cards
-   document.addEventListener("DOMContentLoaded", function () {
-    // Initialize AOS
-    AOS.init();
-  
-    // Overlay for Join Us
-    const showFormBtn = document.getElementById("showJoinUsFormBtn");
-    const formOverlay = document.getElementById("joinUsformOverlay");
-    const closeFormBtn = document.getElementById("closeFormBtn");
-  
-    if (showFormBtn && formOverlay && closeFormBtn) {
-      showFormBtn.addEventListener("click", function () {
-        formOverlay.style.display = "flex";
-      });
-  
-      closeFormBtn.addEventListener("click", function () {
-        formOverlay.style.display = "none";
-      });
-  
-      formOverlay.addEventListener("click", function (event) {
-        if (event.target === formOverlay) {
-          formOverlay.style.display = "none";
-        }
-      });
-    }
-  
-    // Populate testimonial cards
-    const testimonialContainer = document.querySelector(".testimonial-card-container");
-    if (testimonialContainer) {
-      testimonials.forEach((testimonial, index) => {
-        const card = document.createElement("div");
-        card.classList.add("testimonial-card");
-        card.setAttribute("data-aos", "fade-right");
-        card.innerHTML = `
-          <div class="testimonial-card-description">
-            <span class="testimonial-card-icon"></span>
-            <p class="testimonial-card-description">
-              ${testimonial.description}
-            </p>
-          </div>
-          <div>
-            <p class="testimonial-card-position">${testimonial.position}</p>
-            <p class="testimonial-card-name">${testimonial.name}</p>
-          </div>
-        `;
-        testimonialContainer.appendChild(card);
-      });
-    }
-  
-    const testimonialSection = document.getElementById("testimonial-section");
-    if (testimonialSection) {
-      testimonialSection.classList.add("visible");
-    }
-  }); const testimonialContainer = document.querySelector(
+  const testimonialContainer = document.querySelector(
     ".testimonial-card-container"
   );
 
