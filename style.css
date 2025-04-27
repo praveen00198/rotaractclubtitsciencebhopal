@@ -9,7 +9,6 @@
 
 
 
-
 /* Global Styles */
 * {
     margin: 0;
@@ -549,7 +548,7 @@ header {
     transform: scale(1.05);
 }
 
-.carousel-item:hover>.profile-card-post {
+.carousel-item:hover > #profile-card-post {
     color: #0e928c;
 }
 
@@ -564,18 +563,26 @@ header {
 .profile-card-name {
     margin: 0;
     line-height: 25px;
-    font-size: 1.5em;
+    font-size: 20px;
     font-family: var(--heading-font);
     font-weight: 500;
     color: white;
 }
 
 .profile-card-post {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
     font-family: var(--second-font);
-    color: #afafaf;
-    font-size: 0.95em;
+    color: #f3efef;
+    font-size: 0.85em;
     margin-bottom: 20px;
+}
+#profile-card-post{
+    border: 1px solid #014441;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 2px 10px;
 }
 
 .social-icons {
@@ -598,7 +605,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.social-icon:hover i {
+.social-icon:hover a {
     color: #18c8d4;
 }
 
