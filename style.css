@@ -292,7 +292,7 @@ header {
 .about-section-flex {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
 }
 
 .about-section-mission,
@@ -563,6 +563,7 @@ header {
 
 .profile-card-name {
     margin: 0;
+    line-height: 25px;
     font-size: 1.5em;
     font-family: var(--heading-font);
     font-weight: 500;
@@ -570,6 +571,7 @@ header {
 }
 
 .profile-card-post {
+    margin-top: 10px;
     font-family: var(--second-font);
     color: #afafaf;
     font-size: 0.95em;

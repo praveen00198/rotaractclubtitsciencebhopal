@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../Assets/Css/gallery.css" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../Assets/Css/Responsive.css" />
+    <link rel="stylesheet" href="../Assets/Css/joinUsOverlay.css">
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -37,7 +38,13 @@
         </div>
         <hr id="separator" />
         <div id="nav-cta-btn">
-          <button class="join-us-btn" onclick="joinus()">Join Us</button>
+          <button
+              class="join-us-btn"
+              id="showJoinUsFormBtn"
+              aria-label="Join Us"
+            >
+              Join Us
+            </button>
           <button class="donate-here" onclick="donate()">
             <i class="bx bxs-donate-heart"></i> Donate
           </button>
@@ -51,22 +58,22 @@
 
     <div class="gallery">
       <div class="image-container">
-        <img src="../Assets/Image/11107581_4630062.jpg" alt="Image 1" />
+        <img src="../Assets/Image/Gallery/Blood-Donation.jpg" alt="Blood Donation Drive" />
         <div class="image-overlay">
-          <p class="somethinf-it-is">International Service</p>
-          <p class="image-title-text">This is an Event</p>
-          <p class="iamge-description-text">This is an image description</p>
-          <p class="event-date">01/01/2024</p>
+          <p class="somethinf-it-is">Community Service</p>
+          <p class="image-title-text">Mahadan 10.0</p>
+          <p class="iamge-description-text">The Mahadan 10.0 event aimed to promote the spirit of voluntary blood donation, raising awareness about its life-saving impact and encouraging active participation from students and the community.</p>
+          <p class="event-date">12<sup>th</sup> Mar'25</p>
         </div>
       </div>
 
       <div class="image-container">
-        <img src="../Assets/Image/11107581_4630062.jpg" alt="Image 1" />
+        <img src="../Assets/Image/Gallery/New-Year.jpg" alt="New Year" />
         <div class="image-overlay">
-          <p class="somethinf-it-is">Professional Service</p>
-          <p class="image-title-text">This is an Event</p>
-          <p class="iamge-description-text">This is an image description</p>
-          <p class="event-date">01/01/2024</p>
+          <p class="somethinf-it-is">Community Service</p>
+          <p class="image-title-text">New Year Celebration</p>
+          <p class="iamge-description-text">The  New year celebration with over 30+ children at the Harshini Social Welfare Foundation. We kicked off the celebration by cutting a delicious cake. The room lit up with smiles as we distributed sweets and treats to the  childrens.</p>
+          <p class="event-date">01<sup>th</sup> Jan'25</p>
         </div>
       </div>
 
@@ -186,6 +193,93 @@
       </div>
     </footer>
 
-    <!-- <script src="../Assets/JavaScript/main.js"></script> -->
+    <div id="joinUsformOverlay" class="overlay">
+      <div class="form-container">
+        <button id="closeFormBtn" class="close-btn" aria-label="Close Form">
+          &times;
+        </button>
+        <div class="logo-placeholder">
+          <img
+            src="../Assets/Image/RAC-removebg-preview.png"
+            id="logo-placeholder"
+            alt="Logo"
+          />
+        </div>
+        <p class="form-title">Rotaract Club Of TIT & Science</p>
+        <p class="tagline">
+          Make a difference, grow as a leader. Join Rotaract today!
+        </p>
+        <form id="myForm" onsubmit="return validateForm()">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="What would we call you?"
+              required
+            />
+            <span class="error-message" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="enrollment-no">Enrollment No:</label>
+            <input
+              type="text"
+              name="contact"
+              id="enrollment-no"
+              placeholder="e.g. 0192CS23XXXX"
+              required
+            />
+            <span class="error-message" id="enrollmentNoError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="e.g example@gmail.com"
+              required
+            />
+            <span class="error-message" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input
+              type="text"
+              name="contact"
+              id="contact"
+              placeholder="e.g 97XXXXXX25"
+              required
+            />
+            <span class="error-message" id="contactError"></span>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../Assets/JavaScript/main.js"></script>
+    <script>
+      // Function to show the join us form overlay
+      document.addEventListener("DOMContentLoaded", function () {
+        const showFormBtn = document.getElementById("showJoinUsFormBtn");
+        const formOverlay = document.getElementById("joinUsformOverlay");
+        const closeFormBtn = document.getElementById("closeFormBtn");
+
+        showFormBtn.addEventListener("click", function () {
+          formOverlay.style.display = "flex";
+        });
+
+        closeFormBtn.addEventListener("click", function () {
+          formOverlay.style.display = "none";
+        });
+        formOverlay.addEventListener("click", function (event) {
+          if (event.target === formOverlay) {
+            formOverlay.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>

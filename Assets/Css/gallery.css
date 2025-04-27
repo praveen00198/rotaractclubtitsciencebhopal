@@ -24,9 +24,7 @@
     display: block;
     /* Removes extra space below the image */
     width: 320px;
-    /* Adjust the initial width of the images */
-    height: auto;
-    /* Maintain aspect ratio */
+    height: 320px;
     transition: opacity 0.3s ease-in-out;
     /* Optional: Smooth transition for image opacity on hover */
 }
@@ -80,21 +78,23 @@
 
 .image-title-text {
     margin-top: 6px;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 
 }
 
 .iamge-description-text {
+    margin-top: 4px;
+    line-height: 16px;
     font-size: 14px;
     font-family: "Nunito", sans-serif;
-    font-weight: 400;
+    text-align: justify;
 }
 
 .event-date {
-    font-size: 12px;
+    font-size: 16px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    margin-top: 5px;
+    margin-top: 8px;
 }

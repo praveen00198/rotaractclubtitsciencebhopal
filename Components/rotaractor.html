@@ -30,13 +30,25 @@
               <li><a href="/index.html" class="nav-link">Home</a></li>
               <li><a href="/index.html" class="nav-link">About</a></li>
               <li><a href="#" class="nav-link">Rotaractors</a></li>
-              <li><a href="/Components/event.html" class="nav-link">Events and Projects</a></li>
-              <li><a href="/Components/gallery.html" class="nav-link">Gallery</a></li>
+              <li>
+                <a href="/Components/event.html" class="nav-link"
+                  >Events and Projects</a
+                >
+              </li>
+              <li>
+                <a href="/Components/gallery.html" class="nav-link">Gallery</a>
+              </li>
             </ul>
           </div>
           <hr id="separator" />
           <div id="nav-cta-btn">
-            <button class="join-us-btn" onclick="joinus()">Join Us</button>
+            <button
+              class="join-us-btn"
+              id="showJoinUsFormBtn"
+              aria-label="Join Us"
+            >
+              Join Us
+            </button>
             <button class="donate-here" onclick="donate()">
               <i class="bx bxs-donate-heart"></i> Donate
             </button>
@@ -156,7 +168,7 @@
           </button>
           <div class="logo-placeholder">
             <img
-              src="Assets/Image/RAC-removebg-preview.png"
+              src="../Assets/Image/RAC-removebg-preview.png"
               id="logo-placeholder"
               alt="Logo"
             />
@@ -216,7 +228,27 @@
       </div>
 
       <script src="../Assets/JavaScript/rotaractor.js"></script>
-      <!-- <script src="../Assets/JavaScript/main.js"></script> -->
+      <script>
+        // Function to show the join us form overlay
+        document.addEventListener("DOMContentLoaded", function () {
+          const showFormBtn = document.getElementById("showJoinUsFormBtn");
+          const formOverlay = document.getElementById("joinUsformOverlay");
+          const closeFormBtn = document.getElementById("closeFormBtn");
+
+          showFormBtn.addEventListener("click", function () {
+            formOverlay.style.display = "flex";
+          });
+
+          closeFormBtn.addEventListener("click", function () {
+            formOverlay.style.display = "none";
+          });
+          formOverlay.addEventListener("click", function (event) {
+            if (event.target === formOverlay) {
+              formOverlay.style.display = "none";
+            }
+          });
+        });
+      </script>
     </main>
   </body>
 </html>
