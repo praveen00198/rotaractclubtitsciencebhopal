@@ -94,6 +94,11 @@ header {
 .nav-list ul li a:hover {
     color: #0e928c;
 }
+/* .nav-link.active-link {
+    color: #00a0a6; 
+    font-weight: bold;
+    border-bottom: 2px solid #00a0a6;
+  } */
 
 /* CTA Buttons */
 #nav-cta-btn {

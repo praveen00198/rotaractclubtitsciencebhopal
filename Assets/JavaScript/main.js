@@ -210,3 +210,13 @@ function validateForm() {
 
   return isValid;
 }
+
+// For navbar
+const currentPath = window.location.pathname.split("/").pop(); 
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach((link) => {
+  if (link.getAttribute("href") === currentPath) {
+    link.classList.add("active-link");
+  }
+});
