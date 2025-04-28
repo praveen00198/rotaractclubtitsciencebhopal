@@ -21,6 +21,7 @@ document.querySelectorAll(".nav-element a").forEach(link => {
   });
 });
 
+
 // This section implements carousel swiping behavior for the card carousel
 const carouselTrack = document.querySelector(".carousel-track");
 const carouselItems = document.querySelectorAll(".carousel-item");
