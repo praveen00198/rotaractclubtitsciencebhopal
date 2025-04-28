@@ -92,6 +92,8 @@ carouselTrack.addEventListener("touchstart", handleTouchStart);
 carouselTrack.addEventListener("touchmove", handleTouchMove);
 carouselTrack.addEventListener("touchend", handleTouchEnd);
 
+
+
 // Overlay for Join Us
 document.addEventListener("DOMContentLoaded", function () {
   const showFormBtn = document.getElementById("showJoinUsFormBtn");
