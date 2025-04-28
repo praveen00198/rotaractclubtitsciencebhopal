@@ -26,6 +26,8 @@
     width: 320px;
     height: 320px;
     transition: opacity 0.3s ease-in-out;
+    aspect-ratio: 16/9;
+    object-fit: cover;
     /* Optional: Smooth transition for image opacity on hover */
 }
 
