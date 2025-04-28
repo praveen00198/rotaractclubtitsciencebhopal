@@ -25,7 +25,8 @@ body {
 main {
     width: 100%;
 }
-.event-page-title-head{
+
+.event-page-title-head {
     width: 100%;
     padding: 20px 50px;
 
@@ -56,6 +57,7 @@ main {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
+
 #show-events:focus,
 #show-projects:focus {
     background-color: #4ad4ab;
@@ -82,7 +84,10 @@ main {
 
 } */
 
-.aashitah,.tarupan, .matritwa, .kambal-rahat-ka {
+.aashitah,
+.tarupan,
+.matritwa,
+.kambal-rahat-ka {
     display: flex;
     gap: 20px;
     background-color: #f1f5f5;
@@ -108,11 +113,13 @@ main {
     width: 100%;
     padding: 20px;
 }
-.project-title{
+
+.project-title {
     font-family: var(--heading-font);
     color: #012e3b;
 }
-.project-description{
+
+.project-description {
     color: #164d5c;
     font-size: 14px;
     margin-top: 10px;
@@ -128,21 +135,28 @@ main {
         padding: 10px 20px;
     }
 
+    #project-section,
+    #event-section {
+        padding: 10px 20px;
+    }
+
     #show-events,
     #show-projects {
         padding: 5px 10px;
         font-size: 14px;
     }
 
-    .aashitah,.tarupan, .matritwa, .kambal-rahat-ka {
+    .aashitah,
+    .tarupan,
+    .matritwa,
+    .kambal-rahat-ka {
         flex-direction: column;
         gap: 10px;
         padding: 20px 10px;
     }
 
     .project-image {
-        width: 100%;
-        height: auto;
+        display: none;
     }
-    
+
 }
