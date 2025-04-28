@@ -10,9 +10,16 @@ function toggleMenu() {
   } else {
     navElement.classList.add("active");
   }
-
+  
   isOpen = !isOpen;
 }
+document.querySelectorAll(".nav-element a").forEach(link => {
+  link.addEventListener("click", () => {
+    const navElement = document.querySelector(".nav-element");
+    navElement.classList.remove("active");
+    isOpen = false;
+  });
+});
 
 // This section implements carousel swiping behavior for the card carousel
 const carouselTrack = document.querySelector(".carousel-track");
