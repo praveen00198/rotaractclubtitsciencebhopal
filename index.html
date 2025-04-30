@@ -287,6 +287,7 @@
                 <img
                   src="./Assets/Image/Rotaractors/Alok-Patel.png"
                   alt="Image"
+                  draggable="false"
                 />
               </div>
               <!-- Profile card name below -->
@@ -315,6 +316,7 @@
                 <img
                   src="./Assets/Image/Rotaractors/Siddharth.jpg"
                   alt="Image"
+                  draggable="false"
                 />
               </div>
               <!-- Profile card name belo -->
@@ -343,6 +345,7 @@
                 <img
                   src="./Assets/Image/Rotaractors/Tarun-thakur.jpg"
                   alt="Image"
+                  draggable="false"
                 />
               </div>
               <!-- Profile card name belo -->
@@ -371,6 +374,7 @@
                 <img
                   src="./Assets/Image/Rotaractors/Ayush-Raj.png"
                   alt="Image"
+                  draggable="false"
                 />
               </div>
               <!-- Profile card name belo -->
@@ -399,6 +403,7 @@
                 <img
                   src="./Assets/Image/Rotaractors/Prabhat-Kesharwani.jpg"
                   alt="Image"
+                  draggable="false"
                 />
               </div>
               <!-- Profile card name belo -->
@@ -427,6 +432,7 @@
                 <img
                   src="./Assets/Image/Rotaractors/Ujjwal-Singh.jpg"
                   alt="Image"
+                  draggable="false"
                 />
               </div>
               <!-- Profile card name belo -->
@@ -455,6 +461,7 @@
                 <img
                   src="./Assets/Image/Rotaractors/Ujjwal-Singh.jpg"
                   alt="Image"
+                  draggable="false"
                 />
               </div>
               <!-- Profile card name belo -->
@@ -504,18 +511,17 @@
               <li>
                 <i class="bx bxs-envelope bx-md" style="color: #252525"></i
                 ><a href="mailto:info@rotaracttitscience.com"
-                  >info@rotaracttitscience.com</a
+                  >rotaractclubtitscience@gmail.com</a
                 >
               </li>
               <li>
                 <i class="bx bxs-phone-call bx-md" style="color: #252525"></i>
-                <p>+91 1234567890</p>
+                <p>+91 9893251663</p>
               </li>
               <li>
                 <i class="bx bx-map bx-md" style="color: #252525"></i>
                 <p>
-                  Technocrats Institute Of Technology & Science, Bhopal, Madhya
-                  Pradesh, India
+                  Technocrats Institute Of Technology & Science, Anand Nagar, Bhopal - 462021, Madhya Pradesh, India
                 </p>
               </li>
             </ul>
@@ -635,7 +641,7 @@
                 type="email"
                 id="email"
                 name="email"
-                placeholder="e.g example@gmail.com"
+                placeholder="e.g. example@gmail.com"
                 required
               />
               <span class="error-message" id="emailError"></span>
@@ -650,12 +656,51 @@
                 required
               />
               <span class="error-message" id="contactError"></span>
+
+              <!-- Hidden attribute here -->
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New Join Request" />
+
             </div>
+            
             <button type="submit">Submit</button>
           </form>
+
+          <div id="toast" style="display:none;position:fixed;bottom:20px;right:20px;background:#4CAF50;color:#fff;padding:10px 20px;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,0.2);z-index:9999;">
+            Form submitted successfully!
+          </div>
+
         </div>
       </div>
     </main>
     <script src="Assets/JavaScript/main.js"></script>
+    <script>
+      const form = document.getElementById('myForm');
+      const toast = document.getElementById('toast');
+    
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        const formData = new FormData(form);
+        fetch('https://formsubmit.co/ajax/praveenpatel5957@gmail.com', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => {
+            if (response.ok) {
+              toast.style.display = 'block';
+              form.reset();
+              setTimeout(() => {
+                toast.style.display = 'none';
+              }, 5000);
+            } else {
+              alert('Submission failed. Please try again.');
+            }
+          })
+          .catch(error => {
+            alert('Something went wrong: ' + error.message);
+          });
+      });
+    </script>
   </body>
 </html>
