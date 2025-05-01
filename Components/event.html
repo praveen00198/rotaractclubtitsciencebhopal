@@ -350,5 +350,39 @@
         });
       });
     </script>
+
+    <!-- Connection establish -->
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const enrollmentNo = document.getElementById("enrollment-no").value;
+          const email = document.getElementById("email").value;
+          const contact = document.getElementById("contact").value;
+
+          try {
+            const response = await fetch("http://localhost:3000/api/join", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, enrollmentNo, email, contact }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              alert("Successfully submitted!");
+              document.getElementById("myForm").reset();
+            } else {
+              alert("Error: " + result.error);
+            }
+          } catch (error) {
+            console.error("Fetch error:", error);
+            alert("Failed to submit form.");
+          }
+        });
+    </script>
   </body>
 </html>
