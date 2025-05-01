@@ -731,3 +731,36 @@ footer {
     padding-top: 20px;
     font-size: 0.9em;
 }
+
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 20px;
+    border: 1px solid #00241b;
+    border-radius: 5px;
+    color: white;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .toast.show {
+    opacity: 1;
+  }
+  
+  .toast.success {
+    background-color: #023828cb; /* Green */
+  }
+  
+  .toast.error {
+    background-color: #e91d0edc; /* Red */
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+/* End of Toast notification */  

@@ -726,6 +726,7 @@
             <button type="submit">Submit</button>
           </form>
         </div>
+        <div id="toast" class="toast hidden"></div>
       </div>
     </main>
     <script src="/Assets/JavaScript/main.js"></script>
@@ -752,16 +753,34 @@
             const result = await response.json();
 
             if (response.ok) {
-              alert("Successfully submitted!");
+              showToast(
+                result.message || "Thank you for showing interest! Your form has been submitted successfully.",
+                "success"
+              );
               document.getElementById("myForm").reset();
+              document.getElementById("myForm").style.display = "none";
             } else {
-              alert("Error: " + result.error);
+              showToast(
+                (result.error || "Oops! Something went wrong. it's not you, it's us."),
+                "error"
+              );
             }
           } catch (error) {
             console.error("Fetch error:", error);
-            alert("Failed to submit form.");
+            showToast("⚠️ Network error. Please try again later.", "error");
           }
         });
+
+      function showToast(message, type) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.className = `toast show ${type}`;
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+          toast.classList.add("hidden");
+        }, 5000);
+      }
     </script>
   </body>
 </html>

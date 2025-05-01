@@ -18,7 +18,7 @@ app.post('/api/join', async (req, res) => {
   ]);
 
   if (error) return res.status(500).json({ error: error.message });
-  res.status(200).json({ message: 'Submitted successfully', data });
+  res.status(200).json({ message: 'Thank you for showing interest! Your form has been submitted successfully', data });
 });
 
 const PORT = process.env.PORT || 3000;
