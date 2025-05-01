@@ -1,48 +1,27 @@
-const mysql = require('mysql');
+// backend/server.js
+require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
+const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
-const port = 3000;
-
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
-// Connect to your rotaract_form database
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',         // or your MySQL username
-  password: '',         // or your MySQL password
-  database: 'rotaract_form'
-});
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 
-db.connect((err) => {
-  if (err) {
-    console.error('❌ MySQL connection error:', err);
-  } else {
-    console.log('✅ Connected to MySQL database');
-  }
-});
-
-// POST endpoint for form submission
-app.post('/submit-form', (req, res) => {
+app.post('/api/join', async (req, res) => {
   const { name, enrollmentNo, email, contact } = req.body;
 
-  const sql = `
-    INSERT INTO join_request (name, enrollment_no, email, contact)
-    VALUES (?, ?, ?, ?)
-  `;
+  const { data, error } = await supabase.from('join_request').insert([
+    { name, enrollment_no: enrollmentNo, email, contact }
+  ]);
 
-  db.query(sql, [name, enrollmentNo, email, contact], (err, result) => {
-    if (err) {
-      console.error('❌ Insert error:', err);
-      return res.status(500).json({ success: false, message: 'Database error' });
-    }
-    return res.status(200).json({ success: true, message: 'Form submitted successfully!' });
-  });
+  if (error) return res.status(500).json({ error: error.message });
+  res.status(200).json({ message: 'Submitted successfully', data });
 });
 
-app.listen(port, () => {
-  console.log(`🚀 Server running at http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
