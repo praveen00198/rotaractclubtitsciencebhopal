@@ -740,8 +740,8 @@ footer {
     bottom: 20px;
     left: 20px;
     padding: 12px 20px;
-    border: 1px solid #83cab8;
-    border-radius: 5px;
+    border-left: 4px solid #83cab8;
+    /* border-radius: 5px; */
     color: white;
     z-index: 9999;
     opacity: 0;
