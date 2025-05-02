@@ -735,11 +735,12 @@ footer {
 
 /* Toast notification */
 .toast {
+    width: 20rem;
     position: fixed;
     bottom: 20px;
     left: 20px;
     padding: 12px 20px;
-    border: 1px solid #00241b;
+    border: 1px solid #83cab8;
     border-radius: 5px;
     color: white;
     z-index: 9999;
@@ -752,7 +753,7 @@ footer {
   }
   
   .toast.success {
-    background-color: #023828cb; /* Green */
+    background-color: #023828f6; /* Green */
   }
   
   .toast.error {
