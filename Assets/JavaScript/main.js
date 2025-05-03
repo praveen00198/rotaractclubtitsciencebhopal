@@ -10,17 +10,16 @@ function toggleMenu() {
   } else {
     navElement.classList.add("active");
   }
-  
+
   isOpen = !isOpen;
 }
-document.querySelectorAll(".nav-element a").forEach(link => {
+document.querySelectorAll(".nav-element a").forEach((link) => {
   link.addEventListener("click", () => {
     const navElement = document.querySelector(".nav-element");
     navElement.classList.remove("active");
     isOpen = false;
   });
 });
-
 
 // This section implements carousel swiping behavior for the card carousel
 const carouselTrack = document.querySelector(".carousel-track");
@@ -92,8 +91,6 @@ carouselTrack.addEventListener("touchstart", handleTouchStart);
 carouselTrack.addEventListener("touchmove", handleTouchMove);
 carouselTrack.addEventListener("touchend", handleTouchEnd);
 
-
-
 // Overlay for Join Us
 document.addEventListener("DOMContentLoaded", function () {
   const showFormBtn = document.getElementById("showJoinUsFormBtn");
@@ -110,6 +107,26 @@ document.addEventListener("DOMContentLoaded", function () {
   formOverlay.addEventListener("click", function (event) {
     if (event.target === formOverlay) {
       formOverlay.style.display = "none";
+    }
+  });
+});
+
+// Donate form overlay
+document.addEventListener("DOMContentLoaded", function () {
+  const showDonateFormBtn = document.getElementById("showDonateform");
+  const donateFormOverlay = document.getElementById("showdonationoverlay");
+  const closeDonateFormBtn = document.getElementById("closeDonateFormBtn");
+
+  showDonateFormBtn.addEventListener("click", function () {
+    donateFormOverlay.style.display = "flex";
+  });
+
+  closeDonateFormBtn.addEventListener("click", function () {
+    donateFormOverlay.style.display = "none";
+  });
+  donateFormOverlay.addEventListener("click", function (event) {
+    if (event.target === donateFormOverlay) {
+      donateFormOverlay.style.display = "none";
     }
   });
 });
@@ -222,7 +239,7 @@ function validateForm() {
 }
 
 // For navbar
-const currentPath = window.location.pathname.split("/").pop(); 
+const currentPath = window.location.pathname.split("/").pop();
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach((link) => {
@@ -230,3 +247,52 @@ navLinks.forEach((link) => {
     link.classList.add("active-link");
   }
 });
+
+
+//  Drag 'N Drop logic for donate overlay
+const dropArea = document.getElementById("screenshot-container");
+const inputFile = document.getElementById("screenshot");
+const toast = document.getElementById("toast");
+
+dropArea.addEventListener("click", () => inputFile.click());
+
+inputFile.addEventListener("change", function () {
+  if (this.files.length > 0) {
+    showToast(`Selected file: ${this.files[0].name}`);
+  }
+});
+
+["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+  dropArea.addEventListener(eventName, (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+});
+
+["dragenter", "dragover"].forEach((eventName) => {
+  dropArea.addEventListener(eventName, () => {
+    dropArea.classList.add("highlight");
+  });
+});
+
+["dragleave", "drop"].forEach((eventName) => {
+  dropArea.addEventListener(eventName, () => {
+    dropArea.classList.remove("highlight");
+  });
+});
+
+dropArea.addEventListener("drop", (e) => {
+  const files = e.dataTransfer.files;
+  if (files.length > 0) {
+    inputFile.files = files;
+    showToast(`Dropped file: ${files[0].name}`);
+  }
+});
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}

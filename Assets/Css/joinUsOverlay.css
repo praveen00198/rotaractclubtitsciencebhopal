@@ -2,7 +2,7 @@
 
 
 /* Styles for the Overlay */
-.overlay {
+.join-us-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -17,7 +17,7 @@
 }
 
 /* Styles for the Form Container */
-.form-container {
+.join-us-form-container {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -69,7 +69,7 @@
     font-size: 16px;
 }
 
-.form-group {
+.join-us-form-group {
     margin-bottom: 15px;
     text-align: left;
 }
@@ -97,18 +97,17 @@ input[type="email"] {
 }
 
 button[type="submit"] {
-    width: calc(100% - 12px);
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
     border: none;
-    border-radius: 30px;
+    background-color: #46a085;
+    color: #011b13;
+    font: 500 14px 'Poppins', sans-serif;
     cursor: pointer;
-    font-size: 1em;
-    font-family: 'Poppins';
-    margin-top: 15px;
 }
 
 button[type="submit"]:hover {
-    background-color: #1e74cf;
+    background-color: #023d30;
+    color: #fff;
 }
