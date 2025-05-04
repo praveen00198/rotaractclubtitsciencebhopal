@@ -728,8 +728,8 @@
             <button type="submit">Submit</button>
           </form>
         </div>
+        <div id="toast" class="toast hidden"></div>
       </div>
-      <div id="toast" class="toast hidden"></div>
 
       <!-- Donate Overlay -->
       <div class="donate-overlay" id="showdonationoverlay">
@@ -879,8 +879,7 @@
                 "success"
               );
               document.getElementById("joining-form").reset();
-              document.getElementById("joinUsformOverlay").style.display =
-                "none";
+              // document.getElementById("joinUsformOverlay").style.display = "none";
             } else {
               showToast(
                 result.error ||
