@@ -185,8 +185,8 @@ body {
 
 
 @media screen and (max-width: 768px) {
-    .overlay-content {
-        margin-top: 140px;
+    .donate-overlay-content {
+        margin-top: 150px;
         width: 100%;
         padding: 10px;
     }
