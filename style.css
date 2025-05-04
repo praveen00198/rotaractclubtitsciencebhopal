@@ -295,13 +295,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    margin: 0px 50px;
 }
 
 .about-section-mission,
 .about-section-vision {
     width: 45%;
     margin-top: 4rem;
-    padding: 20px 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     background-color: #0c3233bb;
@@ -315,6 +316,7 @@ header {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: #30c0c5;
 }
 
 .mission-description,
