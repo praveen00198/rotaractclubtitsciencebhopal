@@ -344,107 +344,108 @@
         </div>
         <div id="toast" class="toast"></div>
       </div>
-
-      <script src="../Assets/JavaScript/rotaractor.js"></script>
-      <script src="../Assets/JavaScript/main.js"></script>
-
-      <!-- Overlay script -->
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const showFormBtn = document.getElementById("showJoinUsFormBtn");
-          const formOverlay = document.getElementById("joinUsformOverlay");
-          const closeFormBtn = document.getElementById("closeFormBtn");
-
-          showFormBtn.addEventListener("click", function () {
-            formOverlay.style.display = "flex";
-          });
-
-          closeFormBtn.addEventListener("click", function () {
-            formOverlay.style.display = "none";
-          });
-          formOverlay.addEventListener("click", function (event) {
-            if (event.target === formOverlay) {
-              formOverlay.style.display = "none";
-            }
-          });
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const showDonateFormBtn = document.getElementById("showDonateform");
-          const donateFormOverlay = document.getElementById(
-            "showdonationoverlay"
-          );
-          const closeDonateFormBtn =
-            document.getElementById("closeDonateFormBtn");
-
-          showDonateFormBtn.addEventListener("click", function () {
-            donateFormOverlay.style.display = "flex";
-          });
-
-          closeDonateFormBtn.addEventListener("click", function () {
-            donateFormOverlay.style.display = "none";
-          });
-          donateFormOverlay.addEventListener("click", function (event) {
-            if (event.target === donateFormOverlay) {
-              donateFormOverlay.style.display = "none";
-            }
-          });
-        });
-      </script>
-
-      <!-- Connection establish -->
-      <script>
-        document
-          .getElementById("myForm")
-          .addEventListener("submit", async function (e) {
-            e.preventDefault();
-
-            const name = document.getElementById("name").value;
-            const enrollmentNo = document.getElementById("enrollment-no").value;
-            const email = document.getElementById("email").value;
-            const contact = document.getElementById("contact").value;
-
-            try {
-              const response = await fetch("http://localhost:3000/api/join", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, enrollmentNo, email, contact }),
-              });
-
-              const result = await response.json();
-
-              if (response.ok) {
-                showToast(
-                  result.message ||
-                    "Thank you for showing interest! Your form has been submitted successfully.",
-                  "success"
-                );
-                document.getElementById("myForm").reset();
-                document.getElementById("myForm").style.display = "none";
-              } else {
-                showToast(
-                  result.error ||
-                    "Oops! Something went wrong. it's not you, it's us.",
-                  "error"
-                );
-              }
-            } catch (error) {
-              console.error("Fetch error:", error);
-              showToast("⚠️ Network error. Please try again later.", "error");
-            }
-          });
-
-        function showToast(message, type) {
-          const toast = document.getElementById("toast");
-          toast.textContent = message;
-          toast.className = `toast show ${type}`;
-
-          setTimeout(() => {
-            toast.classList.remove("show");
-            toast.classList.add("hidden");
-          }, 5000);
-        }
-      </script>
     </main>
+
+    <!-- Scripts -->
+    <script src="../Assets/JavaScript/rotaractor.js"></script>
+    <script src="../Assets/JavaScript/main.js"></script>
+
+    <!-- Overlay script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const showFormBtn = document.getElementById("showJoinUsFormBtn");
+        const formOverlay = document.getElementById("joinUsformOverlay");
+        const closeFormBtn = document.getElementById("closeFormBtn");
+
+        showFormBtn.addEventListener("click", function () {
+          formOverlay.style.display = "flex";
+        });
+
+        closeFormBtn.addEventListener("click", function () {
+          formOverlay.style.display = "none";
+        });
+        formOverlay.addEventListener("click", function (event) {
+          if (event.target === formOverlay) {
+            formOverlay.style.display = "none";
+          }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const showDonateFormBtn = document.getElementById("showDonateform");
+        const donateFormOverlay = document.getElementById(
+          "showdonationoverlay"
+        );
+        const closeDonateFormBtn =
+          document.getElementById("closeDonateFormBtn");
+
+        showDonateFormBtn.addEventListener("click", function () {
+          donateFormOverlay.style.display = "flex";
+        });
+
+        closeDonateFormBtn.addEventListener("click", function () {
+          donateFormOverlay.style.display = "none";
+        });
+        donateFormOverlay.addEventListener("click", function (event) {
+          if (event.target === donateFormOverlay) {
+            donateFormOverlay.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <!-- Connection establish -->
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const enrollmentNo = document.getElementById("enrollment-no").value;
+          const email = document.getElementById("email").value;
+          const contact = document.getElementById("contact").value;
+
+          try {
+            const response = await fetch("http://localhost:3000/api/join", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, enrollmentNo, email, contact }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              showToast(
+                result.message ||
+                  "Thank you for showing interest! Your form has been submitted successfully.",
+                "success"
+              );
+              document.getElementById("myForm").reset();
+              document.getElementById("myForm").style.display = "none";
+            } else {
+              showToast(
+                result.error ||
+                  "Oops! Something went wrong. it's not you, it's us.",
+                "error"
+              );
+            }
+          } catch (error) {
+            console.error("Fetch error:", error);
+            showToast("⚠️ Network error. Please try again later.", "error");
+          }
+        });
+
+      function showToast(message, type) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.className = `toast show ${type}`;
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+          toast.classList.add("hidden");
+        }, 5000);
+      }
+    </script>
   </body>
 </html>
