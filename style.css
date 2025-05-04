@@ -332,8 +332,6 @@ header {
 .about-section-mission:hover,
 .about-section-vision:hover {
     box-shadow: 0 0 10px #0c706b;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.05);
 }
 
 
