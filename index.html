@@ -742,9 +742,7 @@
               class="logo"
               draggable="false"
             />
-            <span class="close-btn" id="closeDonateFormBtn">
-              &times;
-            </span>
+            <span class="close-btn" id="closeDonateFormBtn"> &times; </span>
           </div>
 
           <div class="flex-overlay">
@@ -829,7 +827,8 @@
                   </i>
                   <p class="lable-for-screenshot">Drag 'N Drop here</p>
                   <p class="for-screenshot">
-                    Please upload the screenshot of payment receipt for confirmation.
+                    Please upload the screenshot of payment receipt for
+                    confirmation.
                   </p>
                   <p class="upload-here">
                     Upload an image by clicking below <b>Upload here</b>
@@ -845,9 +844,6 @@
         </div>
         <div id="toast" class="toast"></div>
       </div>
-
-
-
     </main>
 
     <script src="Assets/JavaScript/main.js"></script>
@@ -882,8 +878,9 @@
                   "Thank you for showing interest! Your form has been submitted successfully.",
                 "success"
               );
-              document.getElementById("myForm").reset();
-              document.getElementById("myForm").style.display = "none";
+              document.getElementById("joining-form").reset();
+              document.getElementById("joinUsformOverlay").style.display =
+                "none";
             } else {
               showToast(
                 result.error ||
@@ -908,7 +905,5 @@
         }, 5000);
       }
     </script>
-
-    
   </body>
 </html>
