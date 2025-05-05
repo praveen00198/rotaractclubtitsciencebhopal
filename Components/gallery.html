@@ -60,59 +60,16 @@
       </div>
     </header>
 
-    <div class="gallery">
-      <div class="image-container">
-        <img
-          src="../Assets/Image/Gallery/Blood-Donation.jpg"
-          alt="Blood Donation Drive"
-        />
-        <div class="image-overlay">
-          <p class="somethinf-it-is">Community Service</p>
-          <p class="image-title-text">Mahadan 10.0</p>
-          <p class="iamge-description-text">
-            The Mahadan 10.0 event aimed to promote the spirit of voluntary
-            blood donation, raising awareness about its life-saving impact and
-            encouraging active participation from students and the community.
-          </p>
-          <p class="event-date">12<sup>th</sup> Mar'25</p>
-        </div>
-      </div>
-
-      <div class="image-container">
-        <img src="../Assets/Image/Gallery/New-Year.jpg" alt="New Year" />
-        <div class="image-overlay">
-          <p class="somethinf-it-is">Community Service</p>
-          <p class="image-title-text">New Year Celebration</p>
-          <p class="iamge-description-text">
-            The New year celebration with over 30+ children at the Harshini
-            Social Welfare Foundation. We kicked off the celebration by cutting
-            a delicious cake. The room lit up with smiles as we distributed
-            sweets and treats to the  childrens.
-          </p>
-          <p class="event-date">01<sup>th</sup> Jan'25</p>
-        </div>
-      </div>
-
-      <div class="image-container">
-        <img src="../Assets/Image/11107581_4630062.jpg" alt="Image 1" />
-        <div class="image-overlay">
-          <p class="somethinf-it-is">Community Service</p>
-          <p class="image-title-text">This is an Event</p>
-          <p class="iamge-description-text">This is an image description</p>
-          <p class="event-date">01/01/2024</p>
-        </div>
-      </div>
-
-      <div class="image-container">
-        <img src="../Assets/Image/11107581_4630062.jpg" alt="Image 1" />
-        <div class="image-overlay">
-          <p class="somethinf-it-is">Club Service</p>
-          <p class="image-title-text">This is an Event</p>
-          <p class="iamge-description-text">This is an image description</p>
-          <p class="event-date">01/01/2024</p>
-        </div>
-      </div>
+    <div class="gallery" id="gallery">
+      <!-- Dynamic content goes here -->
     </div>
+  
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="" alt="Preview" />
+    </div>
+
+      
 
     <footer>
       <div class="footer-container">
@@ -394,6 +351,7 @@
 
     <!-- Scripts -->
     <script src="../Assets/JavaScript/main.js"></script>
+    <script src="../Assets/JavaScript/gallery.js"></script>
 
     <!-- Overlay script -->
     <script>
