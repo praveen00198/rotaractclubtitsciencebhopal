@@ -203,40 +203,42 @@ document.addEventListener("DOMContentLoaded", function () {
 // Form validation
 function validateForm() {
   let isValid = true;
-  const name = document.getElementById("name").value;
-  const enrollmentNo = document.getElementById("enrollment-no").value;
-  const email = document.getElementById("email").value;
-  const contact = document.getElementById("contact").value;
 
   // Clear previous error messages
-  document.getElementById("nameError").innerText = "";
-  document.getElementById("enrollmentNoError").innerText = "";
-  document.getElementById("emailError").innerText = "";
-  document.getElementById("contactError").innerText = "";
+  document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
 
-  // Validate fields
-  if (!name) {
-    document.getElementById("nameError").innerText = "Name is required.";
+  const name = document.getElementById("name").value.trim();
+  const enrollmentNo = document.getElementById("enrollment-no").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const contact = document.getElementById("contact").value.trim();
+
+  // Name validation
+  if (!/^[A-Za-z\s]{2,}$/.test(name)) {
+    document.getElementById("nameError").textContent = "Please enter a valid name.";
     isValid = false;
   }
-  if (!enrollmentNo) {
-    document.getElementById("enrollmentNoError").innerText =
-      "Enrollment number is required.";
+
+  // Enrollment number validation
+  if (!/^0192[A-Z]{2}\d{6}$/i.test(enrollmentNo)) {
+    document.getElementById("enrollmentNoError").textContent = "Invalid enrollment number format.";
     isValid = false;
   }
-  if (!email || !/\S+@\S+\.\S+/.test(email)) {
-    document.getElementById("emailError").innerText =
-      "Please enter a valid email address.";
+
+  // Email validation
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    document.getElementById("emailError").textContent = "Invalid email address.";
     isValid = false;
   }
-  if (!contact || !/^\d{10}$/.test(contact)) {
-    document.getElementById("contactError").innerText =
-      "Please enter a valid contact number.";
+
+  // Contact validation
+  if (!/^[6-9]\d{9}$/.test(contact)) {
+    document.getElementById("contactError").textContent = "Invalid phone number.";
     isValid = false;
   }
 
   return isValid;
 }
+
 
 // For navbar
 const currentPath = window.location.pathname.split("/").pop();
