@@ -294,7 +294,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: 0px 50px;
+    padding: 0px 80px;
 }
 
 .about-section-mission,
@@ -379,7 +379,7 @@ header {
     background-color: #0a2627;
     color: white;
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .icon {
@@ -387,18 +387,26 @@ header {
 }
 
 .skill-section-cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     display: grid;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
 }
 
 .skill-card-title {
     font-family: var(--heading-font);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-style: italic;
 }
-
+.skill-paragraph{
+    font-family: var(--second-font);
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    margin-top: 10px;
+}
 .skill-card:hover {
     box-shadow: 0 0 10px #0c706b;
     transition: all 0.3s ease-in-out;
