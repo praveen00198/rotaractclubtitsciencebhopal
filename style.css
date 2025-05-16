@@ -278,6 +278,10 @@ header {
     margin-bottom: 20px;
     width: 100%;
     letter-spacing: 1px;
+    padding: 0px 80px;
+}
+.about-section-details-list{
+    display: none;
 }
 
 .about-list-items {
@@ -300,7 +304,7 @@ header {
 .about-section-mission,
 .about-section-vision {
     width: 45%;
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding: 15px;
     display: flex;
     flex-direction: column;
