@@ -13,7 +13,7 @@ const galleryData = [
       category: "Community Service",
       title: "New Year Celebration",
       description: "The New year celebration with over 30+ children at the Harshini Social Welfare Foundation. We kicked off the celebration by cutting a delicious cake. The room lit up with smiles as we distributed sweets and treats to the  childrens.",
-      date: "01<sup>th</sup> Feb'25"
+      date: "01<sup>th</sup> Jan'25"
     },
     {
       src: "../Assets/Image/Gallery/Tech-Event.jpg",
