@@ -119,8 +119,8 @@
     .about-section {
         padding-top: 20px;
         padding-bottom: 80px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .about-section-title {
@@ -129,6 +129,7 @@
     .about-section-description {
         font-size: 14px;
         margin-bottom: 10px;
+        padding: 10px;
     }
 
     .about-section-details-list {
@@ -174,7 +175,7 @@
 
     .about-section-mission {
         width: 100%;
-        margin-bottom: -40px;
+        margin-bottom: -20px;
     }
 
     .about-section-vision {
@@ -195,7 +196,7 @@
     }
 
     .skill-section-cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         display: grid;
         gap: 10px;
         justify-content: center;
