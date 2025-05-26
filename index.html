@@ -85,11 +85,11 @@
         </div>
         <div class="hero-description">
           <p>
-            The <b style="color: #013031;">Rotaract Club of TIT & Science</b> is dedicated to developing
-            young leaders through service, fellowship, and professional growth.
-            Together, we create a better tomorrow by empowering individuals,
-            driving meaningful change, and building a stronger, more connected
-            community.
+            The <b style="color: #013031">Rotaract Club of TIT & Science</b> is
+            dedicated to developing young leaders through service, fellowship,
+            and professional growth. Together, we create a better tomorrow by
+            empowering individuals, driving meaningful change, and building a
+            stronger, more connected community.
           </p>
         </div>
         <div class="hero-stats">
@@ -277,7 +277,10 @@
                 ></i>
               </div>
               <span class="skill-card-title">Networking & Team Work</span>
-              <p class="skill-paragraph">Strong networking abilities and collaborative team-oriented approach.</p>
+              <p class="skill-paragraph">
+                Strong networking abilities and collaborative team-oriented
+                approach.
+              </p>
             </div>
           </div>
         </div>
@@ -867,6 +870,9 @@
           const enrollmentNo = document.getElementById("enrollment-no").value;
           const email = document.getElementById("email").value;
           const contact = document.getElementById("contact").value;
+          const submitBtn = document.getElementById("submitBtn");
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Submitting...";
 
           try {
             const response = await fetch(
@@ -876,6 +882,7 @@
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, enrollmentNo, email, contact }),
               }
+              
             );
 
             const result = await response.json();
