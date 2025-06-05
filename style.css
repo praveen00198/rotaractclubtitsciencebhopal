@@ -752,7 +752,7 @@ footer {
 .success-popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* blur effect base */
+  background: rgba(0, 0, 0, 0.4); 
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;

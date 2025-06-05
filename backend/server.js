@@ -24,6 +24,31 @@ app.post('/api/join', async (req, res) => {
   res.status(200).json({ message: 'Thank you for showing interest! Your form has been submitted successfully', data });
 });
 
+app.post('/api/donate', async (req, res) => {
+  try {
+    const { name, email, phone, screenshot_path } = req.body;
+
+    if (!name || !email || !phone || !screenshot_path) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Insert into donations table
+    const { data, error } = await supabase
+      .from('donations')
+      .insert([{ name, email, phone, screenshot_path }]);
+
+    if (error) {
+      console.error('Supabase insert error:', error);
+      return res.status(500).json({ error: 'Database insert error' });
+    }
+
+    res.json({ message: 'Donation submitted successfully', data });
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
