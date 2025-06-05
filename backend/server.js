@@ -22,13 +22,11 @@ app.post("/api/join", async (req, res) => {
     .insert([{ name, enrollment_no: enrollmentNo, email, contact }]);
 
   if (error) return res.status(500).json({ error: error.message });
-  res
-    .status(200)
-    .json({
-      message:
-        "Thank you for showing interest! Your form has been submitted successfully",
-      data,
-    });
+  res.status(200).json({
+    message:
+      "Thank you for showing interest! Your form has been submitted successfully",
+    data,
+  });
 });
 
 const storage = multer.memoryStorage();
@@ -64,7 +62,7 @@ app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
         name,
         email,
         phone,
-        screenshot_path: uploadData.path,
+        image_path: uploadData.path,
       },
     ]);
 
