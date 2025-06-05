@@ -85,11 +85,14 @@
         </div>
         <div class="hero-description">
           <p>
-            The <strong style="color: #013031;"><em>Rotaract Club of TIT & Science</em></strong> is
-            dedicated to developing young leaders through service, fellowship,
-            and professional growth. Together, we create a better tomorrow by
-            empowering individuals, driving meaningful change, and building a
-            stronger, more connected community.
+            The
+            <strong style="color: #013031"
+              ><em>Rotaract Club of TIT & Science</em></strong
+            >
+            is dedicated to developing young leaders through service,
+            fellowship, and professional growth. Together, we create a better
+            tomorrow by empowering individuals, driving meaningful change, and
+            building a stronger, more connected community.
           </p>
         </div>
         <div class="hero-stats">
@@ -740,7 +743,19 @@
           </form>
         </div>
       </div>
-      <div id="toast" class="toast hidden"></div>
+
+      <!-- Success Popup Overlay -->
+      <div id="successPopupOverlay" class="success-popup-overlay hidden">
+        <div class="success-popup-card">
+          <div class="tick-mark">
+            <svg viewBox="0 0 52 52">
+              <circle class="circle" cx="26" cy="26" r="25" fill="none" />
+              <path class="check" fill="none" d="M14 27l7 7 16-16" />
+            </svg>
+          </div>
+          <p class="success-message">Thank you for joining us!</p>
+        </div>
+      </div>
 
       <!-- Donate Overlay -->
       <div class="donate-overlay" id="showdonationoverlay">
@@ -866,13 +881,18 @@
         .addEventListener("submit", async function (e) {
           e.preventDefault();
 
+          const submitBtn = document.getElementById("submitBtn");
+          submitBtn.disabled = true;
+          const originalBtnText = submitBtn.textContent;
+          submitBtn.textContent = "Submitting...";
+
           const name = document.getElementById("name").value;
           const enrollmentNo = document.getElementById("enrollment-no").value;
           const email = document.getElementById("email").value;
           const contact = document.getElementById("contact").value;
-          const submitBtn = document.getElementById("submitBtn");
-          submitBtn.disabled = true;
-          submitBtn.textContent = "Submitting...";
+
+          const overlay = document.getElementById("joinUsformOverlay");
+          const form = document.getElementById("joining-form");
 
           try {
             const response = await fetch(
@@ -882,43 +902,34 @@
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, enrollmentNo, email, contact }),
               }
-              
             );
 
             const result = await response.json();
 
             if (response.ok) {
-              showToast(
-                result.message ||
-                  "Thank you for showing interest! Your form has been submitted successfully.",
-                "success"
-              );
-              document.getElementById("joining-form").reset();
-              document.getElementById("joinUsformOverlay").style.display =
-                "none";
+              form.reset();
+              showSuccessPopup(result.message || "Thank you for joining us!");
+
+              setTimeout(() => {
+                document
+                  .getElementById("successPopupOverlay")
+                  .classList.add("hidden");
+                overlay.style.display = "none";
+              }, 3500);
             } else {
               showToast(
-                result.error ||
-                  "Oops! Something went wrong. it's not you, it's us.",
+                result.error || "Oops! Something went wrong. Please try again.",
                 "error"
               );
             }
           } catch (error) {
             console.error("Fetch error:", error);
-            showToast("⚠️ Network error. Please try again later.", "error");
+            showToast("Network error. Please try again later.", "error");
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
           }
         });
-
-      function showToast(message, type) {
-        const toast = document.getElementById("toast");
-        toast.textContent = message;
-        toast.className = `toast show ${type}`;
-
-        setTimeout(() => {
-          toast.classList.remove("show");
-          toast.classList.add("hidden");
-        }, 5000);
-      }
     </script>
   </body>
 </html>
