@@ -1,4 +1,3 @@
-// backend/server.js
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -7,19 +6,21 @@ const multer = require("multer");
 
 const app = express();
 app.use(cors());
+
+// For other JSON API endpoints (like /api/join)
 app.use(express.json());
 
-// Supabase client
+// Supabase client setup
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY
 );
 
-// Multer setup for handling file uploads
+// Multer setup for file uploads in memory
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-// 👤 Join API (Optional - You already had this)
+// Optional join API
 app.post("/api/join", async (req, res) => {
   const { name, enrollmentNo, email, contact } = req.body;
 
@@ -35,9 +36,13 @@ app.post("/api/join", async (req, res) => {
   });
 });
 
-// 💰 Donation API
+// Donation API with file upload and text fields
 app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
   try {
+    console.log("Headers:", req.headers);
+    console.log("Body:", req.body);    // Should have name, email, phone
+    console.log("File:", req.file);    // Should have the uploaded file info
+
     const { name, email, phone } = req.body;
     const file = req.file;
 
@@ -45,7 +50,7 @@ app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // 📤 Upload image to Supabase storage
+    // Upload image to Supabase storage
     const ext = file.originalname.split(".").pop();
     const fileName = `${Date.now()}.${ext}`;
 
@@ -63,22 +68,15 @@ app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
     }
 
     console.log("✅ Image uploaded:", uploadData.path);
-    console.log("📥 Preparing to insert:", { name, email, phone, image_path: uploadData.path });
 
-    // 📝 Insert into `donations` table
+    // Insert form data with image path into DB
     const { data, error } = await supabase
       .from("donations")
       .insert([{ name, email, phone, image_path: uploadData.path }]);
 
     if (error) {
-      console.error("🛑 Supabase insert error:", {
-        message: error.message,
-        code: error.code,
-        details: error.details,
-        hint: error.hint,
-        table: error.table,
-      });
-      return res.status(500).json({ error: "Database insert failed", supabaseError: error });
+      console.error("🛑 Supabase insert error:", error);
+      return res.status(500).json({ error: "Database insert failed" });
     }
 
     res.json({ message: "Donation submitted successfully", data });
@@ -88,7 +86,13 @@ app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
   }
 });
 
-// ✅ Start server
+// Test route to debug form fields (no file)
+app.post("/api/test", upload.none(), (req, res) => {
+  console.log("Received fields:", req.body);
+  res.json({ fields: req.body });
+});
+
+// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
