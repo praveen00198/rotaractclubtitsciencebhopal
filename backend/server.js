@@ -7,16 +7,21 @@ const multer = require("multer");
 const app = express();
 app.use(cors());
 
+// Don't apply express.json() before multer handles form-data
+// Multer setup
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
+// Supabase client
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY
 );
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
-
+// JSON middleware only used for JSON requests like /api/join
 app.use(express.json());
 
+// 📥 Join Form
 app.post("/api/join", async (req, res) => {
   const { name, enrollmentNo, email, contact } = req.body;
 
@@ -32,14 +37,14 @@ app.post("/api/join", async (req, res) => {
   });
 });
 
+// 💰 Donation Form (Multipart handler)
 app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
   try {
-    console.log("Headers:", req.headers);
-    console.log("Body:", req.body);    
-    console.log("File:", req.file);   
-
     const { name, email, phone } = req.body;
     const file = req.file;
+
+    console.log("Received text fields:", { name, email, phone });
+    console.log("Received file:", file);
 
     if (!file || !name || !email || !phone) {
       return res.status(400).json({ error: "All fields are required" });
@@ -61,29 +66,29 @@ app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
       return res.status(500).json({ error: "Image upload failed" });
     }
 
-    console.log("✅ Image uploaded:", uploadData.path);
-
-    const { data, error } = await supabase
+    const { data: insertData, error: insertError } = await supabase
       .from("donations")
       .insert([{ name, email, phone, image_path: uploadData.path }]);
 
-    if (error) {
-      console.error("🛑 Supabase insert error:", error);
-      return res.status(500).json({ error: "Database insert failed" });
+    if (insertError) {
+      console.error("🛑 Supabase insert error:", insertError);
+      return res.status(500).json({ error: "Database insert failed", insertError });
     }
 
-    res.json({ message: "Donation submitted successfully", data });
+    res.json({ message: "Donation submitted successfully", data: insertData });
   } catch (err) {
     console.error("🚨 Server error:", err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
 
+// Test route for debugging form-data
 app.post("/api/test", upload.none(), (req, res) => {
-  console.log("Received fields:", req.body);
+  console.log("Received fields (test):", req.body);
   res.json({ fields: req.body });
 });
 
+// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
