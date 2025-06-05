@@ -778,7 +778,7 @@ footer {
 .success-message {
   font-size: 18px;
   font-weight: 600;
-  color: #2ecc71;
+  color: #012016;
   margin-top: 15px;
 }
 
@@ -786,7 +786,7 @@ footer {
 .tick-mark svg {
   width: 80px;
   height: 80px;
-  stroke: #2ecc71;
+  stroke: #012c21;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
