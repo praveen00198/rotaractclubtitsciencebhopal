@@ -21,7 +21,7 @@ const supabase = createClient(
 // JSON middleware only used for JSON requests like /api/join
 app.use(express.json());
 
-// 📥 Join Form
+// Join Form
 app.post("/api/join", async (req, res) => {
   const { name, enrollmentNo, email, contact } = req.body;
 
@@ -37,7 +37,7 @@ app.post("/api/join", async (req, res) => {
   });
 });
 
-// 💰 Donation Form (Multipart handler)
+// Donation Form (Multipart handler)
 app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
   try {
     const { name, email, phone } = req.body;
