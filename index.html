@@ -880,12 +880,6 @@
 
     <!-- Here, database logic for submit join us form -->
     <script>
-      function showSuccessPopup(message = "Thank you for joining us!") {
-        const popup = document.getElementById("successPopupOverlay");
-        popup.querySelector(".success-message").textContent = message;
-        popup.classList.remove("hidden");
-      }
-
       document
         .getElementById("joining-form")
         .addEventListener("submit", async function (e) {
@@ -940,6 +934,25 @@
             submitBtn.textContent = originalBtnText;
           }
         });
+      
+      
+      // Success Popup function
+      function showSuccessPopup(message = "Thank you for showing interest! Your form has been submitted successfully.") {
+        const popup = document.getElementById("successPopupOverlay");
+        popup.querySelector(".success-message").textContent = message;
+        popup.classList.remove("hidden");
+      }
+      // Toast notification function
+      function showToast(message, type) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.className = `toast show ${type}`;
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+          toast.classList.add("hidden");
+        }, 3000);
+      }
     </script>
 
     <!-- End of database logic for join us form -->
