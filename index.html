@@ -24,6 +24,7 @@
   </head>
   <body>
     <main>
+      <!-- Header -->
       <header>
         <div class="club-logo">
           <img src="Assets/Image/RAC-removebg-preview.png" alt="Logo" />
@@ -583,6 +584,7 @@
         </div>
        </section> -->
 
+      <!-- Footer -->
       <footer>
         <div class="footer-container">
           <div class="footer-column">
@@ -871,11 +873,19 @@
         <div id="toast" class="toast"></div>
       </div>
     </main>
+    <!-- End of html code here -->
 
+    <!-- Scripts -->
     <script src="Assets/JavaScript/main.js"></script>
 
-    <!-- Here, database logic -->
+    <!-- Here, database logic for submit join us form -->
     <script>
+      function showSuccessPopup(message = "Thank you for joining us!") {
+        const popup = document.getElementById("successPopupOverlay");
+        popup.querySelector(".success-message").textContent = message;
+        popup.classList.remove("hidden");
+      }
+
       document
         .getElementById("joining-form")
         .addEventListener("submit", async function (e) {
@@ -931,5 +941,7 @@
           }
         });
     </script>
+
+    <!-- End of database logic for join us form -->
   </body>
 </html>
