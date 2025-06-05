@@ -56,6 +56,13 @@ app.post("/api/donate", upload.single("screenshot"), async (req, res) => {
       return res.status(500).json({ error: "Image upload failed" });
     }
 
+    console.log("Preparing to insert:", {
+      name,
+      email,
+      phone,
+      image_path: uploadData.path,
+    });
+
     // Save form data + image path to DB
     const { data, error } = await supabase.from("donations").insert([
       {
