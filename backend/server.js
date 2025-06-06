@@ -31,7 +31,7 @@ app.post("/api/join", async (req, res) => {
     }
 
     res.status(200).json({
-      message: "Thank you for joining! Your form was submitted successfully.",
+      message: "Thank you for showing interest! Your form was submitted successfully.",
       data,
     });
   } catch (err) {
