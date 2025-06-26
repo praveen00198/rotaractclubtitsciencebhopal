@@ -35,8 +35,8 @@ const profiles = [
     },
   },
   {
-    name: "Emily Clark",
-    image: "../Assets/Image/11107581_4630062.jpg",
+    name: "Rtr. Prabaht Kesharwani",
+    image: "../Assets/Image/Rotaractors/Prabhat-Kesharwani.jpg",
     position: "Vice President",
     tenure: "RY24-25",
     email: "emily.clark@example.com",
@@ -46,8 +46,8 @@ const profiles = [
     },
   },
   {
-    name: "Emily Clark",
-    image: "../Assets/Image/11107581_4630062.jpg",
+    name: "Rtr. Siddharth Kumar",
+    image: "../Assets/Image/Rotaractors/Siddharth.jpg",
     position: "Vice President",
     tenure: "RY24-25",
     email: "emily.clark@example.com",
