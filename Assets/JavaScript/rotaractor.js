@@ -37,7 +37,7 @@ const profiles = [
   {
     name: "Rtr. Prabaht Kesharwani",
     image: "../Assets/Image/Rotaractors/Prabhat-Kesharwani.jpg",
-    position: "Vice President",
+    position: "Treasurer",
     tenure: "RY24-25",
     email: "emily.clark@example.com",
     social: {
@@ -48,7 +48,17 @@ const profiles = [
   {
     name: "Rtr. Siddharth Kumar",
     image: "../Assets/Image/Rotaractors/Siddharth.jpg",
-    position: "Vice President",
+    position: "Hon. Secretary",
+    tenure: "RY24-25",
+    email: "emily.clark@example.com",
+    social: {
+      linkedin: "https://linkedin.com/in/emilyclark",
+      instagram: "https://instagram.com/emilyclark",
+    },
+    {
+    name: "Rtr. Ujjwal Singh Baghel",
+    image: "../Assets/Image/Rotaractors/Ujjwal-Singh.jpg",
+    position: "Hon. Secretary",
     tenure: "RY24-25",
     email: "emily.clark@example.com",
     social: {
