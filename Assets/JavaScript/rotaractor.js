@@ -55,6 +55,7 @@ const profiles = [
       linkedin: "https://linkedin.com/in/emilyclark",
       instagram: "https://instagram.com/emilyclark",
     },
+  },
     {
     name: "Rtr. Ujjwal Singh Baghel",
     image: "../Assets/Image/Rotaractors/Ujjwal-Singh.jpg",
