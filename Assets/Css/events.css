@@ -2,7 +2,7 @@
 
 :root {
     --default-font: "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
-    --heading-font: "Poppins";
+    --heading-font: "Nunito";
     --second-font: "Nunito";
 }
 
@@ -29,7 +29,7 @@ main {
 .event-page-title-head {
     width: 100%;
     padding: 20px 50px;
-
+    font-family: var(--heading-font);
 }
 
 #buttons {
@@ -90,7 +90,7 @@ main {
 .kambal-rahat-ka {
     display: flex;
     gap: 20px;
-    background-color: #f1f5f5;
+    /* background-color: #f1f5f5; */
     padding: 30px 50px;
     margin-bottom: 25px;
 }
@@ -116,6 +116,8 @@ main {
 
 .project-title {
     font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 800;
     color: #012e3b;
 }
 
