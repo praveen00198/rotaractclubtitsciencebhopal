@@ -38,6 +38,7 @@ header {
     height: 5rem;
     top: 0;
     left: 0;
+    z-index: 1000;
     background-color: white;
     opacity: 0.95;
 }
