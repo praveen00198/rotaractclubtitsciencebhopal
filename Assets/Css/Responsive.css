@@ -76,8 +76,9 @@
     }
 
     .hero-section {
-        /* margin-top: 1rem; */
-        padding: 20px 10px;
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
         display: flex;
         flex-direction: column;
         place-items: center;
@@ -126,42 +127,11 @@
     .about-section-title {
         font-size: 25px;
     }
-    .about-section-description {
-        font-size: 14px;
-        margin-bottom: 10px;
-        padding: 10px;
-    }
-
-    .about-section-details-list {
-        display: none;
-    }
-
-    .block-section-details-list {
-        margin-top: 30px;
-        width: 100%;
-        padding: 10px 10px;
-        grid-template-columns: repeat(2, 1fr);
-        display: grid;
-        gap: 10px;
-        justify-content: center;
-        align-items: stretch;
-    }
-
-    .section-details-block {
-        padding: 15px 15px;
-        background-color: #0c3233bb;
-        border: 1px solid #054441;
-        border-radius: 10px;
-    }
-
-    .section-details-block p {
-        font-family: 'Nunito';
-        font-size: 14px;
-    }
-
-    .about-section-description {
-        font-size: 16px;
-        margin-bottom: -15px;
+    .about-section>p{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-left: 20px;
+        margin-bottom: 2rem;
     }
 
     .about-section-flex {

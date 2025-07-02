@@ -33,13 +33,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     padding: 60px 40px;
     width: 100%;
     height: 5rem;
     top: 0;
     left: 0;
-    z-index: 1000;
     background-color: white;
     opacity: 0.95;
 }
@@ -279,77 +277,12 @@ header {
     text-align: center;
     margin-bottom: 20px;
 }
-
-.about-section-description {
-    font-family: var(--second-font);
-    font-size: 18px;
-    font-weight: 400;
-    text-align: justify;
-    margin-bottom: 20px;
-    width: 100%;
-    letter-spacing: 1px;
-    padding: 0px 80px;
-}
-.about-section-details-list{
-    display: none;
-}
-
-.about-list-items {
-    list-style-type: circle;
-    letter-spacing: 1px;
-    line-height: 25px;
-    width: 100%;
-}
-.block-section-details-list{
-    display: none;
-}
-
-.about-section-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 0px 80px;
-}
-
-.about-section-mission,
-.about-section-vision {
-    width: 45%;
-    margin-top: 2rem;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    background-color: #0c3233bb;
-    border: 1px solid #054441;
-    border-radius: 12px;
-}
-
-.mission-title,
-.vision-title {
+.about-section>p{
     font-family: var(--heading-font);
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #30c0c5;
+    font-size: 1.4rem;
+    border-left: 4px solid #538888;
+    padding-left: 10px;
 }
-
-.mission-description,
-.vision-description {
-    font-family: var(--second-font);
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
-    width: 100%;
-    letter-spacing: 1px;
-}
-
-.about-section-mission:hover,
-.about-section-vision:hover {
-    box-shadow: 0 0 10px #0c706b;
-}
-
-
-
-
 
 /* Skill section */
 .skills-section {
@@ -467,7 +400,7 @@ header {
     margin-bottom: 25px;
     width: 90%;
     transition: opacity 0.5s ease-in;
-    border-left: 4px solid #0aa073;
+    border-left: 4px solid #538888;
 }
 
 .testimonial-card.visible {
