@@ -5,7 +5,40 @@ const profiles = [
     name: "Rtr. Wasif Daniyal",
     image: "../Assets/Image/11107581_4630062.jpg",
     position: "Past President",
-    tenure: "RY18-19",
+    // tenure: "RY18-19",
+    email: "john.doe@example.com",
+    social: {
+      linkedin: "https://linkedin.com/in/johndoe",
+      instagram: "https://instagram.com/johndoe",
+    },
+  },
+  {
+    name: "Rtr. Deepanshu Singh Rajput",
+    image: "../Assets/Image/11107581_4630062.jpg",
+    position: "Past President",
+    // tenure: "RY23-24",
+    email: "john.doe@example.com",
+    social: {
+      linkedin: "https://linkedin.com/in/johndoe",
+      instagram: "https://instagram.com/johndoe",
+    },
+  },
+  {
+    name: "Rtr. Nitya Pandey",
+    image: "../Assets/Image/11107581_4630062.jpg",
+    position: "Immediate Past President",
+    // tenure: "RY24-25",
+    email: "john.doe@example.com",
+    social: {
+      linkedin: "https://linkedin.com/in/johndoe",
+      instagram: "https://instagram.com/johndoe",
+    },
+  },
+  {
+    name: "Rtr. Altaf Raja",
+    image: "../Assets/Image/11107581_4630062.jpg",
+    position: "Secretary",
+    tenure: "RY24-25",
     email: "john.doe@example.com",
     social: {
       linkedin: "https://linkedin.com/in/johndoe",
