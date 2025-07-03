@@ -639,6 +639,9 @@ header {
 #director-name{
     font-weight: 800;
 }
+.director-image-container img{
+    border-radius: 20%;
+}
 
 
 
