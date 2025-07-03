@@ -91,6 +91,26 @@ main{
     box-shadow: 0 0 10px #0c706b;
 }
 
+.theme-logo-description{
+    position: relative;
+}
+.flex{
+    /* align-items: start; */
+    margin: 4.5rem auto;
+    gap: 90px;
+}
+.theme-logo-description>span>svg{
+    width: 40px;
+    height: 40px;
+    color: #2c3f51;
+    position: absolute;
+    top: -15px;
+    left: -50px;
+}
+.theme-logo-description>p{
+    font: 800 2rem var(--second-font);
+    color: #2c3f51;
+}
 
 
 @media screen and (max-width: 768px) {
@@ -98,10 +118,30 @@ main{
         padding: 20px;
     }
     .about-section-description {
+        margin-top: 2rem;
         font-size: 1.6rem;
         line-height: 2rem;
     }
     .about-details{
         grid-template-columns: repeat(2, 1fr);
+    }
+    .flex{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .flex>img{
+        width: 90%;
+    }
+    .theme-logo-description>span>svg{
+        left: 1px;
+        top: -6px;
+        width: 14px;
+        height: 14px;
+        /* display: none; */
+    }
+    .theme-logo-description>p{
+       text-align: justify;
+       font-size: 1.3rem;
+       padding: 0 15px;
     }
 }

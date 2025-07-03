@@ -1,3 +1,6 @@
+
+
+
 let tl = gsap.timeline();
 
 tl.from(".about-details p",{
@@ -7,3 +10,5 @@ tl.from(".about-details p",{
     duration: 0.8,
     stagger: 0.3
 })
+
+AOS.init();

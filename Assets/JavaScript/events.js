@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const showEventsBtn = document.getElementById("show-events");
   const showProjectsBtn = document.getElementById("show-projects");
