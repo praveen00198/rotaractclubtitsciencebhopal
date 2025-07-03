@@ -178,7 +178,7 @@ const profiles = [
     },
   },
   {
-    name: "Aaradhya",
+    name: "Rtr. Aaradhya",
     image: "../Assets/Image/Rotaractors/",
     position: "Graphic Designer",
     tenure: "RY25-26",
