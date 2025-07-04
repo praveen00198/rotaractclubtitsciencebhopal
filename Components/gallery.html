@@ -13,51 +13,55 @@
     <link rel="stylesheet" href="../Assets/Css/Responsive.css" />
     <link rel="stylesheet" href="../Assets/Css/joinUsOverlay.css" />
     <link rel="stylesheet" href="../Assets/Css/donateOverlay.css" />
-    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
-        <div class="club-logo">
-          <img src="../Assets/Image/RAC-removebg-preview.png" alt="Logo" />
-          <p class="title-logo">
-            Rotaract Club Of <br />TIT & Science Bhopal, RID3040
-          </p>
-        </div>
+      <div class="club-logo">
+        <img src="../Assets/Image/RAC-removebg-preview.png" alt="Logo" />
+        <p class="title-logo">
+          Rotaract Club Of <br />TIT & Science Bhopal, RID3040
+        </p>
+      </div>
 
-        <nav class="nav-element">
-          <div class="nav-list">
-            <ul id="nav-list-elements">
-              <li><a href="../index.html" class="nav-link">Home</a></li>
-              <li><a href="about.html" class="nav-link">About</a></li>
-              <li><a href="#" class="nav-link">Rotaractors</a></li>
-              <li>
-                <a href="event.html" class="nav-link">Events and Projects</a>
-              </li>
-              <li>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-              </li>
-            </ul>
-          </div>
-          <hr id="separator" />
-          <div id="nav-cta-btn">
-            <button
-              class="join-us-btn"
-              id="showJoinUsFormBtn"
-              aria-label="Join Us"
-            >
-              Join Us
-            </button>
-            <button class="donate-btn" id="showDonateform" aria-label="Donate">
-              <i class="bx bxs-donate-heart"></i>
-              Donate
-            </button>
-          </div>
-        </nav>
-
-        <div class="toggle-button" onclick="toggleMenu()">
-          <i class="bx bx-menu-alt-right"></i>
+      <nav class="nav-element">
+        <div class="nav-list">
+          <ul id="nav-list-elements">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Rotaractors</a></li>
+            <li>
+              <a href="event.html" class="nav-link">Events and Projects</a>
+            </li>
+            <li>
+              <a href="gallery.html" class="nav-link">Gallery</a>
+            </li>
+          </ul>
         </div>
-      </header>
+        <hr id="separator" />
+        <div id="nav-cta-btn">
+          <button
+            class="join-us-btn"
+            id="showJoinUsFormBtn"
+            aria-label="Join Us"
+          >
+            Join Us
+          </button>
+          <button class="donate-btn" id="showDonateform" aria-label="Donate">
+            <i class="bx bxs-donate-heart"></i>
+            Donate
+          </button>
+        </div>
+      </nav>
+
+      <div class="toggle-button" onclick="toggleMenu()">
+        <i class="bx bx-menu-alt-right"></i>
+      </div>
+    </header>
 
     <div class="masonry" id="gallery">
       <img
@@ -218,73 +222,73 @@
 
     <!-- Join us overlay -->
     <div id="joinUsformOverlay" class="join-us-overlay">
-        <div class="join-us-form-container">
-          <button id="closeFormBtn" class="close-btn" aria-label="Close Form">
-            &times;
-          </button>
-          <div class="logo-placeholder">
-            <img
-              src="../Assets/Image/RAC-removebg-preview.png"
-              id="logo-placeholder"
-              alt="Logo"
-            />
-          </div>
-          <p class="form-title">Rotaract Club Of TIT & Science</p>
-          <p class="tagline">
-            Make a difference, grow as a leader. Join Rotaract today!
-          </p>
-          <form id="joining-form">
-            <div class="join-us-form-group">
-              <label for="name">Name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="What would we call you?"
-                required
-              />
-              <span class="error-message" id="nameError"></span>
-            </div>
-            <div class="form-group">
-              <label for="enrollment-no">Enrollment No:</label>
-              <input
-                type="text"
-                name="enrollmentNo"
-                id="enrollment-no"
-                placeholder="e.g. 0192CS23XXXX"
-                required
-              />
-              <span class="error-message" id="enrollmentNoError"></span>
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="e.g. example@gmail.com"
-                required
-              />
-              <span class="error-message" id="emailError"></span>
-            </div>
-            <div class="form-group">
-              <label for="contact">Contact:</label>
-              <input
-                type="text"
-                name="contact"
-                id="contact"
-                placeholder="e.g 97XXXXXX25"
-                required
-              />
-              <span class="error-message" id="contactError"></span>
-            </div>
-
-            <button type="submit" id="submitBtn">Submit</button>
-          </form>
+      <div class="join-us-form-container">
+        <button id="closeFormBtn" class="close-btn" aria-label="Close Form">
+          &times;
+        </button>
+        <div class="logo-placeholder">
+          <img
+            src="../Assets/Image/RAC-removebg-preview.png"
+            id="logo-placeholder"
+            alt="Logo"
+          />
         </div>
-        <div id="toast" class="toast hidden"></div>
+        <p class="form-title">Rotaract Club Of TIT & Science</p>
+        <p class="tagline">
+          Make a difference, grow as a leader. Join Rotaract today!
+        </p>
+        <form id="joining-form">
+          <div class="join-us-form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="What would we call you?"
+              required
+            />
+            <span class="error-message" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="enrollment-no">Enrollment No:</label>
+            <input
+              type="text"
+              name="enrollmentNo"
+              id="enrollment-no"
+              placeholder="e.g. 0192CS23XXXX"
+              required
+            />
+            <span class="error-message" id="enrollmentNoError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="e.g. example@gmail.com"
+              required
+            />
+            <span class="error-message" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input
+              type="text"
+              name="contact"
+              id="contact"
+              placeholder="e.g 97XXXXXX25"
+              required
+            />
+            <span class="error-message" id="contactError"></span>
+          </div>
+
+          <button type="submit" id="submitBtn">Submit</button>
+        </form>
       </div>
-      <!-- Success Popup Overlay -->
+      <div id="toast" class="toast hidden"></div>
+    </div>
+    <!-- Success Popup Overlay -->
     <div id="successPopupOverlay" class="success-popup-overlay hidden">
       <div class="success-popup-card">
         <div class="tick-mark">
