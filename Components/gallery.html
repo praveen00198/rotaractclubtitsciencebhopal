@@ -223,72 +223,72 @@
 
     <!-- Join us overlay -->
     <div id="joinUsformOverlay" class="join-us-overlay">
-      <div class="join-us-form-container">
-        <button id="closeFormBtn" class="close-btn" aria-label="Close Form">
-          &times;
-        </button>
-        <div class="logo-placeholder">
-          <img
-            src="/Assets/Image/RAC-removebg-preview.png"
-            id="logo-placeholder"
-            alt="Logo"
-          />
-        </div>
-        <p class="form-title">Rotaract Club Of TIT & Science</p>
-        <p class="tagline">
-          Make a difference, grow as a leader. Join Rotaract today!
-        </p>
-        <form id="joining-form">
-          <div class="join-us-form-group">
-            <label for="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="What would we call you?"
-              required
+        <div class="join-us-form-container">
+          <button id="closeFormBtn" class="close-btn" aria-label="Close Form">
+            &times;
+          </button>
+          <div class="logo-placeholder">
+            <img
+              src="../Assets/Image/RAC-removebg-preview.png"
+              id="logo-placeholder"
+              alt="Logo"
             />
-            <span class="error-message" id="nameError"></span>
           </div>
-          <div class="form-group">
-            <label for="enrollment-no">Enrollment No:</label>
-            <input
-              type="text"
-              name="enrollmentNo"
-              id="enrollment-no"
-              placeholder="e.g. 0192CS23XXXX"
-              required
-            />
-            <span class="error-message" id="enrollmentNoError"></span>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="e.g. example@gmail.com"
-              required
-            />
-            <span class="error-message" id="emailError"></span>
-          </div>
-          <div class="form-group">
-            <label for="contact">Contact:</label>
-            <input
-              type="text"
-              name="contact"
-              id="contact"
-              placeholder="e.g 97XXXXXX25"
-              required
-            />
-            <span class="error-message" id="contactError"></span>
-          </div>
+          <p class="form-title">Rotaract Club Of TIT & Science</p>
+          <p class="tagline">
+            Make a difference, grow as a leader. Join Rotaract today!
+          </p>
+          <form id="joining-form">
+            <div class="join-us-form-group">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="What would we call you?"
+                required
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="enrollment-no">Enrollment No:</label>
+              <input
+                type="text"
+                name="enrollmentNo"
+                id="enrollment-no"
+                placeholder="e.g. 0192CS23XXXX"
+                required
+              />
+              <span class="error-message" id="enrollmentNoError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="e.g. example@gmail.com"
+                required
+              />
+              <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact:</label>
+              <input
+                type="text"
+                name="contact"
+                id="contact"
+                placeholder="e.g 97XXXXXX25"
+                required
+              />
+              <span class="error-message" id="contactError"></span>
+            </div>
 
-          <button type="submit">Submit</button>
-        </form>
+            <button type="submit" id="submitBtn">Submit</button>
+          </form>
+        </div>
+        <div id="toast" class="toast hidden"></div>
       </div>
-      <div id="toast" class="toast hidden"></div>
-    </div>
 
     <!-- Donate overlay -->
     <div class="donate-overlay" id="showdonationoverlay">
