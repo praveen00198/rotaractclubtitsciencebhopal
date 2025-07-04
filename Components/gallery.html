@@ -17,7 +17,6 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="../Assets/JavaScript/connection.js"></script>
   </head>
   <body>
     <header>
@@ -120,9 +119,6 @@
         data-src="../Assets/Image/Gallery/fellowship-meet1.jpg"
         class="gallery-image"
       />
-
-
-      
     </div>
 
     <div class="lightbox" id="lightbox">
@@ -460,45 +456,69 @@
     <!-- Connection estabilsh -->
     <script>
       document
-        .getElementById("myForm")
+        .getElementById("joining-form")
         .addEventListener("submit", async function (e) {
           e.preventDefault();
+
+          const submitBtn = document.getElementById("submitBtn");
+          submitBtn.disabled = true;
+          const originalBtnText = submitBtn.textContent;
+          submitBtn.textContent = "Submitting...";
 
           const name = document.getElementById("name").value;
           const enrollmentNo = document.getElementById("enrollment-no").value;
           const email = document.getElementById("email").value;
           const contact = document.getElementById("contact").value;
 
+          const overlay = document.getElementById("joinUsformOverlay");
+          const form = document.getElementById("joining-form");
+
           try {
-            const response = await fetch("http://localhost:3000/api/join", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ name, enrollmentNo, email, contact }),
-            });
+            const response = await fetch(
+              "https://rotaractclubtitsciencebhopal.onrender.com/api/join",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, enrollmentNo, email, contact }),
+              }
+            );
 
             const result = await response.json();
 
             if (response.ok) {
-              showToast(
-                result.message ||
-                  "Thank you for showing interest! Your form has been submitted successfully.",
-                "success"
-              );
-              document.getElementById("myForm").reset();
-              document.getElementById("myForm").style.display = "none";
+              form.reset();
+              showSuccessPopup(result.message || "Thank you for joining us!");
+
+              setTimeout(() => {
+                document
+                  .getElementById("successPopupOverlay")
+                  .classList.add("hidden");
+                overlay.style.display = "none";
+              }, 3500);
             } else {
               showToast(
-                result.error ||
-                  "Oops! Something went wrong. it's not you, it's us.",
+                result.error || "Oops! Something went wrong. Please try again.",
                 "error"
               );
             }
           } catch (error) {
             console.error("Fetch error:", error);
-            showToast("⚠️ Network error. Please try again later.", "error");
+            showToast("Network error. Please try again later.", "error");
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
           }
         });
 
+      // Success Popup function
+      function showSuccessPopup(
+        message = "Thank you for showing interest! Your form has been submitted successfully."
+      ) {
+        const popup = document.getElementById("successPopupOverlay");
+        popup.querySelector(".success-message").textContent = message;
+        popup.classList.remove("hidden");
+      }
+      // Toast notification function
       function showToast(message, type) {
         const toast = document.getElementById("toast");
         toast.textContent = message;
@@ -507,7 +527,7 @@
         setTimeout(() => {
           toast.classList.remove("show");
           toast.classList.add("hidden");
-        }, 5000);
+        }, 3000);
       }
     </script>
   </body>
