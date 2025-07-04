@@ -6,13 +6,6 @@
   --second-font: "Nunito";
 }
 
-body {
-  width: 100%;
-  margin: 0;
-  font-family: "Nunito", sans-serif;
-  background-color: #f9f9f9;
-}
-
 .masonry {
   column-count: 4;
   column-gap: 8px;
