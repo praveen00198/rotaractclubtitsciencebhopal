@@ -138,9 +138,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Testimonial Data (can be extended further)
   const testimonials = [
     {
-      description: `Joining the Rotaract Club of TIT & Science has been a life-changing experience. The projects and events have helped me grow both personally and professionally.`,
-      name: "Rtr.Siddhtarth Kumar",
-      position: "Secretary",
+      description: `My journey with Rotaract Club of TIT & Science from member to President to Learning Facilitator—has shaped me deeply, building lifelong friendships, leadership, and unforgettable experiences that transformed my life.
+`,
+      name: "Rtr. Saurabh Nayak",
+      position: "District Rotaract Secretary Admin, RID 3040",
     },
     {
       description: `Joining the Rotaract Club of TIT & Science has been a life-changing experience. The projects and events have helped me grow both personally and professionally.`,
