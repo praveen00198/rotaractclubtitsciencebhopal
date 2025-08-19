@@ -156,7 +156,7 @@ header {
 
 
 .hero-section {
-    margin-top: -20px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -199,11 +199,15 @@ header {
     margin-bottom: 20px;
 }
 
+.join-us-cta-btn{
+
+}
+
 .hero-stats {
     display: flex;
     gap: 20px;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     margin-bottom: 20px;
 }
 
@@ -218,7 +222,9 @@ header {
     line-height: 20px;
     padding: 10px 20px;
     width: 60%;
-
+    background-color: #0430251e;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
 }
 
 .count-stats {
@@ -231,7 +237,7 @@ header {
 
 .stats-name {
     font-family: var(--second-font);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     color: #5b899b;
     text-align: center;
@@ -242,7 +248,7 @@ header {
 
 .stats-description {
     font-family: var(--second-font);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     color: #123746;
 }
@@ -253,9 +259,16 @@ header {
     background-color: #d6f1f0;
     color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px #0c706b;
+    box-shadow: 0 0 10px #0c706b6e;
     transition: all 0.3s ease-in-out;
     /* transform: scale(1.05); */
+    
+}
+
+.project-stats:hover i,
+.member-stats:hover i,
+.achievement-stats:hover i{
+    color: #00a0a6;
 }
 
 /* About Section */
@@ -506,13 +519,10 @@ header {
     height: auto;
     background-color: #032b2c;
     margin: 0 10px;
-    text-align: center;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 40px;
+    text-align: left;
+    padding: 15px;
     border: 1px solid #207a86;
-    border-radius: 12px;
+    border-radius: 20px;
 }
 
 .carousel-item:hover {
@@ -526,30 +536,30 @@ header {
 }
 
 .carousel-item img {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 180px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 20px;
     margin-bottom: 10px;
 }
 
 .profile-card-name {
-    margin: 0;
-    line-height: 25px;
     letter-spacing: 1px;
-    font-size: 1.2rem;
+    font-size: 20px;
     font-family: var(--heading-font);
     font-weight: 600;
     color: white;
+    padding-left: 10px;
 }
 
 .profile-card-post {
     display: flex;
-    justify-content: center;
     font-family: var(--heading-font);
     color: #f3efef;
-    font-size: 0.9em;
+    font-size: 14px;
     letter-spacing: 1px;
+    line-height: 1;
+    padding-left: 10px;
 }
 
 #profile-card-post {
