@@ -89,7 +89,7 @@ header {
 .nav-list ul li a {
     text-decoration: none;
     color: #0a2627;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -115,8 +115,8 @@ header {
 .donate-btn {
     padding: 5px 16px;
     font-family: var(--second-font);
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s ease;
@@ -199,9 +199,6 @@ header {
     margin-bottom: 20px;
 }
 
-.join-us-cta-btn{
-
-}
 
 .hero-stats {
     display: flex;
@@ -514,143 +511,104 @@ header {
 }
 
 .carousel-item {
-    position: relative;
-    min-width: 230px;
-    height: auto;
-    background-color: #032b2c;
-    margin: 0 10px;
-    text-align: left;
-    padding: 15px;
-    border: 1px solid #207a86;
-    border-radius: 20px;
+  position: relative;
+  min-width: 260px;
+  background: linear-gradient(145deg, #032b2c, #064547);
+  margin: 0 12px;
+  text-align: left;
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
 .carousel-item:hover {
-    box-shadow: 0 0 12px #085c58;
-    transition: all 0.1s ease-in-out;
-    transform: scale(1.05);
-}
-
-.carousel-item:hover>#profile-card-post {
-    color: #0e928c;
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 20px;
-    margin-bottom: 10px;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 12px;
 }
 
 .profile-card-name {
-    letter-spacing: 1px;
-    font-size: 20px;
-    font-family: var(--heading-font);
-    font-weight: 600;
-    color: white;
-    padding-left: 10px;
+  font-size: 25px;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  color: #fff;
+  padding-left: 8px;
+  line-height: 1;
 }
 
 .profile-card-post {
-    display: flex;
-    font-family: var(--heading-font);
-    color: #f3efef;
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 1;
-    padding-left: 10px;
+  display: flex;
+  font-family: var(--heading-font);
+  color: #d1f0f1;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-top: 5px;
+  padding-left: 8px;
+  transition: color 0.3s ease-in-out;
 }
 
-#profile-card-post {
-    width: fit-content;
+.carousel-item:hover #profile-card-post {
+  color: #0dd0c4;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
+.profile-card-bio {
+  color: #cfdede;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 10px 0 12px 8px;
+  max-width: 90%;
 }
 
-.social-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: #ddd;
-    color: #333;
-    margin: 0 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.profile-card-social {
+  display: flex;
+  gap: 14px;
+  margin-left: 8px;
+  margin-bottom: 12px;
 }
 
-.social-icon:hover a {
-    color: #18c8d4;
+.profile-card-social a {
+  color: #0dd0c4;
+  font-size: 18px;
+  transition: transform 0.2s ease-in-out, color 0.2s;
 }
 
-/* Registration Section */
-.registration-section {
-    padding: 30px 120px;
+.profile-card-social a:hover {
+  transform: scale(1.2);
+  color: #14a89c;
 }
 
-.flex-registration {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    background-color: #0a2627;
-    padding: 20px 60px;
-    border-radius: 100px;
-    color: white;
+.profile-card-action {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 8px;
 }
 
-.registration-right-container,
-.registration-left-container {
-    width: 100%;
+.profile-card-action button {
+  background: #0dd0c4;
+  color: #032b2c;
+  font-weight: 600;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 
-#registration-right-text {
-    font-size: 12px;
-}
-
-
-/* Director says */
-.director-says {
-    background-color: #ffffff;
-    background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 0.055) 1px, transparent 0.5px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.055) 1px, transparent 0.5px);
-    background-size: 40px 40px;
-    padding: 20px 50px;
-
-}
-
-.director-says-title {
-    font-family: var(--heading-font);
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.flex {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-}
-.director-says-card>p{
-    font-family: var(--second-font);
-    font-size: 18px;
-}
-
-#director-name{
-    font-weight: 800;
-}
-.director-image-container img{
-    border-radius: 20%;
+.profile-card-action button:hover {
+  background: #14a89c;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 

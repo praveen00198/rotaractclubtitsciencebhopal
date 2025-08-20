@@ -127,12 +127,12 @@
     }
 
     .about-section-title {
-        font-size: 25px;
+        font-size: 20px;
+        line-height: 1;
     }
     .about-section>p{
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-left: 20px;
+        font-size: 16px;
+        padding-left: 15px;
         margin-bottom: 2rem;
     }
 
@@ -159,7 +159,7 @@
     }
 
     .skill-section-title {
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
     }
 

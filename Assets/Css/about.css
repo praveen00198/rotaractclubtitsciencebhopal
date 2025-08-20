@@ -95,6 +95,8 @@ main{
     position: relative;
 }
 .flex{
+    display: flex;
+    align-items: center;
     /* align-items: start; */
     margin: 4.5rem auto;
     gap: 90px;
