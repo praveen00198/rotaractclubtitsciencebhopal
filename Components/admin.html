@@ -346,5 +346,14 @@
         });
       });
     </script>
+    
+   // Redirect to home page on logout
+    <script>
+    const logoutBtn = document.querySelector("button.bg-pink-600");
+    logoutBtn.addEventListener("click", () => {
+    window.location.href = "../index.html"; 
+    });
+ </script>
+
   </body>
 </html>
