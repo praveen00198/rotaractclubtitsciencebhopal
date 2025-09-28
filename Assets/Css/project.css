@@ -1,21 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap');
 
-/* .project-description{
 
-} */
 #project-section{
     padding: 10px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .aashitah,
 .tarupan,
 .matritwa,
 .kambal-rahat-ka {
-    display: flex;
+    width: 25rem;
     gap: 20px;
-    /* background-color: #f1f5f5; */
-    /* padding: 30px 50px; */
+    background-color: #f1f5f5;
     margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .image {
@@ -27,21 +29,21 @@
 
 .project-image {
     max-width: 100%;
-    border-radius: 12px;
     aspect-ratio: 16/9;
     object-fit: cover;
 }
 
 .project-details {
     width: 100%;
-    padding: 20px;
+    padding: 20px 10px;
 }
 
 .project-title {
     font-family: var(--heading-font);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: #012e3b;
+    line-height: 1;
 }
 
 .project-description {
@@ -52,6 +54,9 @@
 
 
 @media screen and (max-width: 768px) {
+    #project-section{
+        justify-content: center;
+    }
 
     .aashitah,
     .tarupan,
@@ -60,16 +65,6 @@
         flex-direction: column;
         gap: 0px;
         background-color: #a5a7a64f;
-        border-radius: 20px;
+        border-radius: 8px;
     }
-
-    .tarupan,
-    .kambal-rahat-ka {
-        flex-direction: column-reverse;
-    }
-
-    .project-image {
-        display: block;
-    }
-
 }
