@@ -631,9 +631,11 @@
 
           <div class="footer-column">
             <p id="developed-by">
-              Made with <i class="bx bxs-heart"></i> <br />Designed and
-              developed by <b>Praveen Patel</b>
-            </p>
+               Made with <i class="bx bxs-heart"></i> <br />
+               Designed and developed by <br />
+              <b>Praveen Patel || Shubham Yadav</b>
+           </p>
+
           </div>
         </div>
         <div class="copyright">
@@ -804,7 +806,18 @@
                     required
                   />
                 </div>
-
+                 
+<div class="donation-form-group">
+  <label for="amount" class="details-title"><i class="bx bx-rupee"></i> Donation Amount</label>
+  <input
+    type="number"
+    id="amount"
+    name="amount"
+    placeholder="Enter amount you want to donate"
+    min="1"
+    required
+  />
+</div>
                 <div class="donation-form-group" id="screenshot-container">
                   <i class="bx bx-cloud-upload bx-md">
                     <input
@@ -861,7 +874,7 @@
 
           try {
             const response = await fetch(
-              "https://rotaractclubtitsciencebhopal.onrender.com/api/join",
+              "http://127.0.0.1:5000/api/joinus",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -918,63 +931,67 @@
     </script>
     <!-- Here, database logic for submit donation screenshot -->
     <script>
-      document
-        .getElementById("donation-form")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
+  document
+    .getElementById("donation-form")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-          const form = e.target;
-          const submitBtn = form.querySelector(".submit-btn");
-          submitBtn.disabled = true;
-          submitBtn.textContent = "Submitting...";
+      const form = e.target;
+      const submitBtn = form.querySelector(".submit-btn");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
 
-          const formData = new FormData(form);
+      const formData = new FormData(form);
 
-          try {
-            const response = await fetch(
-              "https://rotaractclubtitsciencebhopal.onrender.com/api/donate",
-              {
-                method: "POST",
-                body: formData,
-              }
-            );
+      // Validate required fields including amount
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const amount = form.amount.value.trim();
+      const screenshotFiles = form.screenshot.files;
 
-            if (
-              !form.name.value ||
-              !form.email.value ||
-              !form.phone.value ||
-              !form.screenshot.files.length
-            ) {
-              alert("All fields are required!");
-              submitBtn.disabled = false;
-              submitBtn.textContent = "Submit";
-              return;
-            }
+      if (!name || !email || !phone || !amount || !screenshotFiles.length) {
+        alert("All fields including donation amount are required!");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+        return;
+      }
 
-            const result = await response.json();
-            if (!response.ok) throw new Error(result.error);
+      if (Number(amount) <= 0) {
+        alert("Please enter a valid donation amount!");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+        return;
+      }
 
-            showSuccessPopup(
-              result.message || "Donation submitted successfully!"
-            );
-            form.reset();
-          } catch (err) {
-            alert("Error: " + err.message);
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Submit";
-          }
+      try {
+        const response = await fetch("http://127.0.0.1:5000/api/donations", {
+          method: "POST",
+          body: formData,
         });
 
-      function showSuccessPopup(message = "Success!") {
-        const popup = document.getElementById("successPopupOverlay");
-        popup.querySelector(".success-message").textContent = message;
-        popup.classList.remove("hidden");
-        setTimeout(() => {
-          popup.classList.add("hidden");
-        }, 3000);
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error);
+
+        showSuccessPopup(result.message || "Donation submitted successfully!");
+        form.reset();
+      } catch (err) {
+        alert("Error: " + err.message);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
       }
-    </script>
+    });
+
+  function showSuccessPopup(message = "Success!") {
+    const popup = document.getElementById("successPopupOverlay");
+    popup.querySelector(".success-message").textContent = message;
+    popup.classList.remove("hidden");
+    setTimeout(() => {
+      popup.classList.add("hidden");
+    }, 3000);
+  }
+</script>
 
     <script src="Assets/JavaScript/main.js"></script>
   </body>

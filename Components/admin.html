@@ -113,19 +113,19 @@
               class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition"
             >
               <h2 class="text-gray-500">Total Events</h2>
-              <p class="text-3xl font-bold text-pink-600">12</p>
+              <p id="event-count" class="text-3xl font-bold text-pink-600">0</p>
             </div>
             <div
               class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition"
             >
               <h2 class="text-gray-500">Members</h2>
-              <p class="text-3xl font-bold text-pink-600">53</p>
+              <p class="text-3xl font-bold text-pink-600">0</p>
             </div>
             <div
               class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition"
             >
               <h2 class="text-gray-500">Donations</h2>
-              <p class="text-3xl font-bold text-pink-600">₹12,500</p>
+              <p class="text-3xl font-bold text-pink-600">0</p>
             </div>
           </div>
         </div>
@@ -260,48 +260,71 @@
         </div>
 
         <!-- Members -->
-        <div id="members" class="content-section hidden">
-          <h1 class="text-3xl font-bold mb-8 text-gray-800">👥 Members</h1>
-          <div class="bg-white p-6 rounded-xl shadow-md">
-            <p class="font-medium mb-4">New Requests (2)</p>
-            <ul class="space-y-3">
-              <li
-                class="flex justify-between items-center border-b pb-3 hover:bg-gray-50 px-2"
-              >
-                <span>Riya Sharma</span>
-                <div>
-                  <button class="text-green-600 mr-3 font-medium">
-                    Approve
-                  </button>
-                  <button class="text-red-600 font-medium">Reject</button>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <!-- Members / Join Us Section -->
+<div id="members" class="content-section hidden">
+  <h1 class="text-3xl font-bold mb-8 text-gray-800">👥 Members / Join Requests</h1>
+
+  <!-- Pending Requests -->
+  <div class="bg-white p-6 rounded-xl shadow-md mb-8">
+    <p class="font-medium mb-4">Pending Requests</p>
+    <ul id="pendingList" class="space-y-3"></ul>
+  </div>
+
+  <!-- All Members Table -->
+  <div class="bg-white p-6 rounded-xl shadow-md overflow-x-auto">
+    <h2 class="text-xl font-semibold mb-4">All Members</h2>
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="bg-gray-100 text-left text-gray-700">
+          <th class="p-3">Name</th>
+          <th class="p-3">Email</th>
+          <th class="p-3">Phone</th>
+          <th class="p-3">Status</th>
+          <th class="p-3">Timestamp</th>
+          <th class="p-3">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="memberTableBody" class="divide-y divide-gray-200">
+        <!-- Dynamic rows go here -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-4">
+    <button id="clearAllMembers" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md">
+      Clear All Members
+    </button>
+  </div>
+</div>
+
 
         <!-- Donations -->
-        <div id="donations" class="content-section hidden">
-          <h1 class="text-3xl font-bold mb-8 text-gray-800">💰 Donations</h1>
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <table class="w-full">
-              <thead>
-                <tr class="bg-gray-100 text-left text-gray-700">
-                  <th class="p-3">Donor</th>
-                  <th class="p-3">Amount</th>
-                  <th class="p-3">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-t hover:bg-gray-50">
-                  <td class="p-3">Neha Verma</td>
-                  <td class="p-3">₹500</td>
-                  <td class="p-3">18 Aug 2025</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <!-- Donations -->
+<div id="donations" class="content-section hidden">
+  <h1 class="text-3xl font-bold mb-8 text-gray-800">💰 Donations</h1>
+
+  <div class="bg-white rounded-xl shadow-md overflow-hidden mb-4">
+    <div class="p-4 flex justify-end">
+      <button id="clearAllBtn" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md">
+        Clear All
+      </button>
+    </div>
+    <table class="w-full">
+      <thead>
+        <tr class="bg-gray-100 text-left text-gray-700">
+          <th class="p-3">Donor</th>
+          <th class="p-3">Amount</th>
+          <th class="p-3">Date</th>
+          <th class="p-3">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="donationTableBody">
+        <!-- Dynamic CSV rows will appear here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
 
         <!-- Notifications -->
         <div id="notifications" class="content-section hidden">
@@ -324,27 +347,370 @@
       </section>
     </main>
 
-    <!-- JavaScript for switching sections -->
-    <script>
-      const sidebarItems = document.querySelectorAll(".sidebar-item");
-      const contentSections = document.querySelectorAll(".content-section");
 
-      sidebarItems.forEach((item) => {
-        item.addEventListener("click", () => {
-          // reset all sidebar items
-          sidebarItems.forEach((el) =>
-            el.classList.remove("bg-pink-100", "font-semibold")
-          );
-          item.classList.add("bg-pink-100", "font-semibold");
+<!-- JavaScript for switching sections -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // -----------------------------
+  // Sidebar Navigation
+  // -----------------------------
+  const sidebarItems = document.querySelectorAll(".sidebar-item");
+  const contentSections = document.querySelectorAll(".content-section");
 
-          // hide all sections
-          contentSections.forEach((section) => section.classList.add("hidden"));
+  sidebarItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Remove highlight from all sidebar items
+      sidebarItems.forEach(el => el.classList.remove("bg-pink-100","font-semibold"));
+      // Highlight the clicked sidebar item
+      item.classList.add("bg-pink-100","font-semibold");
 
-          // show clicked section
-          const sectionId = item.getAttribute("data-section");
-          document.getElementById(sectionId).classList.remove("hidden");
+      // Hide all content sections
+      contentSections.forEach(section => section.classList.add("hidden"));
+      // Show the selected section
+      const sectionId = item.getAttribute("data-section");
+      document.getElementById(sectionId).classList.remove("hidden");
+    });
+  });
+
+  // -----------------------------
+  // Logout Button
+  // -----------------------------
+  const logoutBtn = document.querySelector("button.bg-pink-600");
+  logoutBtn.addEventListener("click", () => {
+    // Redirect to login page
+    window.location.href = "../index.html";
+  });
+});
+</script>
+
+<!-- Event Management -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const eventTableBody = document.getElementById("eventTableBody");
+  const eventForm = document.getElementById("eventForm");
+  const imagePreview = document.getElementById("imagePreview");
+
+  // -----------------------------
+  // Load all events from backend
+  // -----------------------------
+  async function loadEvents() {
+    try {
+      const response = await fetch("http://127.0.0.1:5000/api/events");
+      const result = await response.json();
+      eventTableBody.innerHTML = ""; // Clear existing rows
+
+      // Loop through each event and create table rows
+      result.events.forEach(event => {
+        const row = document.createElement("tr");
+        row.classList.add("hover:bg-gray-50");
+        row.innerHTML = `
+          <td class="p-4">${event.name || "N/A"}</td>
+          <td class="p-4">${event.status || "N/A"}</td>
+          <td class="p-4">${event.date || "N/A"}</td>
+          <td class="p-4">${event.location || "N/A"}</td>
+          <td class="p-4">
+            <button class="text-red-600 font-medium delete-btn" data-id="${event.id}">Delete</button>
+          </td>
+        `;
+        eventTableBody.appendChild(row);
+
+        // -----------------------------
+        // Delete individual event
+        // -----------------------------
+        row.querySelector(".delete-btn").addEventListener("click", async () => {
+          if (confirm(`Delete event "${event.name}"?`)) {
+            await fetch(`http://127.0.0.1:5000/api/events/${event.id}`, { method: 'DELETE' });
+            loadEvents(); // Reload table after deletion
+          }
         });
       });
-    </script>
-  </body>
+
+    } catch (err) {
+      console.error("Error loading events:", err);
+    }
+  }
+
+  // Initial load of events
+  loadEvents();
+
+  // -----------------------------
+  // Image Preview before upload
+  // -----------------------------
+  document.getElementById("eventImages").addEventListener("change", (e) => {
+    imagePreview.innerHTML = ""; // Clear previous previews
+    [...e.target.files].forEach(file => {
+      const reader = new FileReader();
+      reader.onload = ev => {
+        const img = document.createElement("img");
+        img.src = ev.target.result;
+        img.classList.add("w-20", "h-20", "object-cover", "rounded-lg", "shadow");
+        imagePreview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  // -----------------------------
+  // Submit new event
+  // -----------------------------
+  eventForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const submitBtn = eventForm.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    // Create FormData for sending form fields + images
+    const formData = new FormData();
+    formData.append("name", document.getElementById("eventName").value);
+    formData.append("description", document.getElementById("eventDesc").value);
+    formData.append("status", document.getElementById("eventStatus").value);
+    formData.append("date", document.getElementById("eventDate").value);
+    formData.append("location", document.getElementById("eventLocation").value);
+
+    // Append all selected images
+    const files = document.getElementById("eventImages").files;
+    for (let i = 0; i < files.length; i++) {
+      formData.append("image", files[i]); // Match Flask backend
+    }
+
+    try {
+      const response = await fetch("http://127.0.0.1:5000/api/events", {
+        method: "POST",
+        body: formData // Content-Type auto-handled by browser
+      });
+
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Something went wrong");
+
+      alert("Event added successfully!");
+      eventForm.reset();
+      imagePreview.innerHTML = "";
+
+      // Reload event table
+      loadEvents();
+    } catch (err) {
+      alert("Error: " + err.message);
+      console.error(err);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Add Event";
+    }
+  });
+});
+</script>
+
+<!-- Donation Management -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const donationTableBody = document.getElementById("donationTableBody");
+  const clearAllBtn = document.getElementById("clearAllBtn");
+
+  // -----------------------------
+  // Load all donations
+  // -----------------------------
+  async function loadDonations() {
+    try {
+      const response = await fetch("http://127.0.0.1:5000/api/donations");
+      const result = await response.json();
+      const donations = result.donations || [];
+      donationTableBody.innerHTML = "";
+
+      donations.forEach(donation => {
+        const row = document.createElement("tr");
+        row.classList.add("border-t", "hover:bg-gray-50");
+        row.innerHTML = `
+          <td class="p-3">${donation.Name}</td>
+          <td class="p-3">${donation.Email}</td>
+          <td class="p-3">${donation.Phone}</td>
+          <td class="p-3">₹${donation.Amount}</td>
+          <td class="p-3">
+            <a href="uploads/${donation.Screenshot}" target="_blank" class="text-pink-600 underline">View</a>
+          </td>
+          <td class="p-3">${donation.Timestamp}</td>
+          <td class="p-3">
+            <button class="text-red-600 font-medium delete-btn" data-timestamp="${donation.Timestamp}">Delete</button>
+          </td>
+        `;
+        donationTableBody.appendChild(row);
+
+        // Delete individual donation
+        row.querySelector(".delete-btn").addEventListener("click", async () => {
+          const timestamp = donation.Timestamp;
+          if (confirm(`Delete donation by "${donation.Name}"?`)) {
+            await fetch(`http://127.0.0.1:5000/api/donations/${timestamp}`, { method: "DELETE" });
+            loadDonations();
+          }
+        });
+      });
+    } catch (err) {
+      console.error("Error loading donations:", err);
+    }
+  }
+
+  // Clear all donations
+  clearAllBtn.addEventListener("click", async () => {
+    if (confirm("Are you sure you want to delete ALL donations?")) {
+      await fetch("http://127.0.0.1:5000/api/donations/clear", { method: "DELETE" });
+      loadDonations();
+    }
+  });
+
+  // Initial load
+  loadDonations();
+});
+</script>
+
+<!-- JoinUs Member Management -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const pendingList = document.getElementById("pendingList");
+  const memberTableBody = document.getElementById("memberTableBody");
+  const clearAllBtn = document.getElementById("clearAllMembers");
+
+  // -----------------------------
+  // Load all members and pending requests
+  // -----------------------------
+  async function loadMembers() {
+    try {
+      const response = await fetch("http://127.0.0.1:5000/api/joinus");
+      const data = await response.json();
+      const members = data.members || [];
+
+      // Clear previous content
+      pendingList.innerHTML = "";
+      memberTableBody.innerHTML = "";
+
+      members.forEach(member => {
+        // Pending requests list
+        if(member.Status === "Pending") {
+          const li = document.createElement("li");
+          li.classList.add("flex","justify-between","items-center","border-b","pb-3","hover:bg-gray-50","px-2");
+          li.innerHTML = `
+            <span>${member.Name} - ${member.Email} - ${member.Phone}</span>
+            <div>
+              <button class="text-green-600 mr-2 font-medium approve-btn">Approve</button>
+              <button class="text-red-600 font-medium reject-btn">Reject</button>
+              <button class="text-gray-600 font-medium delete-btn">Delete</button>
+            </div>
+          `;
+          pendingList.appendChild(li);
+
+          // Approve member
+          li.querySelector(".approve-btn").addEventListener("click", async () => {
+            try {
+              await fetch(`http://127.0.0.1:5000/api/joinus/${member.Timestamp}/approve`, { method: "PUT" });
+              loadMembers();
+            } catch (err) {
+              console.error(err);
+              alert("Error approving member");
+            }
+          });
+
+          // Reject member
+          li.querySelector(".reject-btn").addEventListener("click", async () => {
+            try {
+              await fetch(`http://127.0.0.1:5000/api/joinus/${member.Timestamp}/reject`, { method: "PUT" });
+              loadMembers();
+            } catch (err) {
+              console.error(err);
+              alert("Error rejecting member");
+            }
+          });
+
+          // Delete member
+          li.querySelector(".delete-btn").addEventListener("click", async () => {
+            if(confirm(`Delete member "${member.Name}"?`)) {
+              try {
+                await fetch(`http://127.0.0.1:5000/api/joinus/${member.Timestamp}`, { method: "DELETE" });
+                loadMembers();
+              } catch (err) {
+                console.error(err);
+                alert("Error deleting member");
+              }
+            }
+          });
+        }
+
+        // Table of all members
+        const row = document.createElement("tr");
+        row.classList.add("hover:bg-gray-50");
+        row.innerHTML = `
+          <td class="p-3">${member.Name}</td>
+          <td class="p-3">${member.Email}</td>
+          <td class="p-3">${member.Phone}</td>
+          <td class="p-3"><b>${member.Status}</b></td>
+          <td class="p-3">${member.Timestamp}</td>
+          <td class="p-3">
+            ${member.Status === "Pending" ? `
+              <button class="text-green-600 mr-2 font-medium approve-btn">Approve</button>
+              <button class="text-red-600 font-medium reject-btn">Reject</button>` : ""}
+            <button class="text-gray-600 font-medium delete-btn">Delete</button>
+          </td>
+        `;
+        memberTableBody.appendChild(row);
+
+        // Table buttons (approve/reject/delete)
+        row.querySelectorAll(".approve-btn").forEach(btn => {
+          btn.addEventListener("click", async () => {
+            try {
+              await fetch(`http://127.0.0.1:5000/api/joinus/${member.Timestamp}/approve`, { method: "PUT" });
+              loadMembers();
+            } catch (err) {
+              console.error(err);
+              alert("Error approving member");
+            }
+          });
+        });
+
+        row.querySelectorAll(".reject-btn").forEach(btn => {
+          btn.addEventListener("click", async () => {
+            try {
+              await fetch(`http://127.0.0.1:5000/api/joinus/${member.Timestamp}/reject`, { method: "PUT" });
+              loadMembers();
+            } catch (err) {
+              console.error(err);
+              alert("Error rejecting member");
+            }
+          });
+        });
+
+        row.querySelectorAll(".delete-btn").forEach(btn => {
+          btn.addEventListener("click", async () => {
+            if(confirm(`Delete member "${member.Name}"?`)) {
+              try {
+                await fetch(`http://127.0.0.1:5000/api/joinus/${member.Timestamp}`, { method: "DELETE" });
+                loadMembers();
+              } catch (err) {
+                console.error(err);
+                alert("Error deleting member");
+              }
+            }
+          });
+        });
+      });
+    } catch(err) {
+      console.error("Error loading members:", err);
+    }
+  }
+
+  // -----------------------------
+  // Clear all members
+  // -----------------------------
+  clearAllBtn.addEventListener("click", async () => {
+    if(confirm("Are you sure you want to clear all members?")) {
+      try {
+        await fetch("http://127.0.0.1:5000/api/joinus/clear", { method: "DELETE" });
+        loadMembers();
+      } catch (err) {
+        console.error(err);
+        alert("Error clearing members");
+      }
+    }
+  });
+
+  // Initial load of members
+  loadMembers();
+});
+</script>
+ </body> 
 </html>

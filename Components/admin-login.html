@@ -3,71 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+    <title>Admin Login</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-  <style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    main {
-      background-image: url("/Assets/Image/image-background.avif");
-      background-size: cover; 
-      background-repeat: no-repeat; 
-      background-position: center; 
+      body, html {
+          height: 100%;
+      }
 
-      width: 100%;
-      height: 100vh;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    h1{
-        color: white;
-        font-size: 2rem;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-
-    form{
-        margin-top: 5rem;
-        width: 30rem;
-        height: 20rem;
-        /* background-color: crimson; */
-        backdrop-filter: blur(2px);
+      main {
+        background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+        width: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-    }
-    input{
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 6px;
-        font-size: 16px;
-    }
-    button{
-        width: 100%;
-        padding: 10px 0px;
-        border-radius: 20px;
-        border: none;
-        font-size: 18px;
-        font-weight: 600;
-    }
-  </style>
+        color: #333;
+      }
+
+      h1{
+          text-align: center;
+          margin-bottom: 1rem;
+          font-weight: 600;
+          color: #555;
+      }
+
+      form{
+          margin-top: 2rem;
+          width: 350px;
+          padding: 2rem;
+          background: rgba(255,255,255,0.8);
+          border-radius: 15px;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+          display: flex;
+          flex-direction: column;
+      }
+
+      input{
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 20px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          outline: none;
+          background: #fdfdfd;
+          color: #333;
+          font-weight: 500;
+      }
+
+      input::placeholder {
+          color: #aaa;
+      }
+
+      button{
+          width: 100%;
+          padding: 12px 0;
+          border-radius: 25px;
+          border: none;
+          font-size: 18px;
+          font-weight: 600;
+          cursor: pointer;
+          background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+          color: #333;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+
+      button:hover{
+          transform: scale(1.05);
+          box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      }
+
+      /* Message styling */
+      #loginMessage {
+        margin-top: 10px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
 
   <body>
     <main>
-        <h1>Admin acecess</h1>
+        <h1>Admin Access</h1>
         <h1>Rotaract Club of TIT and Science</h1>
-        <form action="" method="get">
-            <input type="text" name="" id="username" placeholder="Enter user name">
-            <input type="text" name="" id="password" placeholder="Enter password">
+        <form id="adminLoginForm">
+            <input type="text" id="username" placeholder="Enter username">
+            <input type="password" id="password" placeholder="Enter password">
             <button type="submit">Log in</button>
         </form>
+        <!-- Message will appear here -->
     </main>
+
+    <script>
+      document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        // Users list
+        const users = [
+          { username: "shubh_admin", password: "shubham1019", dashboard: "admin.html" },
+          { username: "praveen_admin", password: "praveen7777", dashboard: "admin.html" }
+        ];
+
+        // Check credentials
+        const user = users.find(u => u.username === username && u.password === password);
+
+        // Check if message div already exists
+        let messageDiv = document.getElementById("loginMessage");
+        if(!messageDiv){
+          messageDiv = document.createElement("div");
+          messageDiv.id = "loginMessage";
+          this.appendChild(messageDiv); // Append below the form
+        }
+
+        if(user){
+          messageDiv.style.color = "green";
+          messageDiv.textContent = "Login successful! Redirecting...";
+          setTimeout(() => {
+            window.location.href = user.dashboard;
+          }, 1000);
+        } else {
+          messageDiv.style.color = "red";
+          messageDiv.textContent = "Invalid username or password!";
+        }
+      });
+    </script>
   </body>
 </html>
