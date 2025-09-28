@@ -98,19 +98,23 @@ main {
 }
 .event-title{
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .event-date, 
 .event-location{
     font-size: 13px;
     color: rgba(245, 251, 252, 0.438);
     letter-spacing: 0.5px;
-    /* line-height: 1; */
 }
 .event-description{
-    margin-top: 10px;
     font-size: 14px;
     line-height: 1;
+    margin-bottom: 10px;
+}
+.event-status{
+    font-size: 10px;
+    color: rgb(209, 209, 59);
+    margin-bottom: 10px;
 }
 
 
