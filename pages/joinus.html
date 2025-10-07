@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAC TIT & Science</title>
+    <link rel="stylesheet" href="../Assets/Css/joinUsOverlay.css">
+</head>
+<body>
+    <div id="joinUsformOverlay" class="join-us-overlay">
+        <div class="join-us-form-container">
+          <button id="closeFormBtn" class="close-btn" aria-label="Close Form">
+            &times;
+          </button>
+          <div class="logo-placeholder">
+            <img
+              src="Assets/Image/RAC-removebg-preview.png"
+              id="logo-placeholder"
+              alt="Logo"
+            />
+          </div>
+          <p class="form-title">Rotaract Club Of TIT & Science</p>
+          <p class="tagline">
+            Make a difference, grow as a leader. Join Rotaract today!
+          </p>
+          <form id="joining-form">
+            <div class="join-us-form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="What would we call you?"
+                required
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="enrollment-no">Enrollment No. or Student ID</label>
+              <input
+                type="text"
+                name="enrollmentNo"
+                id="enrollment-no"
+                placeholder="e.g. 0192CS23XXXX or 23-24STUXXXXX"
+                required
+              />
+              <span class="error-message" id="enrollmentNoError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="e.g. example@gmail.com"
+                required
+              />
+              <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact</label>
+              <input
+                type="text"
+                name="contact"
+                id="contact"
+                placeholder="e.g 97XXXXXX25"
+                required
+              />
+              <span class="error-message" id="contactError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="skills">Skills:</label>
+              <input
+                type="text"
+                name="skills"
+                id="skills"
+                placeholder="e.g. JavaScript, Python, Graphic Design"
+              />
+              <span class="error-message" id="skillsError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="achievements">Achievements:</label>
+              <textarea
+                name="achievements"
+                id="achievements"
+                rows="3"
+                placeholder="e.g. Won coding hackathons, Student of the Year"
+              ></textarea>
+              <span class="error-message" id="achievementsError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="interests">Interests / Goals:</label>
+              <textarea
+                name="interests"
+                id="interests"
+                rows="3"
+                placeholder="e.g. Web Development, AI/ML, Community Service"
+              ></textarea>
+              <span class="error-message" id="interestsError"></span>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit</button>
+          </form>
+        </div>
+      </div>
+</body>
+</html>
