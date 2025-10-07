@@ -47,12 +47,10 @@
                 <a href="pages/about.html" class="nav-link">About</a>
               </li>
               <li>
-              <a href="pages/project.html" class="nav-link">Projects</a>
-            </li>
+                <a href="pages/project.html" class="nav-link">Projects</a>
+              </li>
               <li>
-                <a href="pages/event.html" class="nav-link"
-                  >Events</a
-                >
+                <a href="pages/event.html" class="nav-link">Events</a>
               </li>
               <li>
                 <a href="pages/gallery.html" class="nav-link">Gallery</a>
@@ -264,7 +262,6 @@
                 Passionate leader, working to empower youth through community
                 service and innovation.
               </div>
-
             </div>
 
             <!--Hon. Secretary Proflie card -->
@@ -284,7 +281,6 @@
               <div class="profile-card-post">
                 <p id="profile-card-post">Hon. Secretary</p>
               </div>
-              
             </div>
 
             <!--Vice President Proflie card -->
@@ -631,367 +627,18 @@
 
           <div class="footer-column">
             <p id="developed-by">
-               Made with <i class="bx bxs-heart"></i> <br />
-               Designed and developed by <br />
+              Made with <i class="bx bxs-heart"></i> <br />
+              Designed and developed by <br />
               <b>Praveen Patel || Shubham Yadav</b>
-           </p>
-
+            </p>
           </div>
         </div>
         <div class="copyright">
           &copy; 2025 Rotaract Club Of TIT & Science. All rights reserved.
         </div>
       </footer>
-
-      <!-- Overlay form for Join Us-->
-      <div id="joinUsformOverlay" class="join-us-overlay">
-        <div class="join-us-form-container">
-          <button id="closeFormBtn" class="close-btn" aria-label="Close Form">
-            &times;
-          </button>
-          <div class="logo-placeholder">
-            <img
-              src="Assets/Image/RAC-removebg-preview.png"
-              id="logo-placeholder"
-              alt="Logo"
-            />
-          </div>
-          <p class="form-title">Rotaract Club Of TIT & Science</p>
-          <p class="tagline">
-            Make a difference, grow as a leader. Join Rotaract today!
-          </p>
-          <form id="joining-form">
-            <div class="join-us-form-group">
-              <label for="name">Name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="What would we call you?"
-                required
-              />
-              <span class="error-message" id="nameError"></span>
-            </div>
-            <div class="form-group">
-              <label for="enrollment-no">Enrollment No:</label>
-              <input
-                type="text"
-                name="enrollmentNo"
-                id="enrollment-no"
-                placeholder="e.g. 0192CS23XXXX"
-                required
-              />
-              <span class="error-message" id="enrollmentNoError"></span>
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="e.g. example@gmail.com"
-                required
-              />
-              <span class="error-message" id="emailError"></span>
-            </div>
-            <div class="form-group">
-              <label for="contact">Contact:</label>
-              <input
-                type="text"
-                name="contact"
-                id="contact"
-                placeholder="e.g 97XXXXXX25"
-                required
-              />
-              <span class="error-message" id="contactError"></span>
-            </div>
-
-            <button type="submit" id="submitBtn">Submit</button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Success Popup Overlay -->
-      <div id="successPopupOverlay" class="success-popup-overlay hidden">
-        <div class="success-popup-card">
-          <div class="tick-mark">
-            <svg viewBox="0 0 52 52">
-              <circle class="circle" cx="26" cy="26" r="25" fill="none" />
-              <path class="check" fill="none" d="M14 27l7 7 16-16" />
-            </svg>
-          </div>
-          <p class="success-message">Thank you for joining us!</p>
-        </div>
-      </div>
-
-      <!-- Donate Overlay -->
-      <div class="donate-overlay" id="showdonationoverlay">
-        <div class="donate-overlay-content">
-          <div class="overlay-header">
-            <img
-              src="/Assets/Image/RAC-removebg-preview.png"
-              alt="Logo"
-              srcset="RAC-removebg-preview.png"
-              class="logo"
-              draggable="false"
-            />
-            <span class="close-btn" id="closeDonateFormBtn"> &times; </span>
-          </div>
-
-          <div class="flex-overlay">
-            <div class="qr-section">
-              <div class="qr-img-container">
-                <img
-                  src="./Assets/Image/qr-code.jpg"
-                  alt="QR-Code"
-                  class="qr-img"
-                  draggable="false"
-                />
-              </div>
-              <div class="account-details-container">
-                <div class="details-block">
-                  <p class="details-title">
-                    <i class="bx bx-user"></i>Account Holder
-                  </p>
-                  <p class="details">Praveen Kesharvani</p>
-                </div>
-                <div class="details-block">
-                  <p class="details-title"><i class="bx bx-at"></i>UPI ID</p>
-                  <p class="details">rotaractcluboftitandscience@ybl</p>
-                </div>
-                <div class="details-block">
-                  <p class="details-title">
-                    <i class="bx bxs-user-account"></i>A/c No.
-                  </p>
-                  <p class="details">0591001700035809</p>
-                </div>
-                <div class="details-block">
-                  <p class="details-title">
-                    <i class="bx bxs-bank"></i>IFSC Code
-                  </p>
-                  <p class="details">PUNB059100</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-container">
-              <p class="form-title">
-                To help us verify your donation, please fill out the form below:
-              </p>
-              <form id="donation-form" enctype="multipart/form-data">
-                <div class="donation-form-group">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
-                <div class="donation-form-group">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your Email"
-                    required
-                  />
-                </div>
-                <div class="donation-form-group">
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Enter your contact no."
-                    required
-                  />
-                </div>
-                 
-<div class="donation-form-group">
-  <label for="amount" class="details-title"><i class="bx bx-rupee"></i> Donation Amount</label>
-  <input
-    type="number"
-    id="amount"
-    name="amount"
-    placeholder="Enter amount you want to donate"
-    min="1"
-    required
-  />
-</div>
-                <div class="donation-form-group" id="screenshot-container">
-                  <i class="bx bx-cloud-upload bx-md">
-                    <input
-                      type="file"
-                      name="screenshot"
-                      id="screenshot"
-                      accept="image/*"
-                      required
-                      hidden
-                    />
-                  </i>
-                  <p class="lable-for-screenshot">Drag 'N Drop here</p>
-                  <p class="for-screenshot">
-                    Please upload the screenshot of payment receipt for
-                    confirmation.
-                  </p>
-                  <p class="upload-here">
-                    Upload an image by clicking below <b>Upload here</b>
-                  </p>
-                </div>
-
-                <div class="button">
-                  <button type="submit" class="submit-btn">Submit</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div id="toast" class="toast"></div>
-      </div>
     </main>
     <!-- End of html code here -->
-
-    <!-- Scripts -->
-    <!-- Here, database logic for submit join us form -->
-    <script>
-      document
-        .getElementById("joining-form")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-
-          const submitBtn = document.getElementById("submitBtn");
-          submitBtn.disabled = true;
-          const originalBtnText = submitBtn.textContent;
-          submitBtn.textContent = "Submitting...";
-
-          const name = document.getElementById("name").value;
-          const enrollmentNo = document.getElementById("enrollment-no").value;
-          const email = document.getElementById("email").value;
-          const contact = document.getElementById("contact").value;
-
-          const overlay = document.getElementById("joinUsformOverlay");
-          const form = document.getElementById("joining-form");
-
-          try {
-            const response = await fetch(
-              "http://127.0.0.1:5000/api/joinus",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, enrollmentNo, email, contact }),
-              }
-            );
-
-            const result = await response.json();
-
-            if (response.ok) {
-              form.reset();
-              showSuccessPopup(result.message || "Thank you for joining us!");
-
-              setTimeout(() => {
-                document
-                  .getElementById("successPopupOverlay")
-                  .classList.add("hidden");
-                overlay.style.display = "none";
-              }, 3500);
-            } else {
-              showToast(
-                result.error || "Oops! Something went wrong. Please try again.",
-                "error"
-              );
-            }
-          } catch (error) {
-            console.error("Fetch error:", error);
-            showToast("Network error. Please try again later.", "error");
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-          }
-        });
-
-      // Success Popup function
-      function showSuccessPopup(
-        message = "Thank you for showing interest! Your form has been submitted successfully."
-      ) {
-        const popup = document.getElementById("successPopupOverlay");
-        popup.querySelector(".success-message").textContent = message;
-        popup.classList.remove("hidden");
-      }
-      // Toast notification function
-      function showToast(message, type) {
-        const toast = document.getElementById("toast");
-        toast.textContent = message;
-        toast.className = `toast show ${type}`;
-
-        setTimeout(() => {
-          toast.classList.remove("show");
-          toast.classList.add("hidden");
-        }, 3000);
-      }
-    </script>
-    <!-- Here, database logic for submit donation screenshot -->
-    <script>
-  document
-    .getElementById("donation-form")
-    .addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const form = e.target;
-      const submitBtn = form.querySelector(".submit-btn");
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-
-      const formData = new FormData(form);
-
-      // Validate required fields including amount
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const phone = form.phone.value.trim();
-      const amount = form.amount.value.trim();
-      const screenshotFiles = form.screenshot.files;
-
-      if (!name || !email || !phone || !amount || !screenshotFiles.length) {
-        alert("All fields including donation amount are required!");
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit";
-        return;
-      }
-
-      if (Number(amount) <= 0) {
-        alert("Please enter a valid donation amount!");
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit";
-        return;
-      }
-
-      try {
-        const response = await fetch("http://127.0.0.1:5000/api/donations", {
-          method: "POST",
-          body: formData,
-        });
-
-        const result = await response.json();
-        if (!response.ok) throw new Error(result.error);
-
-        showSuccessPopup(result.message || "Donation submitted successfully!");
-        form.reset();
-      } catch (err) {
-        alert("Error: " + err.message);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit";
-      }
-    });
-
-  function showSuccessPopup(message = "Success!") {
-    const popup = document.getElementById("successPopupOverlay");
-    popup.querySelector(".success-message").textContent = message;
-    popup.classList.remove("hidden");
-    setTimeout(() => {
-      popup.classList.add("hidden");
-    }, 3000);
-  }
-</script>
 
     <script src="Assets/JavaScript/main.js"></script>
   </body>
