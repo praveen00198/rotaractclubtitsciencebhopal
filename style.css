@@ -1,8 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Gruppo&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rancho&family=Send+Flowers&display=swap');
+@font-face {
+    font-family: "Instrument Sans";
+    src: url('/Assets/font/Instrument_Sans/InstrumentSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+    font-family: Nunito;
+    src: url('/Assets/font/Nunito/Nunito-VariableFont_wght.ttf');
+}
 
 :root {
     --default-font: "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
-    --heading-font: "Nunito";
+    --heading-font: "Instrument Sans";
     --second-font: "Nunito";
 }
 
@@ -36,15 +43,13 @@ header {
     align-items: center;
     padding: 60px 40px;
     width: 100%;
-    height: 5rem;
+    height: 3rem;
     top: 0;
     left: 0;
     z-index: 1000;
     background-color: white;
     opacity: 1;
 }
-
-.title-logo {}
 
 /* Club Logo Section */
 .club-logo {
@@ -98,11 +103,6 @@ header {
     color: #0e928c;
 }
 
-/* .nav-link.active-link {
-    color: #00a0a6; 
-    font-weight: bold;
-    border-bottom: 2px solid #00a0a6;
-  } */
 
 /* CTA Buttons */
 #nav-cta-btn {
@@ -219,7 +219,7 @@ header {
     line-height: 20px;
     padding: 10px 20px;
     width: 60%;
-    background-color: #0430251e;
+    background-color: #011d16;
     border-radius: 10px;
     backdrop-filter: blur(2px);
 }
@@ -246,27 +246,11 @@ header {
 .stats-description {
     font-family: var(--second-font);
     font-size: 16px;
-    font-weight: 400;
-    color: #123746;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 0.5px;
 }
 
-.project-stats:hover,
-.member-stats:hover,
-.achievement-stats:hover {
-    background-color: #d6f1f0;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #0c706b6e;
-    transition: all 0.3s ease-in-out;
-    /* transform: scale(1.05); */
-    
-}
-
-.project-stats:hover i,
-.member-stats:hover i,
-.achievement-stats:hover i{
-    color: #00a0a6;
-}
 
 /* About Section */
 .about-section {
@@ -284,21 +268,22 @@ header {
 .about-section-title {
     font-family: var(--heading-font);
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 500;
     color: #00A0A6;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .about-section>p {
-    font-family: var(--heading-font);
+    font-family: var(--second-font);
     font-size: 1.4rem;
-    border-left: 4px solid #538888;
     padding-left: 10px;
+    text-align: center;
 }
 
 /* Skill section */
 .skills-section {
+    height: 17rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -317,7 +302,7 @@ header {
     border: 2px solid #109094;
     border-radius: 15px;
     position: relative;
-    top: -6rem;
+    top: -8rem;
 }
 
 .skill-section-title {
@@ -326,20 +311,20 @@ header {
     font-weight: 700;
     color: #0a2627;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .skill-section-tagline {
     font-family: var(--second-font);
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     color: #0a2627;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .skill-card {
-    width: 90%;
+    width: 100%;
     padding: 20px 20px;
     background-color: #0a2627;
     color: white;
@@ -356,6 +341,7 @@ header {
     display: grid;
     align-items: stretch;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .skill-card-title {
@@ -363,31 +349,25 @@ header {
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
-    font-style: italic;
+    line-height: 1;
+    font-weight: 400;
 }
 
 .skill-paragraph {
     font-family: var(--second-font);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 200;
     width: 100%;
     margin-top: 10px;
+    letter-spacing: 0.5px;
 }
-
-.skill-card:hover {
-    box-shadow: 0 0 10px #0c706b;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.05);
-}
-
 
 
 
 /* Testimonial section */
 .testimonial-section {
     padding: 50px;
-    background-color: #0a2627;
-    color: white;
+    color: #0a2627;
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
@@ -410,41 +390,45 @@ header {
     justify-content: space-between;
     height: 100%;
     padding: 10px;
-    background-color: #042c2ea6;
+    background-color: #042c2e;
     color: white;
     margin-bottom: 25px;
-    width: 90%;
+    width: 100%;
     transition: opacity 0.5s ease-in;
-    border-left: 4px solid #538888;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px #012016;
 }
 
 .testimonial-card.visible {
     opacity: 1;
 }
 
-#testimonial-card-description {
+.testimonial-card-description {
     font-family: var(--second-font);
-    font-size: 16px;
-    text-align: justify;
+    font-size: 14px;
     width: 100%;
+    font-weight: 200;
+    letter-spacing: 0.5px;
 }
 
 .testimonial-card-name {
     margin-top: 10px;
     margin: 5px;
     font-family: var(--heading-font);
-    font-size: 15px;
+    font-size: 16px;
     text-align: start;
+    font-weight: 300;
 }
 
 #testimonial-card-position {
     font-family: var(--second-font);
     width: fit-content;
     font-size: 12px;
-    font-weight: 400;
-    background-color: #123746;
+    font-weight: 300;
+    background-color: #0a5c4a;
     padding: 5px 10px;
     border-radius: 20px;
+    letter-spacing: 0.5px;
 }
 
 .testimonial-section-title {
@@ -452,7 +436,7 @@ header {
     font-size: 30px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
 .testimonial-section-tagline {
@@ -460,7 +444,7 @@ header {
     font-size: 16px;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 32px;
 }
 
 /* Animations */
