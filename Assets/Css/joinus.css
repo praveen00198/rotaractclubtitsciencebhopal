@@ -2,123 +2,146 @@
   font-family: "Instrument Sans";
   src: url("../Assets/font/Instrument_Sans/InstrumentSans-VariableFont_wdth\,wght.ttf");
 }
-@font-face {
-  font-family: Nunito;
-  src: url("../Assets/font/Nunito/Nunito-VariableFont_wght.ttf");
+
+
+main{
+    font-family: "Instrument Sans";
+    height: 100vh;
 }
 
-
-/* Styles for the Overlay */
-.join-us-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.flex{
+    display: flex;
+    height: calc(100vh - 3rem);
+}
+form{
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    overflow-y: auto;
-    justify-content: center;
-    align-items: center;
+    padding: 20px 90px;
+    overflow-y: scroll;
 }
 
-/* Styles for the Form Container */
-.join-us-form-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+#main{
+    width: 120%;
+    height: 100vh;
+    padding: 40px 90px;
+    background-color: rgb(1, 20, 16);
     position: relative;
-    width: 400px;
-    max-width: 92%;
 }
-
-/* Styles for the Close Button */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 2px 7px;
+#main-top{
+    border-left: 20px solid #023d30;
 }
-
-.close-btn:hover {
-    color: #0e0e0e;
-}
-
-/* Styles for Form Groups */
-#logo-placeholder {
+#main-top img{
     width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 8px;
+}
+#main h2{
+    color: white;
+    font-size: 2rem;
+    font-family: 'Instrument Sans';
+    letter-spacing: 1px;
+    margin-top: 12px;
+}
+
+#main-bottom{
+    width: 100%;
+    color: white;
+    margin-top: 10rem;
+}
+#main-bottom p{
+    font-weight: 100;
+    font-size: 18px;
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+    color: #929292;
+}
+#main-bottom a{
+    font-size: 12px;
+    color: #1b7275;
 }
 
 .form-title {
-    font-size: 1.5rem;
+    font-size: 1.69rem;
     font-weight: 600;
     color: #1d1d1d;
-    font-family: 'Poppins';
+    line-height: 1;
+    margin-bottom: 10px;
 }
 
 .tagline {
     color: #666;
-    margin-bottom: 20px;
-    margin-top: -10px;
-    font-family: 'Nunito';
+    margin-bottom: 30px;
     font-size: 16px;
 }
 
-.join-us-form-group {
+.form-group {
     margin-bottom: 15px;
     text-align: left;
+    position: relative;
 }
 
 label {
     display: block;
-    margin-bottom: 2px;
-    margin-left: 8px;
     color: #272727;
-    font-family: 'Josefin Sans', sans-serif;
     font-size: 14px;
+    position: absolute;
+    left: 10px;
+    padding: 0px 2px;
+    transform:translateY(-165%);
+    pointer-events:none;
+    transition: transform 0.3s ease;
+    font-size: 16px;
 }
 
 input[type="text"],
-input[type="email"] {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
+input[type="email"],
+input[type="tel"],
+textarea {
+    font-weight: 400;
+    font-family: 'Instrument Sans';
     background-color: transparent;
     width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #46a085;
-    border-radius: 10px;
-    font-size: 15px;
+    padding: 10px 14px;
+    border: 1px solid #949494;
+    border-radius: 6px;
+    font-size: 16px;
     transition: border-color 0.3s ease;
     outline: none;
     color: rgb(0, 31, 32);
 }
 
-button[type="submit"] {
+input[type='text']{
+     text-transform: capitalize;
+}
+textarea{
+    text-transform: none;
+    resize: none;
+}
+
+input:focus + label,
+input:valid + label{
+    font-size: 12px;
+    color: #023d30b2;
+    transform: translateY(-330%);
+    background-color: white;
+}
+
+input:valid{
+    border-color: #5adbb4;
+}
+
+button {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     border-radius: 20px;
     border: none;
     background-color: #1e6e56;
     color: #011b13;
-    font: 500 14px 'Poppins', sans-serif;
+    font: 600 16px 'Instrument Sans', sans-serif;
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+button:hover {
+
     background-color: #023d30;
     color: #fff;
 }

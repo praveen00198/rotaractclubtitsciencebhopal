@@ -24,63 +24,82 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="./Assets/Css/Responsive.css" />
-    <link rel="stylesheet" href="../Assets/css/joinus.css">
+    <link rel="stylesheet" href="../Assets/css/joinus.css" />
   </head>
   <body>
-    
-      <!-- Header -->
-      <header>
-        <div class="club-logo">
-          <img src="../Assets/Image/RAC-removebg-preview.png" alt="Logo" />
-          <p class="title-logo">
-            Rotaract Club Of <br />TIT & Science Bhopal, RID3040
+    <main>
+      <div class="flex">
+        <div id="main">
+          <div id="main-top">
+            <img src="../Assets/Image/RAC-removebg-preview.png" alt="Image" />
+          </div>
+          <h2>Rotaract Club of TIT & Science Bhopal, RID 3040</h2>
+
+          <div id="main-bottom">
+            <p>
+              Don’t wait for change — be it. Join Rotaract and make every
+              action count. A small step from you, a giant leap toward a better
+              world!
+            </p>
+            <a href="#">Know more</a>
+          </div>
+        </div>
+
+        <!-- Joining Form -->
+        <form action="" method="post">
+          <h2 class="form-title">Ready to turn your potential into impact?</h2>
+          <p class="tagline">
+            Fill out the Join Us form and be part of something bigger!
           </p>
-        </div>
-
-        <nav class="nav-element">
-          <div class="nav-list">
-            <ul id="nav-list-elements">
-              <li><a href="#" class="nav-link">Home</a></li>
-              <li>
-                <a href="pages/about.html" class="nav-link">About</a>
-              </li>
-              <li>
-                <a href="pages/project.html" class="nav-link">Projects</a>
-              </li>
-              <li>
-                <a href="pages/event.html" class="nav-link">Events</a>
-              </li>
-              <li>
-                <a href="pages/gallery.html" class="nav-link">Gallery</a>
-              </li>
-            </ul>
+          <div class="form-group">
+            <input type="text" name="name" id="name-input" required />
+            <label for="name">Enter Your Full Name</label>
           </div>
-          <hr id="separator" />
-          <div id="nav-cta-btn">
-            <button
-              class="join-us-btn"
-              id="showJoinUsFormBtn"
-              aria-label="Join Us"
+
+          <div class="form-group">
+            <input type="email" name="email" id="email-input" required />
+            <label for="email">Enter Your Email Id</label>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" name="contact" id="contact-input" required />
+            <label for="contact">Enter Your Contact No.</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="enrollment"
+              id="enrollment-input"
+              required
+            />
+            <label for="enrollment"
+              >Enter Your Enrollment No. or Student Id</label
             >
-              Join Us
-            </button>
-            <button class="donate-btn" id="showDonateform" aria-label="Donate">
-              <i class="bx bxs-donate-heart"></i>
-              Donate
-            </button>
           </div>
-        </nav>
 
-        <div class="toggle-button" onclick="toggleMenu()">
-          <i class="bx bx-menu-alt-right"></i>
-        </div>
-      </header>
+          <div class="form-group">
+            <textarea
+              name="about"
+              id="about-input"
+              rows="5"
+              placeholder="Mention your Skill and Achievements (if any)"
+              required
+            ></textarea>
+          </div>
 
-      <main>
-        
-      <main>
+          <div class="form-group">
+            <textarea
+              name="about"
+              id="about-input"
+              rows="5"
+              placeholder="How did you came to know about Rotaract?"
+            ></textarea>
+          </div>
 
-      </main>
+          <button onclick="formSubmission()">Submit</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>

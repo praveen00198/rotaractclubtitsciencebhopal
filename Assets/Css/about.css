@@ -1,149 +1,357 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Gruppo&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rancho&family=Send+Flowers&display=swap');
+@font-face {
+    font-family: 'Instrument Sans';
+    src: url('../font/Instrument_Sans/InstrumentSans-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../font/Nunito/Nunito-VariableFont_wght.ttf');
+}
 
 :root {
     --default-font: "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
-    --heading-font: "Nunito";
+    --heading-font: "Instrument Sans";
     --second-font: "Nunito";
 }
 
 
-main{
-    background-color: #ffffff;
-      background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 0.055) 1px, transparent 0.5px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.055) 1px, transparent 0.5px);
-      background-size: 40px 40px;
-    
-    padding: 40px 80px;
+main {
+    padding: 20px 150px;
+    font-family: var(--default-font);
 }
 
-.about-section-description {
-    font-family: var(--second-font);
-    font-size: 4rem;
+.color {
+    color: #00140a;
     font-weight: 600;
-    margin-bottom: 20px;
-    width: 100%;
-    line-height: 4.5rem;
-    border-left: 6px solid #054441;
-    padding-left: 20px;
-    color: #011615;
-}
-.about-details{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    align-items: stretch;
-    margin-top: 50px;
-}
-.about-details p{
-    font-family: var(--second-font);
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
-    width: 100%;
-    letter-spacing: 1px;
-    background-color: #054441;
-    color: aliceblue;
-    padding: 10px;
-    border-radius: 6px;
 }
 
-.about-section-flex {
+#about-us-hero {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    gap: 10px;
-}
-
-.about-section-mission,
-.about-section-vision {
-    width: 50%;
-    margin-top: 2rem;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 6px;
-    background-color: #054441;
-}
-
-.mission-title,
-.vision-title {
-    font-family: var(--heading-font);
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: aliceblue;
-}
-
-.mission-description,
-.vision-description {
-    font-family: var(--second-font);
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
-    width: 100%;
-    letter-spacing: 1px;
-    color: aliceblue;
-}
-
-.about-section-mission:hover,
-.about-section-vision:hover {
-    box-shadow: 0 0 10px #0c706b;
-}
-
-.theme-logo-description{
-    position: relative;
-}
-.flex{
-    display: flex;
     align-items: center;
-    /* align-items: start; */
-    margin: 4.5rem auto;
-    gap: 90px;
+    gap: 100px;
+    padding: 20px 0px;
 }
-.theme-logo-description>span>svg{
-    width: 40px;
-    height: 40px;
-    color: #2c3f51;
+
+#about-us-hero-left {
+    /* background-color: crimson; */
+    width: 100%;
+}
+
+#about-us-hero-left-top {
+    width: fit-content;
+    border: 1px solid #a9c9b9;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+#about-us-hero-left-top p {
+    font-family: var(--heading-font);
+}
+
+#about-us-hero-left-mid {
+    margin-top: 15px;
+}
+
+#about-us-hero-left-mid h1 {
+    font-size: 4rem;
+    font-family: 'Instrument Sans';
+    font-weight: 500;
+    line-height: 1;
+}
+
+#about-us-hero-left-bottom {
+    margin-top: 20px;
+}
+
+#about-us-hero-left-bottom p {
+    color: #666666;
+    font-family: 'Nunito';
+}
+
+#establish-btn {
+    margin-top: 35px;
+}
+
+#establish-btn a {
+    background-color: #001109;
+    color: #c0d4ca;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: var(--heading-font);
+}
+
+#about-us-hero-right img {
+    width: 400px;
+}
+
+
+/* Establish section */
+
+#about-us-establish-section,
+#our-ethics,
+#faculty-saying-section {
+    padding: 40px 0px;
+}
+
+#establish-year {
+    font: 400 4rem 'Instrument Sans';
+}
+
+#about-us-extablish-section-container {
+    display: flex;
+    gap: 60px;
+}
+
+#about-us-extablish-section-container-left {
+    width: 100%;
+    height: 300px;
+    background-color: #bebebe;
+    border-radius: 12px;
+}
+
+#about-us-extablish-section-container-right h2 {
+    font-family: 'Instrument Sans';
+    font-weight: 500;
+}
+
+
+.about-us-extablish-section-container-right-elem {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#sponser-card,
+#under-guidance-card {
+    width: 100%;
+    height: 220px;
+    background-color: #bebebe;
+    border-radius: 12px;
+}
+
+#our-ethics h1,
+#faculty-saying-section h1 {
+    font-family: 'Instrument Sans';
+    text-align: center;
+    font-weight: 500;
+}
+
+#our-ethics p {
+    font-family: 'Nunito';
+    text-align: center;
+}
+
+#our-ethics-elem {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.our-ethics-card {
+    padding: 8px 15px;
+}
+
+#tagline {
+    color: #666666;
+}
+
+.our-ethics-card #image {
+    margin: 0px auto;
+    width: 100px;
+    height: 100px;
+    background-color: #F8FAF9;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.our-ethics-card #image img {
+    width: 100px;
+    height: 100px;
+}
+
+.our-ethics-card h2 {
+    font-family: 'Instrument Sans';
+    font-weight: 600;
+    text-align: center;
+}
+
+.our-ethics-card p {
+    font-family: 'Nunito';
+    font-size: 14px;
+    color: #666666;
+}
+
+
+
+#faculty-card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.faculty-saying-card {
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 22px;
+}
+
+.faculty-saying-card i {
     position: absolute;
-    top: -15px;
-    left: -50px;
+    top: -0.1px;
+    left: 1px;
+    font-size: 20px;
+    color: #555555;
 }
-.theme-logo-description>p{
-    font: 800 2rem var(--second-font);
-    color: #2c3f51;
+
+.faculty-saying-card p {
+    font-family: 'Nunito';
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #00140a;
 }
+
+.faculty-saying-card h4 {
+    font-family: 'Instrument Sans';
+    font-weight: 500;
+}
+
+.faculty-saying-card h5 {
+    font-family: 'Instrument Sans';
+    font-weight: 200;
+    color: #5c5c5c;
+}
+
 
 
 @media screen and (max-width: 768px) {
-    main{
-        padding: 20px;
+    main {
+        padding: 0px 12px;
     }
-    .about-section-description {
-        margin-top: 2rem;
-        font-size: 1.6rem;
-        line-height: 2rem;
+
+    .color {
+        color: #00140a;
+        font-weight: 600;
     }
-    .about-details{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .flex{
+
+    #about-us-hero {
         flex-direction: column;
-        gap: 10px;
+        padding: 20px 0px;
     }
-    .flex>img{
-        width: 90%;
+
+    #about-us-hero-left {
+        width: 100%;
     }
-    .theme-logo-description>span>svg{
-        left: 1px;
-        top: -6px;
-        width: 14px;
-        height: 14px;
-        /* display: none; */
+
+    #about-us-hero-left-top p {
+        font-size: 14px;
+        font-family: var(--heading-font);
     }
-    .theme-logo-description>p{
-       text-align: justify;
-       font-size: 1.3rem;
-       padding: 0 15px;
+
+    #about-us-hero-left-mid {
+        margin-top: 15px;
+    }
+
+    #about-us-hero-left-mid h1 {
+        font-size: 2.5rem;
+        font-family: 'Instrument Sans';
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    #about-us-hero-left-bottom {
+        margin-top: 20px;
+    }
+
+    #about-us-hero-left-bottom p {
+        color: #666666;
+        font-family: 'Nunito';
+    }
+
+    #about-us-hero-right img {
+        display: none;
+    }
+
+
+    /* Establish section */
+    #about-us-establish-section {
+        margin-top: -80px;
+        padding: 10px 0px;
+    }
+
+    #establish-year {
+        font: 400 4rem 'Instrument Sans';
+    }
+
+    #about-us-extablish-section-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #about-us-extablish-section-container-left {
+        width: 100%;
+        height: 200px;
+        background-color: #bebebe;
+        border-radius: 12px;
+    }
+
+    #about-us-extablish-section-container-right h2 {
+        font-family: 'Instrument Sans';
+        font-weight: 500;
+    }
+
+    #sponser-card,
+    #under-guidance-card {
+        width: 100%;
+        height: 220px;
+        background-color: #bebebe;
+        border-radius: 12px;
+    }
+
+    /* Our ethics and values */
+
+   
+    #our-ethics h1,
+    #faculty-saying-section h1 {
+        font-family: 'Instrument Sans';
+        text-align: center;
+        font-weight: 500;
+    }
+
+    #our-ethics-elem {
+        margin-top: 20px;
+        overflow-x: scroll;
+        gap: 8px;
+    }
+
+    .our-ethics-card {
+        min-width: 220px;
+        padding: 8px 10px;
+    }
+
+    #tagline {
+        display: none;
+    }
+
+
+    #faculty-card-container {
+        flex-direction: column;
+    }
+
+    .faculty-saying-card h4 {
+        margin-top: 20px;
+    }
+
+    .faculty-saying-card h5 {
+        font-family: 'Instrument Sans';
+        font-weight: 200;
+        color: #5c5c5c;
     }
 }
