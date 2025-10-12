@@ -1,62 +1,76 @@
 @font-face {
-  font-family: "Instrument Sans";
-  src: url("../Assets/font/Instrument_Sans/InstrumentSans-VariableFont_wdth\,wght.ttf");
+    font-family: "Instrument Sans";
+    src: url("../Assets/font/Instrument_Sans/InstrumentSans-VariableFont_wdth\,wght.ttf");
 }
 
 
-main{
+main {
     font-family: "Instrument Sans";
     height: 100vh;
 }
 
-.flex{
+.flex {
     display: flex;
     height: calc(100vh - 3rem);
 }
-form{
+
+form {
     width: 100%;
     height: 100vh;
     padding: 20px 90px;
     overflow-y: scroll;
 }
 
-#main{
+#main {
     width: 120%;
     height: 100vh;
     padding: 40px 90px;
     background-color: rgb(1, 20, 16);
     position: relative;
 }
-#main-top{
+
+#main-top {
     border-left: 20px solid #023d30;
 }
-#main-top img{
+
+#main-top img {
     width: 80px;
     margin-left: 8px;
 }
-#main h2{
+
+#main h2 {
     color: white;
     font-size: 2rem;
     font-family: 'Instrument Sans';
     letter-spacing: 1px;
     margin-top: 12px;
+    font-weight: 500;
 }
 
-#main-bottom{
+#main-bottom {
     width: 100%;
     color: white;
     margin-top: 10rem;
 }
-#main-bottom p{
+
+#main-bottom h2 {
+    font-family: 'Instrument Sans';
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#main-bottom p {
     font-weight: 100;
     font-size: 18px;
     margin-bottom: 6px;
     letter-spacing: 0.2px;
     color: #929292;
 }
-#main-bottom a{
+
+#main-bottom a {
     font-size: 12px;
-    color: #1b7275;
+    color: #1b7548;
+    text-decoration: none;
 }
 
 .form-title {
@@ -86,8 +100,8 @@ label {
     position: absolute;
     left: 10px;
     padding: 0px 2px;
-    transform:translateY(-165%);
-    pointer-events:none;
+    transform: translateY(-165%);
+    pointer-events: none;
     transition: transform 0.3s ease;
     font-size: 16px;
 }
@@ -109,23 +123,24 @@ textarea {
     color: rgb(0, 31, 32);
 }
 
-input[type='text']{
-     text-transform: capitalize;
+input[type='text'] {
+    text-transform: capitalize;
 }
-textarea{
+
+textarea {
     text-transform: none;
     resize: none;
 }
 
-input:focus + label,
-input:valid + label{
+input:focus+label,
+input:valid+label {
     font-size: 12px;
     color: #023d30b2;
     transform: translateY(-330%);
     background-color: white;
 }
 
-input:valid{
+input:valid {
     border-color: #5adbb4;
 }
 
@@ -144,4 +159,16 @@ button:hover {
 
     background-color: #023d30;
     color: #fff;
+}
+
+
+@media screen and (max-width: 760px) {
+    #main {
+        display: none;
+    }
+
+    form {
+        padding: 20px 10px;
+        overflow-y: scroll;
+    }
 }
