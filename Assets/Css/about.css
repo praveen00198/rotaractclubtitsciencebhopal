@@ -109,6 +109,12 @@ main {
     height: 300px;
     background-color: #bebebe;
     border-radius: 12px;
+    background-image: url('../Image/installation2018.jpg');
+    background-position: center;
+    background-size: cover;
+}
+#about-us-extablish-section-container-left img{
+    width: 100%;
 }
 
 #about-us-extablish-section-container-right h2 {
@@ -162,21 +168,30 @@ main {
 .our-ethics-card #image {
     margin: 0px auto;
     width: 100px;
-    height: 100px;
-    background-color: #F8FAF9;
-    border-radius: 50%;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.our-ethics-card #image img {
-    width: 100px;
-    height: 100px;
+.our-ethics-card #image i {
+    font-size: 80px;
+    color: #05362fc0;
+    animation: tada 1.5s ease-in-out;
+}
+
+@keyframes tada {
+  0% { transform: scale(1); }
+  10%, 20% { transform: scale(0.9) rotate(-3deg); }
+  30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+  40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+  100% { transform: scale(1) rotate(0); }
 }
 
 .our-ethics-card h2 {
     font-family: 'Instrument Sans';
     font-weight: 600;
     text-align: center;
+    color: #011a12;
 }
 
 .our-ethics-card p {
