@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
 // Toggle the menu on mobile devices
 // This function toggles the visibility of the navigation menu when the hamburger icon is clicked
 let isOpen = false;

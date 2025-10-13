@@ -38,11 +38,10 @@
           <div id="main-bottom">
             <h2>What are you waiting for?</h2>
             <p>
-              Don’t wait for change — be it. Join Rotaract and make every
-              action count. A small step from you, a giant leap toward a better
-              world!
+              Don’t wait for change — be it. Join Rotaract and make every action
+              count. A small step from you, a giant leap toward a better world!
             </p>
-            <a href="#">Know more</a>
+            <p id="know-more">Know more</p>
           </div>
         </div>
 
@@ -102,5 +101,12 @@
         </form>
       </div>
     </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("#know-more").addEventListener("click", () => {
+          window.location.href = "../pages/about.html";
+        });
+      });
+    </script>
   </body>
 </html>
