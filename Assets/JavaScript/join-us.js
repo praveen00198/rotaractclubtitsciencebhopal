@@ -1,0 +1,34 @@
+async function formSubmission(event) {
+  event.preventDefault(); // prevent page reload
+
+  const data = {
+    name: document.querySelector("#name-input").value,
+    email: document.querySelector("#email-input").value,
+    contact: document.querySelector("#contact-input").value,
+    enrollment: document.querySelector("#enrollment-input").value,
+    skills: document.querySelector("#skill-input").value,
+    source: document.querySelector("#source-input").value,
+  };
+
+  try {
+    const res = await fetch(
+      "https://rotaractclubtitsciencebhopal.onrender.com/api/join",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    );
+
+    const result = await res.json();
+
+    if (res.ok) {
+      alert(result.message); // "Joined successfully!"
+    } else {
+      alert("Error: " + result.error);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong!");
+  }
+}
