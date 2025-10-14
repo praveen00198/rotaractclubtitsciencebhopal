@@ -19,6 +19,7 @@ form {
     height: 100vh;
     padding: 20px 90px;
     overflow-y: scroll;
+    position: relative;
 }
 
 #main {
@@ -71,6 +72,21 @@ form {
     font-size: 14px;
     color: #1b7548;
     cursor: pointer;
+}
+
+
+#toast-notification{
+    width: fit-content;
+    background-color: #ebebeb;
+    padding: 10px 15px;
+    position: absolute;
+    left: 0px;
+    display: none;
+}
+#toast-content{
+    color: #011b13;
+    font-size: 14px;
+    font-family: 'Instrument Sans';
 }
 
 .form-title {

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", formSubmission);
 });
 
-
 async function formSubmission(event) {
   event.preventDefault(); // prevent page reload
 
@@ -30,7 +29,16 @@ async function formSubmission(event) {
     const result = await res.json();
 
     if (res.ok) {
-      alert(result.message); // "Joined successfully!"
+      const toast = document.querySelector("#toast-notification");
+      const toastContent = document.querySelector("#toast-content");
+
+      toastContent.textContent =
+        result.message || "Form submitted successfully!";
+      toast.style.display = "block";
+
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 3000);
     } else {
       alert("Error: " + result.error);
     }
