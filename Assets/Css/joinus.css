@@ -79,7 +79,8 @@ form {
     width: fit-content;
     background-color: #ebebeb;
     padding: 10px 15px;
-    position: absolute;
+    position: fixed;
+    top: 0px;
     left: 0px;
     display: none;
 }
