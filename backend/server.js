@@ -11,4 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", joinRoutes);
+app.get("/ping", (req, res) => {
+  res.send("Server is alive!");
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
