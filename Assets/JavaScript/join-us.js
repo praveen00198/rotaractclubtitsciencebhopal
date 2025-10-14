@@ -1,3 +1,10 @@
+// Attach the event listener to the form
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("join-us-form");
+  form.addEventListener("submit", formSubmission);
+});
+
+
 async function formSubmission(event) {
   event.preventDefault(); // prevent page reload
 
