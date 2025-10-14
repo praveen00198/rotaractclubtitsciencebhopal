@@ -36,8 +36,11 @@ async function formSubmission(event) {
         result.message || "Form submitted successfully!";
       toast.style.display = "block";
 
+      document.getElementById("join-us-form").reset();
+
       setTimeout(() => {
         toast.style.display = "none";
+        window.location.href = "/";
       }, 3000);
     } else {
       alert("Error: " + result.error);
