@@ -1,7 +1,7 @@
 // to-open-join-us-form
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".join-us-btn").addEventListener("click", () => {
-    window.location.href = "../pages/joinus.html";
+    window.location.href = "./pages/joinus.html";
   });
 });
 
