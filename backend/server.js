@@ -10,7 +10,12 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Join us route
 app.use("/api", joinRoutes);
+
+
+
+
 app.get("/ping", (req, res) => {
   res.send("Server is alive!");
 });

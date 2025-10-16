@@ -34,7 +34,7 @@ async function formSubmission(event) {
 
       toastContent.textContent =
         result.message || "Form submitted successfully!";
-      toast.style.display = "block";
+        toast.style.display = "block";
 
       document.getElementById("join-us-form").reset();
 
@@ -46,7 +46,14 @@ async function formSubmission(event) {
       alert("Error: " + result.error);
     }
   } catch (err) {
-    console.error(err);
-    alert("Something went wrong!");
+      const toast = document.querySelector("#toast-notification");
+      const toastContent = document.querySelector("#toast-content");
+
+      toastContent.textContent = "Something went wrong!";
+      toast.style.display = "block";
+
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 2000);
   }
 }

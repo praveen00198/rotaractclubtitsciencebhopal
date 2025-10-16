@@ -205,17 +205,19 @@ main {
 #faculty-card-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
 }
 
 .faculty-saying-card {
+    width: 410px;
     position: relative;
     background-color: #f5f5f5;
     border-radius: 8px;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 22px;
+    border: 1px solid #d5e0dd;
 }
 
 .faculty-saying-card i {
@@ -229,7 +231,7 @@ main {
 .faculty-saying-card p {
     font-family: 'Nunito';
     font-size: 15px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: #00140a;
 }
 
@@ -243,6 +245,7 @@ main {
     font-weight: 200;
     color: #5c5c5c;
 }
+
 
 
 
