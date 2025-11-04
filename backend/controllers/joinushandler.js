@@ -2,7 +2,6 @@ const { JoinUs } = require("../model/JoinUsModel");
 
 exports.joinus = async (req, res) => {
   try {
-    console.log(req.body);
     const { name, email, contact, enrollment, skills, aboutRotaract } = req.body;
     await JoinUs.create({
       name,
