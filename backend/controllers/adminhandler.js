@@ -1,4 +1,3 @@
-const { zod } = require('zod');
 const bcrypt = require('bcrypt');
 const { Admin } = require("../model/AdminModel");
 
