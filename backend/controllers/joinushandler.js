@@ -18,6 +18,7 @@ exports.joinus = async (req, res) => {
       message: "Form submitted successfully!",
     });
   } catch (error) {
+    console.error("JoinUs error:", error);
     res.status(500).json({ 
         success: false, 
         message: "Server error" });
