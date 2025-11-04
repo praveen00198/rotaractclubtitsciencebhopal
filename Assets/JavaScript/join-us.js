@@ -10,10 +10,10 @@ async function formSubmission(event) {
   const data = {
     name: document.querySelector("#name-input").value,
     email: document.querySelector("#email-input").value,
-    contact_no: document.querySelector("#contact-input").value,
-    enrollment_no: document.querySelector("#enrollment-input").value,
+    contact: document.querySelector("#contact-input").value,
+    enrollment: document.querySelector("#enrollment-input").value,
     skills: document.querySelector("#skill-input").value,
-    source: document.querySelector("#source-input").value,
+    aboutRotaract: document.querySelector("#source-input").value,
   };
 
   try {
