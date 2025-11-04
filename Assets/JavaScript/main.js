@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// to-open-event-page
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#upcoming-event-view-more-event-btn").addEventListener("click", () => {
+    window.location.href = "../pages/event.html";
+  });
+});
+
 
 // Toggle the menu on mobile devices
 // This function toggles the visibility of the navigation menu when the hamburger icon is clicked

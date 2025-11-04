@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { joinUs } = require("../controllers/joinController");
+const { event } = require("../controllers/eventhandler");
 
-router.post("/join", joinUs);
+router.post('/event', event)
 
 module.exports = router;
